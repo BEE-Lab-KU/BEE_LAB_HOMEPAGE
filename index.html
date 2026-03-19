@@ -1204,6 +1204,216 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
+<!-- DA RESEARCH DETAIL: Pattern Classification -->
+<div id="page-research-da-pattern" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">건물 에너지 소비 패턴 분류 및 이상 탐지</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>Research Overview</h3>
+          <p>건물 에너지 관리 시스템(BEMS)에서 수집된 대규모 에너지 소비 데이터를 기반으로, 비지도 학습(K-Means, DBSCAN 등) 기법을 활용하여 건물 에너지 소비 패턴을 자동 분류합니다. 또한 Isolation Forest, Autoencoder 기반 이상 탐지 모델을 적용하여 비정상적 에너지 소비를 실시간으로 감지하는 프레임워크를 개발하고 있습니다.</p>
+          <h3>Methodology</h3>
+          <p>시계열 에너지 데이터를 특징 추출(Feature Engineering)하여 차원 축소(PCA, t-SNE) 후 클러스터링을 수행합니다. 이상 탐지는 통계적 방법과 딥러닝 기반 방법을 비교 분석하여 건물 유형별 최적 모델을 제안합니다.</p>
+          <h3>Keywords</h3>
+          <p>Clustering · Anomaly Detection · BEMS · Unsupervised Learning · Time Series</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-doyeon')"><img src="Photos/이도연.png" alt=""/><div><div class="name">이도연</div><div class="role">Ph.D. Candidate</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">scikit-learn</span><span class="sidebar-tag">TensorFlow</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DA RESEARCH DETAIL: Forecasting -->
+<div id="page-research-da-forecast" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">딥러닝 기반 건물 에너지 수요 예측</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>Research Overview</h3>
+          <p>LSTM, GRU, Transformer 등 시계열 딥러닝 모델을 활용하여 건물 에너지 수요를 단기(1시간~1일) 및 중기(1주~1개월) 단위로 예측하는 모델을 개발합니다. 기상 데이터, 재실 스케줄, 건물 특성 등 다양한 외부 변수를 결합한 멀티모달 예측 프레임워크를 구축하고 있습니다.</p>
+          <h3>Methodology</h3>
+          <p>Attention 메커니즘 기반의 Seq2Seq 모델과 Temporal Fusion Transformer를 적용하여 다변량 시계열 예측 성능을 비교합니다. 전이 학습(Transfer Learning)을 통해 소규모 데이터 건물에 대한 예측 정확도 향상을 도모합니다.</p>
+          <h3>Keywords</h3>
+          <p>Deep Learning · LSTM · Transformer · Energy Forecasting · Transfer Learning</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-inseob')"><img src="Photos/김인섭.png" alt=""/><div><div class="name">김인섭</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">PyTorch</span><span class="sidebar-tag">EnergyPlus</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DA MEMBER PROFILES -->
+<div id="page-member-doyeon" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/이도연.png" alt=""/>
+      <div class="profile-info"><h1>이도연</h1><div class="role-line">Ph.D. Candidate · Data & Analysis Group</div>
+        <div class="bio">건물 에너지 데이터의 패턴 분석 및 이상 탐지 연구를 수행하고 있으며, 머신러닝 기반 에너지 효율 진단 기법 개발에 관심이 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" onclick="showPage('research-da-pattern')"><h4>건물 에너지 소비 패턴 분류 및 이상 탐지</h4><p>#clustering #anomaly_detection #BEMS</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-member-inseob" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/김인섭.png" alt=""/>
+      <div class="profile-info"><h1>김인섭</h1><div class="role-line">Master's Student · Data & Analysis Group</div>
+        <div class="bio">딥러닝 기반 건물 에너지 수요 예측 연구를 수행하고 있으며, 시계열 모델링 및 전이 학습 기법에 관심이 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" onclick="showPage('research-da-forecast')"><h4>딥러닝 기반 건물 에너지 수요 예측</h4><p>#deep_learning #time_series #forecasting</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-member-jiyoung" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/김지영.png" alt=""/>
+      <div class="profile-info"><h1>김지영</h1><div class="role-line">Undergraduate Researcher · Data & Analysis Group</div>
+        <div class="bio">건물 에너지 데이터 전처리 및 시각화 연구에 참여하고 있으며, 데이터 사이언스 분야에 관심이 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" onclick="showPage('research-da-pattern')"><h4>건물 에너지 소비 패턴 분류 및 이상 탐지 (참여)</h4><p>#data_preprocessing #visualization #EDA</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- UM RESEARCH DETAIL: GIS -->
+<div id="page-research-um-gis" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="showPage('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">GIS 기반 도시 건물군 에너지 모델링</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>Research Overview</h3>
+          <p>GIS 공간 데이터와 건물 에너지 시뮬레이션을 연계하여 도시 스케일의 에너지 소비 분포를 분석하고 예측합니다. 건물 유형, 연면적, 준공년도, 기후 데이터 등을 변수로 활용하여 건물군 에너지 수요 모델을 구축하고, 탄소중립 시나리오를 평가합니다.</p>
+          <h3>Methodology</h3>
+          <p>QGIS와 Python 기반 공간 분석 도구를 활용하여 건물군 데이터를 구축하고, 건물별 에너지 시뮬레이션(EnergyPlus)과 통계 모델(회귀분석, Random Forest)을 병행하여 도시 에너지 맵을 생성합니다.</p>
+          <h3>Keywords</h3>
+          <p>GIS · Urban Energy Modeling · Building Stock · Carbon Neutral · Spatial Analysis</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-jungyun')"><img src="Photos/황정윤.png" alt=""/><div><div class="name">황정윤</div><div class="role">Ph.D. Candidate</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">QGIS</span><span class="sidebar-tag">Python</span><span class="sidebar-tag">EnergyPlus</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UM RESEARCH DETAIL: Digital Twin -->
+<div id="page-research-um-twin" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="showPage('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">디지털 트윈 기반 건물 에너지 성능 시뮬레이션</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>Research Overview</h3>
+          <p>BIM(Building Information Modeling)의 IFC 데이터를 활용하여 건물 디지털 트윈을 구축하고, 에너지 시뮬레이션을 자동화하는 파이프라인을 개발합니다. 설계 단계부터 운영 단계까지 실시간 에너지 성능 모니터링 및 최적화를 지원합니다.</p>
+          <h3>Methodology</h3>
+          <p>IFC 파싱 및 gbXML 변환을 통해 BIM-to-BEM 자동화 워크플로우를 구축하고, EnergyPlus 연동 시뮬레이션을 수행합니다. IoT 센서 데이터와 시뮬레이션 결과를 결합하여 디지털 트윈 모델을 보정(Calibration)합니다.</p>
+          <h3>Keywords</h3>
+          <p>Digital Twin · BIM · IFC · EnergyPlus · BEM · Calibration</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-jisu')"><img src="Photos/임지수.png" alt=""/><div><div class="name">임지수</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">IFC</span><span class="sidebar-tag">gbXML</span><span class="sidebar-tag">EnergyPlus</span><span class="sidebar-tag">Python</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- UM MEMBER PROFILES -->
+<div id="page-member-jungyun" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/황정윤.png" alt=""/>
+      <div class="profile-info"><h1>황정윤</h1><div class="role-line">Ph.D. Candidate · Building & Urban Modeling Group</div>
+        <div class="bio">GIS 기반 도시 스케일 에너지 모델링 및 탄소중립 시나리오 분석 연구를 수행하고 있으며, 공간 데이터 분석과 건물군 에너지 시뮬레이션에 관심이 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" onclick="showPage('research-um-gis')"><h4>GIS 기반 도시 건물군 에너지 모델링</h4><p>#GIS #urban_energy #building_stock #carbon_neutral</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-member-jisu" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/임지수.png" alt=""/>
+      <div class="profile-info"><h1>임지수</h1><div class="role-line">Master's Student · Building & Urban Modeling Group</div>
+        <div class="bio">BIM/IFC 기반 디지털 트윈 구축 및 에너지 시뮬레이션 자동화 연구를 수행하고 있으며, BIM-to-BEM 변환 파이프라인 개발에 관심이 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" onclick="showPage('research-um-twin')"><h4>디지털 트윈 기반 건물 에너지 성능 시뮬레이션</h4><p>#digital_twin #BIM #IFC #EnergyPlus</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-member-hyunsu" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/이현수.png" alt=""/>
+      <div class="profile-info"><h1>이현수</h1><div class="role-line">Undergraduate Researcher · Building & Urban Modeling Group</div>
+        <div class="bio">도시 건물 데이터 수집 및 GIS 기반 시각화 연구에 참여하고 있으며, 공간 데이터 분석에 관심이 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" onclick="showPage('research-um-gis')"><h4>GIS 기반 도시 건물군 에너지 모델링 (참여)</h4><p>#GIS #data_collection #spatial_visualization</p></div>
+    </div>
+  </div>
+</div>
+
 <!-- DATA & ANALYSIS PAGE -->
 <div id="page-data-analysis" class="page-view">
 
@@ -1240,20 +1450,23 @@ a { color: inherit; text-decoration: none; }
   <div class="section-divider"></div>
   <h2 class="section-title">Members</h2>
   <div class="members-grid">
-    <div class="member-card">
+    <div class="member-card" onclick="showPage('member-doyeon')">
       <img class="member-avatar" src="Photos/이도연.png" alt="이도연"/>
       <div class="name">이도연</div>
       <div class="role">Ph.D. Candidate</div>
+      <div class="arrow-hint">View Profile →</div>
     </div>
-    <div class="member-card">
+    <div class="member-card" onclick="showPage('member-inseob')">
       <img class="member-avatar" src="Photos/김인섭.png" alt="김인섭"/>
       <div class="name">김인섭</div>
       <div class="role">Master's Student</div>
+      <div class="arrow-hint">View Profile →</div>
     </div>
-    <div class="member-card">
+    <div class="member-card" onclick="showPage('member-jiyoung')">
       <img class="member-avatar" src="Photos/김지영.png" alt="김지영"/>
       <div class="name">김지영</div>
       <div class="role">Undergraduate Researcher</div>
+      <div class="arrow-hint">View Profile →</div>
     </div>
   </div>
 </div>
@@ -1267,17 +1480,21 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-da-research" class="rp-panel active">
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" onclick="showPage('research-da-pattern')">
+        <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
         <h4>건물 에너지 소비 패턴 분류 및 이상 탐지</h4>
         <p>비지도 학습 기반 클러스터링 기법을 활용하여 건물 에너지 소비 패턴을 분류하고 이상 소비를 자동 탐지하는 연구</p>
         <div class="tag-row"><span class="tag">Clustering</span><span class="tag">Anomaly Detection</span><span class="tag">Energy Data</span></div>
+        <div class="people-row"><img src="Photos/이도연.png" alt=""/><span class="label">이도연</span></div>
       </div>
-      <div class="project-card">
+      <div class="project-card" onclick="showPage('research-da-forecast')">
+        <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
         <h4>딥러닝 기반 건물 에너지 수요 예측</h4>
         <p>LSTM, Transformer 등 시계열 딥러닝 모델을 활용한 건물 에너지 수요 예측 모델 개발</p>
         <div class="tag-row"><span class="tag">Deep Learning</span><span class="tag">Time Series</span><span class="tag">Forecasting</span></div>
+        <div class="people-row"><img src="Photos/김인섭.png" alt=""/><span class="label">김인섭</span></div>
       </div>
     </div>
   </div>
@@ -1345,20 +1562,23 @@ a { color: inherit; text-decoration: none; }
   <div class="section-divider"></div>
   <h2 class="section-title">Members</h2>
   <div class="members-grid">
-    <div class="member-card">
+    <div class="member-card" onclick="showPage('member-jungyun')">
       <img class="member-avatar" src="Photos/황정윤.png" alt="황정윤"/>
       <div class="name">황정윤</div>
       <div class="role">Ph.D. Candidate</div>
+      <div class="arrow-hint">View Profile →</div>
     </div>
-    <div class="member-card">
+    <div class="member-card" onclick="showPage('member-jisu')">
       <img class="member-avatar" src="Photos/임지수.png" alt="임지수"/>
       <div class="name">임지수</div>
       <div class="role">Master's Student</div>
+      <div class="arrow-hint">View Profile →</div>
     </div>
-    <div class="member-card">
+    <div class="member-card" onclick="showPage('member-hyunsu')">
       <img class="member-avatar" src="Photos/이현수.png" alt="이현수"/>
       <div class="name">이현수</div>
       <div class="role">Undergraduate Researcher</div>
+      <div class="arrow-hint">View Profile →</div>
     </div>
   </div>
 </div>
@@ -1372,17 +1592,21 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-um-research" class="rp-panel active">
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" onclick="showPage('research-um-gis')">
+        <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
         <h4>GIS 기반 도시 건물군 에너지 모델링</h4>
         <p>GIS 데이터와 건물 에너지 시뮬레이션을 연계하여 도시 스케일의 에너지 소비 분포를 분석하고 예측하는 연구</p>
         <div class="tag-row"><span class="tag">GIS</span><span class="tag">Urban Energy</span><span class="tag">Building Stock</span></div>
+        <div class="people-row"><img src="Photos/황정윤.png" alt=""/><span class="label">황정윤</span></div>
       </div>
-      <div class="project-card">
+      <div class="project-card" onclick="showPage('research-um-twin')">
+        <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
         <h4>디지털 트윈 기반 건물 에너지 성능 시뮬레이션</h4>
         <p>BIM/IFC 데이터를 활용한 건물 디지털 트윈 구축 및 에너지 시뮬레이션 자동화 파이프라인 개발</p>
         <div class="tag-row"><span class="tag">Digital Twin</span><span class="tag">BIM</span><span class="tag">IFC</span><span class="tag">EnergyPlus</span></div>
+        <div class="people-row"><img src="Photos/임지수.png" alt=""/><span class="label">임지수</span></div>
       </div>
     </div>
   </div>
