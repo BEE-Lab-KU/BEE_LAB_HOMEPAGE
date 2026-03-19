@@ -637,6 +637,44 @@ a { color: inherit; text-decoration: none; }
   .profile-top { flex-direction: column; align-items: center; text-align: center; }
 }
 
+/* HEXAGONAL LANDING */
+.hex-cell {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.hex-bg {
+  background: linear-gradient(135deg, #c4a84e 0%, #a08530 50%, #8a7228 100%);
+  opacity: 0.35;
+}
+.hex-link {
+  background: linear-gradient(135deg, #f5e6b8 0%, #d4b96a 50%, #bfa04a 100%);
+  cursor: pointer;
+  color: #1a1a1a;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.hex-link:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 48px rgba(196,168,78,0.4);
+  background: linear-gradient(135deg, #fff8e0 0%, #e8cc7a 50%, #d4b96a 100%);
+}
+.hex-center {
+  background: linear-gradient(135deg, #fffef5 0%, #f5e6b8 50%, #e8d48a 100%);
+  cursor: pointer;
+  color: #1a1a1a;
+  box-shadow: 0 12px 48px rgba(196,168,78,0.5);
+}
+.hex-center:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 64px rgba(196,168,78,0.6);
+}
+
 .fade-in { animation: fadeIn 0.35s ease-out; }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -648,8 +686,9 @@ a { color: inherit; text-decoration: none; }
 
 <nav class="top-bar">
   <div class="top-bar-inner">
-    <a class="lab-logo" href="#" onclick="showPage('intro')">BEE Lab</a>
+    <a class="lab-logo" href="#" onclick="showPage('intro')">BEE Lab.</a>
     <div class="nav-right">
+      <a href="#" onclick="showPage('introduce');return false;">Introduce</a>
       <a href="#" onclick="showPage('members-all');return false;">Members</a>
       <a href="#" onclick="showPage('research-topics');return false;">Research</a>
       <a href="#" onclick="showPage('publications');return false;">Publications</a>
@@ -827,7 +866,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="pub-row" onclick="showPage('pub-llm')">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">LLM Multi-Agent Systems for Building Energy Optimization: A Review</div><div class="pub-journal">Building Simulation, Vol. 18</div></div>
+      <div><div class="pub-title">LLM Multi-Agent Systems for Building Energy Optimization: A Review</div><div class="pub-journal">Building Simulation</div></div>
       <span class="pub-badge sci">SCI</span>
     </div>
   </div>
@@ -1187,7 +1226,7 @@ a { color: inherit; text-decoration: none; }
       <div>
         <div style="margin-bottom:12px;"><span class="pub-badge sci">SCI</span></div>
         <h1 style="font-size:32px;">LLM Multi-Agent Systems for Building Energy Optimization: A Review</h1>
-        <div class="detail-meta"><span class="status-text">2025 · Building Simulation, Vol. 18</span></div>
+        <div class="detail-meta"><span class="status-text">2025 · Building Simulation</span></div>
         <div class="detail-content">
           <h3>Abstract</h3>
           <p>건물 에너지 최적화를 위한 LLM 기반 멀티 에이전트 시스템의 최신 연구 동향을 리뷰합니다. 건물 에너지 시뮬레이션, 설비 제어, 진단 등 다양한 응용 분야에서의 LLM 활용 가능성과 한계를 분석합니다.</p>
@@ -1641,7 +1680,77 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================ -->
 <!-- INTRO / ABOUT PAGE -->
 <!-- ============================================ -->
+<!-- ============================================ -->
+<!-- MAIN LANDING PAGE (Hexagonal) -->
+<!-- ============================================ -->
 <div id="page-intro" class="page-view active">
+<div style="min-height:100vh;background:#2a2a2a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+  <!-- Background gradient overlay -->
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(60,55,40,0.8) 0%,rgba(30,30,30,1) 70%);"></div>
+
+  <div style="position:relative;z-index:2;text-align:center;padding:40px;">
+    <!-- Hexagonal grid -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+
+      <!-- Row 1 -->
+      <div style="display:flex;gap:8px;">
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-link" onclick="showPage('members-all')" style="width:160px;height:140px;">
+          <span>Members</span>
+        </div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-link" onclick="showPage('research-topics')" style="width:160px;height:140px;">
+          <span>Research</span>
+        </div>
+      </div>
+
+      <!-- Row 2 (offset) -->
+      <div style="display:flex;gap:8px;margin-top:-32px;">
+        <div class="hex-cell hex-link" onclick="showPage('blog')" style="width:160px;height:140px;">
+          <span>Blog</span>
+        </div>
+        <div class="hex-cell hex-center" onclick="showPage('introduce')" style="width:160px;height:140px;">
+          <span style="font-size:22px;font-weight:900;letter-spacing:-0.02em;">BEE Lab.</span>
+        </div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-link" onclick="showPage('publications')" style="width:160px;height:140px;">
+          <span>Publications</span>
+        </div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+      </div>
+
+      <!-- Row 3 -->
+      <div style="display:flex;gap:8px;margin-top:-32px;">
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-link" onclick="showPage('contact')" style="width:160px;height:140px;">
+          <span>Contact</span>
+        </div>
+        <div class="hex-cell hex-link" onclick="showPage('news')" style="width:160px;height:140px;">
+          <span>News</span>
+        </div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+      </div>
+
+      <!-- Row 4 (bg only) -->
+      <div style="display:flex;gap:8px;margin-top:-32px;">
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <div style="margin-top:40px;color:rgba(255,255,255,0.35);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;">Building Energy & Environment Laboratory · Konkuk University</div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- INTRODUCE PAGE (moved from old intro) -->
+<!-- ============================================ -->
+<div id="page-introduce" class="page-view">
 <div style="width:100%;height:480px;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80') center/cover no-repeat;position:relative;">
   <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.7) 100%);"></div>
   <div style="position:absolute;bottom:64px;left:0;right:0;max-width:1200px;margin:0 auto;padding:0 40px;">
@@ -1838,27 +1947,153 @@ a { color: inherit; text-decoration: none; }
 
   <!-- International -->
   <div id="pub-international" class="rp-panel active">
-    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025 Publications</div>
-    <div class="pub-row" onclick="showPage('pub-whr')">
+
+    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025</div>
+    <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">CO₂ Heat Pump Water Heater System for Data Center Waste Heat Recovery via Han River</div><div class="pub-journal">Energy and Buildings · SCI</div></div>
+      <div><div class="pub-title">Hwang, J., Lee, K., Lee, D., Kim, D. W., & Lim, H. Analysis of energy consumption impacts using public data-based building shape index: a case study of office buildings in Seoul.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2025.114643" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
-    <div class="pub-row" onclick="showPage('pub-llm')">
+    <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">LLM Multi-Agent Systems for Building Energy Optimization: A Review</div><div class="pub-journal">Building Simulation · SCI</div></div>
+      <div><div class="pub-title">Shim, J., Lim, H., Song, D., & Park, S. Continuous or intermittent heating?: Uncovering practical heating control strategies amid common misconceptions about radiant floor heating.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2025.116501" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">Lee, K., Lim, H., Kim, I., & Lee, S. Data-driven methodology for identifying gross floor area thresholds in building energy benchmarking.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2025.113768" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">Lee, D., Lim, H., Lim, J., Kim, S., Yoon, S., Kim, D. W., & Shim, J. Analyzing energy signature of building retrofits using public data.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/J.BUILDENV.2025.113525" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">Lee, K., Lim, H., Hwang, J., & Lee, D. Development of building benchmarking index for improving gross-floor-area-based energy use intensity.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2024.115103" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2024</div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">Hwang, J., Lim, H., & Lim, J. Reducing uncertainty of building shape information in urban building energy modeling using Bayesian calibration.</div><div class="pub-journal">Sustainable Cities and Society</div><a href="https://doi.org/10.1016/j.scs.2024.105895" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">Data-driven anomaly detection framework for building energy management systems</div><div class="pub-journal">Applied Energy · SCI</div></div>
+      <div><div class="pub-title">Lee, K., Lim, H., Hwang, J., & Lee, D. Evaluating missing data handling methods for developing building energy benchmarking models.</div><div class="pub-journal">Energy</div><a href="https://doi.org/10.1016/j.energy.2024.132979" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">GIS-based urban building energy modeling for carbon neutrality scenarios</div><div class="pub-journal">Energy and Buildings · SCI</div></div>
+      <div><div class="pub-title">Lee, K., & Lim, H. Correlation analysis of building parameters according to ASHRAE Standard 90.1.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2023.108130" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">Choi, S., Lim, H., Lim, J., & Yoon, S. Retrofit building energy performance evaluation using an energy signature-based symbolic hierarchical clustering method.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2024.111206" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2023</div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">Choi, Y., Jeong, E. S., Mun, J. H., Yang, K. H., Lee, S. J., & Lim, H. Thermal performance and condensation analysis of insulated concrete panels using a thermal-meta structure.</div><div class="pub-journal">Applied Thermal Engineering</div><a href="https://doi.org/10.1016/j.applthermaleng.2023.120761" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2022</div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">Lim, J., Ooka, R., & Lim, H. Multicollinearity issue for the parameterization of urban ventilation potential with urban morphology.</div><div class="pub-journal">Sustainable Cities and Society</div><a href="https://doi.org/10.1016/j.scs.2022.104218" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">Banks, A., Grist, C., Heller, J., & Lim, H. Field Measurement of Central CO2 Heat Pump Water Heater for Multifamily Retrofit.</div><div class="pub-journal">Sustainability</div><a href="https://doi.org/10.3390/su14138048" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">Park, S., Cai, Y., Lim, H., & Song, D. Analysis of vertical movement of particulate matter due to the stack effect in high-rise buildings.</div><div class="pub-journal">Atmospheric Environment</div><a href="https://doi.org/10.1016/j.atmosenv.2022.119113" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">Bak, J., Koo, J., Yoon, S., & Lim, H. Thermal Draft Load Coefficient for Heating Load Differences Caused by Stack-Driven Infiltration by Floor in Multifamily High-Rise Buildings.</div><div class="pub-journal">Energies</div><a href="https://doi.org/10.3390/en15041386" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Estimating unknown parameters of a building stock using a stochastic-deterministic-coupled approach.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2021.111673" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2020</div>
+    <div class="pub-row">
+      <div class="pub-year">2020</div>
+      <div><div class="pub-title">Bak, J., Yoon, S., Song, D., Lim, H., & Kim, Y. S. Weather-driven infiltration and interzonal airflow in a multifamily high-rise building: Dwelling infiltration distribution.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2020.107098" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2020</div>
+      <div><div class="pub-title">Kim, J., Song, D., Kim, S., Park, S., Choi, Y., & Lim, H. Energy-saving potential of extending temperature set-points in a VRF air-conditioned building.</div><div class="pub-journal">Energies</div><a href="https://doi.org/10.3390/en13092160" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2020</div>
+      <div><div class="pub-title">Kim, J., Myoung, J., Lim, H., & Song, D. Efficiency gap caused by the input data in evaluating energy efficiency of low-income households' energy retrofit program.</div><div class="pub-journal">Sustainability</div><a href="https://doi.org/10.3390/su12072774" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2020</div>
+      <div><div class="pub-title">Lim, H., Seo, J., Song, D., Yoon, S., & Kim, J. Interaction analysis of countermeasures for the stack effect in a high-rise office building.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106530" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2020</div>
+      <div><div class="pub-title">Yoon, S., Song, D., Kim, J., Kim, J., Lim, H., & Koo, J. Identifying stack-driven indoor environmental problems and associated pressure difference in high-rise residential buildings: Airflow noise and draft.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106483" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2019</div>
+    <div class="pub-row">
+      <div class="pub-year">2019</div>
+      <div><div class="pub-title">Song, D., Yoon, S., Jeong, C., Kim, J., & Lim, H. Heat, vapor, and CO2 transportation caused by airflow in high-rise residential buildings.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106176" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2019</div>
+      <div><div class="pub-title">Yoon, S., Song, D., Kim, J., & Lim, H. Stack-driven infiltration and heating load differences by floor in high-rise residential buildings.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.05.006" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2017 – 2018</div>
+    <div class="pub-row">
+      <div class="pub-year">2018</div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Influences of energy data on Bayesian calibration of building energy model.</div><div class="pub-journal">Applied Energy</div><a href="https://doi.org/10.1016/j.apenergy.2018.09.156" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2017</div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Comprehensive evaluation of the influence of meta-models on Bayesian calibration.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2017.09.009" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2017</div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Review on stochastic modeling methods for building stock energy prediction.</div><div class="pub-journal">Building Simulation</div><a href="https://doi.org/10.1007/s12273-017-0383-y" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2014</div>
+    <div class="pub-row">
+      <div class="pub-year">2014</div>
+      <div><div class="pub-title">Song, D., Lim, H., Lee, J., & Seo, J. Application of the mechanical ventilation in elevator shaft space to mitigate stack effect under operation stage in high-rise buildings.</div><div class="pub-journal">Indoor and Built Environment</div><a href="https://doi.org/10.1177/1420326X13480055" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><span class="pub-badge sci">SCI</span></div>
+    </div>
+
   </div>
 
   <!-- Domestic -->
@@ -2025,9 +2260,7 @@ a { color: inherit; text-decoration: none; }
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5!2d127.074!3d37.5407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4e0e6bfffff%3A0x11111111!2z6rG06rWt64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
       <div style="font-size:15px;color:var(--text-mid);line-height:2;">
-        <div><strong>주소</strong>　서울특별시 광진구 능동로 120 건국대학교 건축관</div>
-        <div><strong>연구실</strong>　건축관 000호</div>
-        <div><strong>전화</strong>　02-450-0000</div>
+        <div><strong>주소</strong>　서울특별시 광진구 능동로 120<br><span style="visibility:hidden;"><strong>주소</strong>　</span>건국대학교 건축관 A동 509호</div>
       </div>
     </div>
     <div>
