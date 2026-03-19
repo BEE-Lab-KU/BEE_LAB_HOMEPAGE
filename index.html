@@ -1684,65 +1684,15 @@ a { color: inherit; text-decoration: none; }
 <!-- MAIN LANDING PAGE (Hexagonal) -->
 <!-- ============================================ -->
 <div id="page-intro" class="page-view active">
-<div style="min-height:100vh;background:#2a2a2a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-  <!-- Background gradient overlay -->
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(60,55,40,0.8) 0%,rgba(30,30,30,1) 70%);"></div>
+<div style="position:relative;width:100%;height:100vh;overflow:hidden;background:#1a1a1a;">
+  <!-- Spline 3D Scene -->
+  <iframe src="https://my.spline.design/cloneronhoverlightning-cqNZAoGwFUNplEsJmiQsRuEV/" 
+    style="position:absolute;inset:0;width:100%;height:100%;border:none;" 
+    loading="lazy" allowfullscreen></iframe>
 
-  <div style="position:relative;z-index:2;text-align:center;padding:40px;">
-    <!-- Hexagonal grid -->
-    <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
-
-      <!-- Row 1 -->
-      <div style="display:flex;gap:8px;">
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-link" onclick="showPage('members-all')" style="width:160px;height:140px;">
-          <span>Members</span>
-        </div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-link" onclick="showPage('research-topics')" style="width:160px;height:140px;">
-          <span>Research</span>
-        </div>
-      </div>
-
-      <!-- Row 2 (offset) -->
-      <div style="display:flex;gap:8px;margin-top:-32px;">
-        <div class="hex-cell hex-link" onclick="showPage('blog')" style="width:160px;height:140px;">
-          <span>Blog</span>
-        </div>
-        <div class="hex-cell hex-center" onclick="showPage('introduce')" style="width:160px;height:140px;">
-          <span style="font-size:22px;font-weight:900;letter-spacing:-0.02em;">BEE Lab.</span>
-        </div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-link" onclick="showPage('publications')" style="width:160px;height:140px;">
-          <span>Publications</span>
-        </div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-      </div>
-
-      <!-- Row 3 -->
-      <div style="display:flex;gap:8px;margin-top:-32px;">
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-link" onclick="showPage('contact')" style="width:160px;height:140px;">
-          <span>Contact</span>
-        </div>
-        <div class="hex-cell hex-link" onclick="showPage('news')" style="width:160px;height:140px;">
-          <span>News</span>
-        </div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-      </div>
-
-      <!-- Row 4 (bg only) -->
-      <div style="display:flex;gap:8px;margin-top:-32px;">
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-        <div class="hex-cell hex-bg" style="width:160px;height:140px;"></div>
-      </div>
-    </div>
-
-    <!-- Subtitle -->
-    <div style="margin-top:40px;color:rgba(255,255,255,0.35);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;">Building Energy & Environment Laboratory · Konkuk University</div>
+  <!-- Overlay UI (optional nav hints) -->
+  <div style="position:absolute;bottom:32px;left:0;right:0;text-align:center;z-index:10;pointer-events:none;">
+    <div style="color:rgba(255,255,255,0.35);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;">Building Energy & Environment Laboratory · Konkuk University</div>
   </div>
 </div>
 </div>
