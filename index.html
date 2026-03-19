@@ -988,6 +988,49 @@ a { color: inherit; text-decoration: none; }
 
 </div>
 
+<!-- DATA & ANALYSIS MEMBER DETAIL PAGES -->
+<div id="page-member-doyeon" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="profile-top">
+      <div class="profile-avatar-placeholder" style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#6C63FF,#3F3D99);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#fff;letter-spacing:1px;flex-shrink:0;">DY</div>
+      <div class="profile-info"><h1>이도연</h1><div class="role-line">Ph.D. Student · Data & Analysis Group</div>
+      <div class="bio">Data & Analysis 그룹에서 건물 에너지 데이터 분석 및 최적화 연구를 수행하고 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" style="opacity:0.6;cursor:default;"><h4>연구 주제 준비 중</h4><p>#coming_soon</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-member-inseop" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="profile-top">
+      <div class="profile-avatar-placeholder" style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#2D9CDB,#1A5276);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#fff;letter-spacing:1px;flex-shrink:0;">IS</div>
+      <div class="profile-info"><h1>김인섭</h1><div class="role-line">M.S. Student · Data & Analysis Group</div>
+      <div class="bio">Data & Analysis 그룹에서 건물 에너지 데이터 분석 및 최적화 연구를 수행하고 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" style="opacity:0.6;cursor:default;"><h4>연구 주제 준비 중</h4><p>#coming_soon</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="page-member-jiyoung" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="showPage('data-analysis')">← Data & Analysis</div>
+    <div class="profile-top">
+      <div class="profile-avatar-placeholder" style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#E91E63,#AD1457);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#fff;letter-spacing:1px;flex-shrink:0;">JY</div>
+      <div class="profile-info"><h1>김지영</h1><div class="role-line">Undergraduate Researcher · Data & Analysis Group</div>
+      <div class="bio">Data & Analysis 그룹에서 건물 에너지 데이터 분석 연구에 참여하고 있습니다.</div></div>
+    </div>
+    <div class="profile-research-list"><h3>Research</h3>
+      <div class="profile-research-item" style="opacity:0.6;cursor:default;"><h4>연구 주제 준비 중</h4><p>#coming_soon</p></div>
+    </div>
+  </div>
+</div>
+
 <!-- RESEARCH TOPICS PAGE -->
 <div id="page-research-topics" class="page-view">
   <div style="max-width:1200px;margin:0 auto;padding:80px 40px;">
@@ -1147,10 +1190,23 @@ a { color: inherit; text-decoration: none; }
   <div class="section-divider"></div>
   <h2 class="section-title">Members</h2>
   <div class="members-grid">
-    <div class="member-card" style="opacity:0.5;cursor:default;">
-      <div style="width:88px;height:88px;border-radius:50%;background:#E0E0E0;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px;color:#999;">?</div>
-      <div class="name">TBD</div>
-      <div class="role">Coming Soon</div>
+    <div class="member-card" onclick="showPage('member-doyeon')">
+      <div class="member-avatar-placeholder" style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#6C63FF,#3F3D99);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;letter-spacing:1px;">DY</div>
+      <div class="name">이도연</div>
+      <div class="role">Ph.D. Student</div>
+      <div class="arrow-hint">프로필 보기 →</div>
+    </div>
+    <div class="member-card" onclick="showPage('member-inseop')">
+      <div class="member-avatar-placeholder" style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#2D9CDB,#1A5276);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;letter-spacing:1px;">IS</div>
+      <div class="name">김인섭</div>
+      <div class="role">M.S. Student</div>
+      <div class="arrow-hint">프로필 보기 →</div>
+    </div>
+    <div class="member-card" onclick="showPage('member-jiyoung')">
+      <div class="member-avatar-placeholder" style="width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,#E91E63,#AD1457);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;letter-spacing:1px;">JY</div>
+      <div class="name">김지영</div>
+      <div class="role">Undergraduate Researcher</div>
+      <div class="arrow-hint">프로필 보기 →</div>
     </div>
   </div>
 
