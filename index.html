@@ -684,7 +684,7 @@ a { color: inherit; text-decoration: none; }
 </head>
 <body>
 
-<nav class="top-bar" style="display:none;">
+<nav class="top-bar">
   <div class="top-bar-inner">
     <a class="lab-logo" href="#" onclick="showPage('intro')">BEE Lab.</a>
     <div class="nav-right">
@@ -726,7 +726,10 @@ a { color: inherit; text-decoration: none; }
 
 <section class="overview">
   <h2>Overview</h2>
-  <p>Building Systems 그룹은 건물 내 기계 설비의 설계·시뮬레이션·최적화 연구를 수행합니다. CHPWH, 엘레베이터 샤프트, 그린 리모델링, 폐열 회수 시스템 개발 등을 통해 에너지 효율적이고 지속가능한 건축 환경을 구현하는 것을 목표로 합니다..</p>
+  <p>Building Systems 그룹은 건물 단위에서 발생하는 에너지·환경 문제를 다루며,
+    지속가능하고 에너지 효율적인 건축환경 구현을 목표로 연구합니다.
+    열원 시스템의 동적 시뮬레이션, 냉난방 설비의 최적 제어, 데이터센터 폐열 회수
+    등 실질적인 에너지 절감 방안을 탐구하고 있습니다.</p>
 </section>
 
 <div class="section">
@@ -1741,13 +1744,14 @@ a { color: inherit; text-decoration: none; }
   <div class="section-divider"></div>
   <h2 class="section-title">Advisor</h2>
   <div style="display:flex;gap:40px;align-items:flex-start;">
-    <div style="width:160px;height:160px;border-radius:12px;background:#E0E0E0;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:40px;color:#999;">👤</div>
+    <img src="Photos/임현우.png" alt="임현우" style="width:160px;height:200px;object-fit:cover;border-radius:12px;flex-shrink:0;background:#E0E0E0;">
     <div>
-      <div style="font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;">임현우 교수</div>
-      <div style="font-size:15px;color:var(--text-muted);margin-bottom:16px;">Prof. Hyunwoo Lim · School of Architecture, Konkuk University</div>
+      <div style="font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px;">Hyunwoo <span style="color:#D4A017;">Lim</span>, Ph.D., BEMP</div>
+      <div style="font-size:15px;color:var(--text-muted);margin-bottom:16px;">Associate Professor · School of Architecture, College of Architecture, Konkuk University</div>
       <div style="font-size:15px;color:var(--text-mid);line-height:1.8;">건물 에너지 시스템, HVAC 시뮬레이션, 히트펌프 및 폐열회수 시스템 분야의 연구를 이끌고 있습니다. 데이터 기반 건물 에너지 분석 및 도시 스케일 에너지 모델링으로 연구 영역을 확장하고 있습니다.</div>
-      <div style="margin-top:16px;display:flex;gap:16px;">
+      <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;">
         <span style="font-size:13px;color:var(--text-muted);">📧 hyunwoolim@konkuk.ac.kr</span>
+        <a href="https://scholar.google.com/citations?user=xIPpmY4AAAAJ&hl=en" target="_blank" style="font-size:13px;color:#000;text-decoration:underline;">Google Scholar ↗</a>
       </div>
     </div>
   </div>
@@ -1783,13 +1787,88 @@ a { color: inherit; text-decoration: none; }
 
   <!-- Professor -->
   <div id="mem-professor" class="rp-panel active">
-    <div style="display:flex;gap:40px;align-items:flex-start;padding:32px;border:1px solid var(--border);border-radius:12px;">
-      <div style="width:120px;height:120px;border-radius:50%;background:#E0E0E0;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:36px;color:#999;">👤</div>
+    <!-- Professor Header -->
+    <div style="display:flex;gap:48px;align-items:flex-start;padding:40px;border:1px solid var(--border);border-radius:12px;margin-bottom:40px;">
+      <img src="Photos/임현우.png" alt="임현우" style="width:180px;height:220px;object-fit:cover;border-radius:12px;flex-shrink:0;background:#E0E0E0;">
       <div>
-        <div style="font-size:24px;font-weight:800;margin-bottom:4px;">임현우</div>
-        <div style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Professor · School of Architecture, Konkuk University</div>
-        <div style="font-size:14px;color:var(--text-mid);line-height:1.8;">건물 에너지 시스템, HVAC 시뮬레이션, 히트펌프 시스템, 데이터 기반 에너지 분석</div>
-        <div style="margin-top:12px;font-size:13px;color:var(--text-muted);">📧 hyunwoolim@konkuk.ac.kr</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:8px;">Professor:</div>
+        <div style="font-size:32px;font-weight:900;letter-spacing:-0.03em;margin-bottom:4px;">Hyunwoo <span style="color:#D4A017;">Lim</span>, Ph.D., BEMP</div>
+        <div style="font-size:15px;color:var(--text-muted);margin-bottom:8px;">Associate Professor</div>
+        <div style="font-size:15px;color:var(--text-mid);margin-bottom:20px;">School of Architecture, College of Architecture, Konkuk University</div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://scholar.google.com/citations?user=xIPpmY4AAAAJ&hl=en" target="_blank" style="font-size:13px;padding:6px 14px;border:1px solid var(--border);border-radius:100px;color:var(--text-mid);text-decoration:none;">Google Scholar ↗</a>
+          <a href="https://orcid.org/0000-0001-9824-1336" target="_blank" style="font-size:13px;padding:6px 14px;border:1px solid var(--border);border-radius:100px;color:var(--text-mid);text-decoration:none;">ORCID ↗</a>
+          <a href="https://www.researchgate.net/profile/Hyunwoo_Lim" target="_blank" style="font-size:13px;padding:6px 14px;border:1px solid var(--border);border-radius:100px;color:var(--text-mid);text-decoration:none;">ResearchGate ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div style="margin-bottom:40px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Education</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2.2;">
+        <div>· Ph.D. in Architectural Engineering, University of Colorado Boulder, CO, USA</div>
+        <div>· M.S. in Architectural Engineering, Sungkyunkwan University, Suwon, South Korea</div>
+        <div>· B.S. in Architectural Engineering, Sungkyunkwan University, Suwon, South Korea</div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div style="margin-bottom:40px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Certifications</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2.2;">
+        <div>· Building Energy Modeling Professional (BEMP), ASHRAE, Nov. 2020 – Present</div>
+        <div>· LEED Green Associate, U.S. Green Building Council, Jul. 2016 – Present</div>
+      </div>
+    </div>
+
+    <!-- Professional Experience -->
+    <div style="margin-bottom:40px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Professional Experience</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2.2;">
+        <div>· Associate Professor, Konkuk University, Mar. 2025 – Present</div>
+        <div>· Assistant Professor, Konkuk University, Mar. 2021 – Feb. 2025</div>
+        <div>· Energy Modeler, Ecotope, Inc., Seattle, WA, USA, Jun. 2017 – Feb. 2021</div>
+        <div>· Research Assistant, University of Colorado Boulder, 2014 – 2017</div>
+      </div>
+    </div>
+
+    <!-- Professional Activities -->
+    <div style="margin-bottom:40px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Professional Activities</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2.2;">
+        <div>· Early Career Editorial Board Member, <em>Energy and Buildings</em>, Mar. 2023 – Present</div>
+        <div>· Reviewer: Energy and Buildings, Building and Environment, Applied Energy, Sustainable Cities and Society, Building Simulation</div>
+        <div>· Associate Member, ASHRAE, Jul. 2020 – Present</div>
+        <div>· 한국건축친환경설비학회, 2021 – Present</div>
+        <div>· 대한설비공학회, 2021 – Present</div>
+        <div>· 한국건축학회, 2021 – Present</div>
+        <div>· 녹색건축인증 (G-SEED) 심의위원회, 2023 – Present</div>
+      </div>
+    </div>
+
+    <!-- Honors and Awards -->
+    <div style="margin-bottom:40px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Honors and Awards</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2.2;">
+        <div>· 우수논문상, 한국태양에너지학회, 추계학술발표대회, 2023</div>
+        <div>· 최상홍 인재 신진공학자상, 대한설비공학회, 2023</div>
+        <div>· 우수논문상, 대한설비공학회, 동계학술발표대회, 2022</div>
+        <div>· Doctoral Assistantship for Completion of Dissertation, University of Colorado Boulder, Jan. 2016</div>
+        <div>· Award for Excellence in Research, Sungkyunkwan University, Mar. 2009</div>
+        <div>· Brain Korea 21 Research Fellowship, Korea Research Foundation, Mar. 2009, Sep. 2008</div>
+        <div>· The First Prize of Capstone Design Project in Architectural Engineering, Sungkyunkwan University, Nov. 2007</div>
+      </div>
+    </div>
+
+    <!-- Researcher Information -->
+    <div style="margin-bottom:20px;">
+      <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;">Researcher Information</div>
+      <div style="font-size:14px;color:var(--text-mid);line-height:2.2;">
+        <div>· Researcher ID: AAH-5113-2021</div>
+        <div>· ORCID ID: <a href="https://orcid.org/0000-0001-9824-1336" target="_blank" style="color:#000;text-decoration:underline;">0000-0001-9824-1336</a></div>
+        <div>· Research Gate: <a href="https://www.researchgate.net/profile/Hyunwoo_Lim" target="_blank" style="color:#000;text-decoration:underline;">Hyunwoo_Lim</a></div>
+        <div>· Google Scholar: <a href="https://scholar.google.com/citations?user=xIPpmY4AAAAJ&hl=en" target="_blank" style="color:#000;text-decoration:underline;">Hyunwoo Lim</a></div>
       </div>
     </div>
   </div>
@@ -1898,146 +1977,146 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025</div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">Hwang, J., Lee, K., Lee, D., Kim, D. W., & Lim, H. Analysis of energy consumption impacts using public data-based building shape index: a case study of office buildings in Seoul.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2025.114643" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Hwang, J., Lee, K., Lee, D., Kim, D. W., & Lim, H. Analysis of energy consumption impacts using public data-based building shape index: a case study of office buildings in Seoul.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2025.114643" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">Shim, J., Lim, H., Song, D., & Park, S. Continuous or intermittent heating?: Uncovering practical heating control strategies amid common misconceptions about radiant floor heating.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2025.116501" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Shim, J., Lim, H., Song, D., & Park, S. Continuous or intermittent heating?: Uncovering practical heating control strategies amid common misconceptions about radiant floor heating.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2025.116501" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">Lee, K., Lim, H., Kim, I., & Lee, S. Data-driven methodology for identifying gross floor area thresholds in building energy benchmarking.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2025.113768" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lee, K., Lim, H., Kim, I., & Lee, S. Data-driven methodology for identifying gross floor area thresholds in building energy benchmarking.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2025.113768" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">Lee, D., Lim, H., Lim, J., Kim, S., Yoon, S., Kim, D. W., & Shim, J. Analyzing energy signature of building retrofits using public data.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/J.BUILDENV.2025.113525" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lee, D., Lim, H., Lim, J., Kim, S., Yoon, S., Kim, D. W., & Shim, J. Analyzing energy signature of building retrofits using public data.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/J.BUILDENV.2025.113525" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">Lee, K., Lim, H., Hwang, J., & Lee, D. Development of building benchmarking index for improving gross-floor-area-based energy use intensity.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2024.115103" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lee, K., Lim, H., Hwang, J., & Lee, D. Development of building benchmarking index for improving gross-floor-area-based energy use intensity.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2024.115103" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2024</div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">Hwang, J., Lim, H., & Lim, J. Reducing uncertainty of building shape information in urban building energy modeling using Bayesian calibration.</div><div class="pub-journal">Sustainable Cities and Society</div><a href="https://doi.org/10.1016/j.scs.2024.105895" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Hwang, J., Lim, H., & Lim, J. Reducing uncertainty of building shape information in urban building energy modeling using Bayesian calibration.</div><div class="pub-journal">Sustainable Cities and Society</div><a href="https://doi.org/10.1016/j.scs.2024.105895" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">Lee, K., Lim, H., Hwang, J., & Lee, D. Evaluating missing data handling methods for developing building energy benchmarking models.</div><div class="pub-journal">Energy</div><a href="https://doi.org/10.1016/j.energy.2024.132979" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lee, K., Lim, H., Hwang, J., & Lee, D. Evaluating missing data handling methods for developing building energy benchmarking models.</div><div class="pub-journal">Energy</div><a href="https://doi.org/10.1016/j.energy.2024.132979" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">Lee, K., & Lim, H. Correlation analysis of building parameters according to ASHRAE Standard 90.1.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2023.108130" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lee, K., & Lim, H. Correlation analysis of building parameters according to ASHRAE Standard 90.1.</div><div class="pub-journal">Journal of Building Engineering</div><a href="https://doi.org/10.1016/j.jobe.2023.108130" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">Choi, S., Lim, H., Lim, J., & Yoon, S. Retrofit building energy performance evaluation using an energy signature-based symbolic hierarchical clustering method.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2024.111206" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Choi, S., Lim, H., Lim, J., & Yoon, S. Retrofit building energy performance evaluation using an energy signature-based symbolic hierarchical clustering method.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2024.111206" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2023</div>
     <div class="pub-row">
       <div class="pub-year">2023</div>
-      <div><div class="pub-title">Choi, Y., Jeong, E. S., Mun, J. H., Yang, K. H., Lee, S. J., & Lim, H. Thermal performance and condensation analysis of insulated concrete panels using a thermal-meta structure.</div><div class="pub-journal">Applied Thermal Engineering</div><a href="https://doi.org/10.1016/j.applthermaleng.2023.120761" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Choi, Y., Jeong, E. S., Mun, J. H., Yang, K. H., Lee, S. J., & Lim, H. Thermal performance and condensation analysis of insulated concrete panels using a thermal-meta structure.</div><div class="pub-journal">Applied Thermal Engineering</div><a href="https://doi.org/10.1016/j.applthermaleng.2023.120761" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2022</div>
     <div class="pub-row">
       <div class="pub-year">2022</div>
-      <div><div class="pub-title">Lim, J., Ooka, R., & Lim, H. Multicollinearity issue for the parameterization of urban ventilation potential with urban morphology.</div><div class="pub-journal">Sustainable Cities and Society</div><a href="https://doi.org/10.1016/j.scs.2022.104218" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lim, J., Ooka, R., & Lim, H. Multicollinearity issue for the parameterization of urban ventilation potential with urban morphology.</div><div class="pub-journal">Sustainable Cities and Society</div><a href="https://doi.org/10.1016/j.scs.2022.104218" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2022</div>
-      <div><div class="pub-title">Banks, A., Grist, C., Heller, J., & Lim, H. Field Measurement of Central CO2 Heat Pump Water Heater for Multifamily Retrofit.</div><div class="pub-journal">Sustainability</div><a href="https://doi.org/10.3390/su14138048" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Banks, A., Grist, C., Heller, J., & Lim, H. Field Measurement of Central CO2 Heat Pump Water Heater for Multifamily Retrofit.</div><div class="pub-journal">Sustainability</div><a href="https://doi.org/10.3390/su14138048" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2022</div>
-      <div><div class="pub-title">Park, S., Cai, Y., Lim, H., & Song, D. Analysis of vertical movement of particulate matter due to the stack effect in high-rise buildings.</div><div class="pub-journal">Atmospheric Environment</div><a href="https://doi.org/10.1016/j.atmosenv.2022.119113" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Park, S., Cai, Y., Lim, H., & Song, D. Analysis of vertical movement of particulate matter due to the stack effect in high-rise buildings.</div><div class="pub-journal">Atmospheric Environment</div><a href="https://doi.org/10.1016/j.atmosenv.2022.119113" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2022</div>
-      <div><div class="pub-title">Bak, J., Koo, J., Yoon, S., & Lim, H. Thermal Draft Load Coefficient for Heating Load Differences Caused by Stack-Driven Infiltration by Floor in Multifamily High-Rise Buildings.</div><div class="pub-journal">Energies</div><a href="https://doi.org/10.3390/en15041386" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Bak, J., Koo, J., Yoon, S., & Lim, H. Thermal Draft Load Coefficient for Heating Load Differences Caused by Stack-Driven Infiltration by Floor in Multifamily High-Rise Buildings.</div><div class="pub-journal">Energies</div><a href="https://doi.org/10.3390/en15041386" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2022</div>
-      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Estimating unknown parameters of a building stock using a stochastic-deterministic-coupled approach.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2021.111673" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Estimating unknown parameters of a building stock using a stochastic-deterministic-coupled approach.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2021.111673" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2020</div>
     <div class="pub-row">
       <div class="pub-year">2020</div>
-      <div><div class="pub-title">Bak, J., Yoon, S., Song, D., Lim, H., & Kim, Y. S. Weather-driven infiltration and interzonal airflow in a multifamily high-rise building: Dwelling infiltration distribution.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2020.107098" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Bak, J., Yoon, S., Song, D., Lim, H., & Kim, Y. S. Weather-driven infiltration and interzonal airflow in a multifamily high-rise building: Dwelling infiltration distribution.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2020.107098" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2020</div>
-      <div><div class="pub-title">Kim, J., Song, D., Kim, S., Park, S., Choi, Y., & Lim, H. Energy-saving potential of extending temperature set-points in a VRF air-conditioned building.</div><div class="pub-journal">Energies</div><a href="https://doi.org/10.3390/en13092160" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Kim, J., Song, D., Kim, S., Park, S., Choi, Y., & Lim, H. Energy-saving potential of extending temperature set-points in a VRF air-conditioned building.</div><div class="pub-journal">Energies</div><a href="https://doi.org/10.3390/en13092160" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2020</div>
-      <div><div class="pub-title">Kim, J., Myoung, J., Lim, H., & Song, D. Efficiency gap caused by the input data in evaluating energy efficiency of low-income households' energy retrofit program.</div><div class="pub-journal">Sustainability</div><a href="https://doi.org/10.3390/su12072774" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Kim, J., Myoung, J., Lim, H., & Song, D. Efficiency gap caused by the input data in evaluating energy efficiency of low-income households' energy retrofit program.</div><div class="pub-journal">Sustainability</div><a href="https://doi.org/10.3390/su12072774" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2020</div>
-      <div><div class="pub-title">Lim, H., Seo, J., Song, D., Yoon, S., & Kim, J. Interaction analysis of countermeasures for the stack effect in a high-rise office building.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106530" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lim, H., Seo, J., Song, D., Yoon, S., & Kim, J. Interaction analysis of countermeasures for the stack effect in a high-rise office building.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106530" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2020</div>
-      <div><div class="pub-title">Yoon, S., Song, D., Kim, J., Kim, J., Lim, H., & Koo, J. Identifying stack-driven indoor environmental problems and associated pressure difference in high-rise residential buildings: Airflow noise and draft.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106483" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Yoon, S., Song, D., Kim, J., Kim, J., Lim, H., & Koo, J. Identifying stack-driven indoor environmental problems and associated pressure difference in high-rise residential buildings: Airflow noise and draft.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106483" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2019</div>
     <div class="pub-row">
       <div class="pub-year">2019</div>
-      <div><div class="pub-title">Song, D., Yoon, S., Jeong, C., Kim, J., & Lim, H. Heat, vapor, and CO2 transportation caused by airflow in high-rise residential buildings.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106176" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Song, D., Yoon, S., Jeong, C., Kim, J., & Lim, H. Heat, vapor, and CO2 transportation caused by airflow in high-rise residential buildings.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.106176" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2019</div>
-      <div><div class="pub-title">Yoon, S., Song, D., Kim, J., & Lim, H. Stack-driven infiltration and heating load differences by floor in high-rise residential buildings.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.05.006" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Yoon, S., Song, D., Kim, J., & Lim, H. Stack-driven infiltration and heating load differences by floor in high-rise residential buildings.</div><div class="pub-journal">Building and Environment</div><a href="https://doi.org/10.1016/j.buildenv.2019.05.006" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2017 – 2018</div>
     <div class="pub-row">
       <div class="pub-year">2018</div>
-      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Influences of energy data on Bayesian calibration of building energy model.</div><div class="pub-journal">Applied Energy</div><a href="https://doi.org/10.1016/j.apenergy.2018.09.156" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Influences of energy data on Bayesian calibration of building energy model.</div><div class="pub-journal">Applied Energy</div><a href="https://doi.org/10.1016/j.apenergy.2018.09.156" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2017</div>
-      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Comprehensive evaluation of the influence of meta-models on Bayesian calibration.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2017.09.009" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Comprehensive evaluation of the influence of meta-models on Bayesian calibration.</div><div class="pub-journal">Energy and Buildings</div><a href="https://doi.org/10.1016/j.enbuild.2017.09.009" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2017</div>
-      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Review on stochastic modeling methods for building stock energy prediction.</div><div class="pub-journal">Building Simulation</div><a href="https://doi.org/10.1007/s12273-017-0383-y" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. J. Review on stochastic modeling methods for building stock energy prediction.</div><div class="pub-journal">Building Simulation</div><a href="https://doi.org/10.1007/s12273-017-0383-y" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
     <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2014</div>
     <div class="pub-row">
       <div class="pub-year">2014</div>
-      <div><div class="pub-title">Song, D., Lim, H., Lee, J., & Seo, J. Application of the mechanical ventilation in elevator shaft space to mitigate stack effect under operation stage in high-rise buildings.</div><div class="pub-journal">Indoor and Built Environment</div><a href="https://doi.org/10.1177/1420326X13480055" target="_blank" style="font-size:12px;color:var(--text-muted);">DOI ↗</a></div>
+      <div><div class="pub-title">Song, D., Lim, H., Lee, J., & Seo, J. Application of the mechanical ventilation in elevator shaft space to mitigate stack effect under operation stage in high-rise buildings.</div><div class="pub-journal">Indoor and Built Environment</div><a href="https://doi.org/10.1177/1420326X13480055" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge sci">SCI</span></div>
     </div>
 
@@ -2045,37 +2124,240 @@ a { color: inherit; text-decoration: none; }
 
   <!-- Domestic -->
   <div id="pub-domestic" class="rp-panel">
-    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025 국내 논문</div>
+
+    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025</div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">데이터센터 폐열 회수를 위한 CO₂ 히트펌프 시스템 성능 분석</div><div class="pub-journal">대한건축학회논문집</div></div>
+      <div><div class="pub-title">김인섭, 서준원, 이성민, & 임현우. 건물 용도 조정을 통한 도시 에너지 사용량 패턴 평탄화 가능성 검토.</div><div class="pub-journal">한국태양에너지학회 논문집</div><a href="https://doi.org/10.7836/kses.2025.45.1.023" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
+      <div><span class="pub-badge conf">KCI</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2024</div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이상민, 이상원, 최서연, & 임현우. 도서관 최적 좌석 제시를 위한 PMV 가상센서 시스템 구축.</div><div class="pub-journal">한국태양에너지학회 논문집</div><a href="https://doi.org/10.7836/kses.2024.44.6.157" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge conf">KCI</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">건물 에너지 소비 패턴 분류를 위한 비지도 학습 기법 비교 연구</div><div class="pub-journal">한국건축친환경설비학회논문집</div></div>
+      <div><div class="pub-title">황정윤, 임도훈, 김가은, 임현우. 자연 채광 및 환기를 위한 실시간 제어 키네틱 파사드 시스템 설계 및 적용 가능성 검토.</div><div class="pub-journal">한국태양에너지학회 논문집</div><a href="https://doi.org/10.7836/kses.2024.44.1.001" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a></div>
       <div><span class="pub-badge conf">KCI</span></div>
     </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이경재, 임현우. 건물 에너지 데이터 분석에서 결측치 처리방식에 따른 차원 축소 및 모델 예측 성능 비교.</div><div class="pub-journal">한국태양에너지학회 논문집</div><a href="https://doi.org/10.7836/kses.2024.44.1.059" target="_blank" style="font-size:12px;color:#000;font-weight:600;text-decoration:underline;text-underline-offset:2px;">🔗 DOI</a><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수논문상</span></div>
+      <div><span class="pub-badge conf">KCI</span></div>
+    </div>
+
   </div>
 
   <!-- Conferences -->
   <div id="pub-conferences" class="rp-panel">
-    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025 Conferences</div>
-    <div class="pub-row" onclick="showPage('pub-roomvent')">
-      <div class="pub-year">2025</div>
-      <div><div class="pub-title">CO₂ HPWH Performance Analysis for Data Center WHR</div><div class="pub-journal">ROOMVENT 2026 · Czech Republic</div></div>
-      <div><span class="pub-badge conf">CONF</span></div>
-    </div>
+
+    <!-- INTERNATIONAL CONFERENCES -->
+    <div style="font-size:24px;font-weight:800;margin-bottom:32px;letter-spacing:-0.02em;">International Conferences</div>
+
+    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025</div>
     <div class="pub-row">
       <div class="pub-year">2025</div>
-      <div><div class="pub-title">Digital Twin-based Building Energy Performance Simulation Framework</div><div class="pub-journal">Building Simulation 2025 · Melbourne</div></div>
+      <div><div class="pub-title">Lee, D., Lim, H. Analysis of the Relationship between Building Shape Indicators and Energy End-Use Using Public Data.</div><div class="pub-journal">The REHVA HVAC World Congress CLIMA (Clima 2025). June, Milano, Italy.</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2024</div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">Hwang, J., Lim, H. Improvement of accuracy in urban building energy modeling using representative buildings: through reducing shape information uncertainty.</div><div class="pub-journal">International Symposium on Architectural Interchanges in Asia (ISAIA 2024). September, Kyoto, Japan.</div></div>
       <div><span class="pub-badge conf">CONF</span></div>
     </div>
     <div class="pub-row">
       <div class="pub-year">2024</div>
-      <div><div class="pub-title">도시 건물군 에너지 모델링을 위한 GIS 기반 프레임워크</div><div class="pub-journal">대한건축학회 학술발표대회</div></div>
+      <div><div class="pub-title">Lee, D., Lim, H. Comparative analysis of energy usage before and after Green Remodeling through Change Point Model.</div><div class="pub-journal">International Symposium on Architectural Interchanges in Asia (ISAIA 2024). September, Kyoto, Japan.</div></div>
       <div><span class="pub-badge conf">CONF</span></div>
     </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">Lee, K., Lim, H. Investigate how to handle missing values when developing building energy benchmarking models.</div><div class="pub-journal">International Symposium on Architectural Interchanges in Asia (ISAIA 2024). September, Kyoto, Japan.</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2020</div>
+    <div class="pub-row">
+      <div class="pub-year">2020</div>
+      <div><div class="pub-title">Lim, H., & Zhai, Z. Prediction of Building Stock Energy Demand.</div><div class="pub-journal">In Proceedings of the 11th International Symposium on Heating, Ventilation and Air Conditioning (ISHVAC 2019). Springer Singapore.</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2012</div>
+    <div class="pub-row">
+      <div class="pub-year">2012</div>
+      <div><div class="pub-title">Lim, H., Kim, J. & Krarti, M. Design of distributed generation systems for an apartment complex in Korea.</div><div class="pub-journal">Proceedings of the ASME 2012 6th International Conference on Energy Sustainability. July, San Diego, California.</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2010</div>
+    <div class="pub-row">
+      <div class="pub-year">2010</div>
+      <div><div class="pub-title">Lim, H., Lee, J., Song, D., Lee, J., & Wallbaum, H. A new proposal of a control method for the stack effect in super tall buildings: E/L Shaft cooling system.</div><div class="pub-journal">Proc. Int. Conference.</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <!-- DOMESTIC CONFERENCES -->
+    <div style="font-size:24px;font-weight:800;margin:64px 0 32px;letter-spacing:-0.02em;border-top:2px solid var(--border);padding-top:48px;">Domestic Conferences</div>
+
+    <div style="font-size:20px;font-weight:700;margin-bottom:20px;">2025</div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">이도연, 임현우. 상권 및 인허가 데이터 기반 중요 업종별 EUI 특성분석.</div><div class="pub-journal">2025년도 대한설비공학회 동계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">이상민, 임현우. 급탕 환수 부하의 분리를 통한 중앙식 히트펌프 온수기의 성능 향상 분석.</div><div class="pub-journal">2025년도 한국지열수열에너지학회 추계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">황정윤, 임현우. 건물 에너지 소비량 데이터 기반 창면적비 추정 모델의 성능 비교.</div><div class="pub-journal">2025년도 대한설비공학회 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">이도연, 임현우. 공공데이터를 활용한 건물 에너지 벤치마킹 분류 기준의 설명력 개선 연구.</div><div class="pub-journal">2025년도 대한설비공학회 하계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">김인섭, 임현우. 도시 에너지 사용량 패턴 평탄화를 위한 건물 용도 비율 최적화.</div><div class="pub-journal">2025년도 대한설비공학회 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">이상민, 임현우. TRANSYS를 활용한 공동주택 Central Heat Pump Water Heater 시스템 구축.</div><div class="pub-journal">2025년도 대한설비공학회 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">조정현, 임현우. 연돌효과가 고층 사무용 건물 냉난방 부하에 미치는 영향.</div><div class="pub-journal">2025년도 대한설비공학회 하계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">임지수, 임현우. 에너지 공유 시스템을 위한 지역 건물 에너지 모델 구축 과정.</div><div class="pub-journal">2025년도 대한설비공학회 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2024</div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">황정윤, 임현우. 확률론적 추론 방법을 통한 건물 에너지 소비 기반 창면적비 추정.</div><div class="pub-journal">2024년도 대한설비공학회 동계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이도연, 임현우. 건물 형상지표에 따른 용도별 에너지 사용량 분석.</div><div class="pub-journal">2024년도 한국건축친환경설비학회 추계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이상민, 임현우. 도서관 최적 좌석 제시를 위한 PMV 가상센서 시스템 구축.</div><div class="pub-journal">2024년도 한국태양에너지학회 추계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">김인섭, 임현우. 건물 용도 조정을 통한 도시 에너지 사용량 패턴 평탄화.</div><div class="pub-journal">2024년도 한국태양에너지학회 추계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이경재, 임현우. 연면적 기반 EUI 개선을 위한 건물 에너지 벤치마킹 평가지표 개발 기초 연구.</div><div class="pub-journal">대한설비공학회 2024년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">황정윤, 임현우. 공공데이터 기반의 건물 형상에 따른 냉난방 및 기저에너지 소비 영향력 분석.</div><div class="pub-journal">대한설비공학회 2024년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이도연, 김덕우, 임현우. 공공데이터 기반의 그린리모델링 효과 분석.</div><div class="pub-journal">대한설비공학회 2024년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">김인섭, 임현우. 도시 건물 에너지 소비량 예측 및 정확도 향상을 위한 에너지 사용 패턴 재구성.</div><div class="pub-journal">대한설비공학회 2024년도 하계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2024</div>
+      <div><div class="pub-title">이상민, 임현우. 도시 단위에서 건물 유형별 에너지 사용량을 대표하는 최소 샘플 크기 추정.</div><div class="pub-journal">대한설비공학회 2024년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2023</div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">최성권, 이신화, 이종섭, 임현우. VRF Heat Recovery mode를 통한 데이터센터 냉방부하, Central HPWH 급탕부하 절감 최적 설계 방안 제시.</div><div class="pub-journal">대한설비공학회 2023년도 동계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">이경재, 임현우. 건물 에너지 평가를 위한 건축물대장 핵심변수 선별 방법론.</div><div class="pub-journal">대한설비공학회 2023년도 동계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">황정윤, 임현우. 공공데이터 기반 건물 형상정보가 에너지 사용량에 미치는 영향.</div><div class="pub-journal">한국건축친환경설비학회 2023년도 추계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">김진엽, 이나윤, 이지현, 임현우. Change point model을 통한 그린리모델링 전후 에너지 사용량 비교 분석.</div><div class="pub-journal">한국건축친환경설비학회 2023년도 추계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">황정윤, 임현우. 자연 채광 및 환기를 위한 실시간 제어 키네틱 파사드 시스템 설계 및 검토.</div><div class="pub-journal">한국태양에너지학회 2023년도 추계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">이경재, 임현우. 건물 에너지 데이터 결측치 처리 방식에 따른 차원 축소 및 모델 예측 성능 분석.</div><div class="pub-journal">한국태양에너지학회 2023년도 추계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">이경재, 임현우. 건물 에너지 규정에 의한 매개변수간의 상관관계가 주성분 분석에 미치는 영향.</div><div class="pub-journal">대한설비공학회 2023년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2023</div>
+      <div><div class="pub-title">황정윤, 임현우. 도시건물에너지 모델링에서 에너지 소비량을 통한 건물 형상정보 추정.</div><div class="pub-journal">대한설비공학회 2023년도 하계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수구두발표상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
+    <div style="font-size:20px;font-weight:700;margin:40px 0 20px;">2022</div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">이경재, 황정윤, 임현우. 건물 에너지 설계 기준에 의한 입력변수의 상관관계를 고려한 민감도 분석.</div><div class="pub-journal">추계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">박성현, 조민기, 한아름, 임현우. 베이지안 보정을 활용한 그린리모델링 대상 국공립 어린이집 확률론적 건물 집단 에너지 모델 개발.</div><div class="pub-journal">대한설비공학회 동계학술발표대회</div><span style="margin-left:8px;font-size:11px;font-weight:600;color:#D4A017;">🏆 우수논문상</span></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">이경재, 임현우. 사무소 건물의 에너지 성능 기준 향상을 고려한 민감도 분석.</div><div class="pub-journal">대한설비공학회 2022년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+    <div class="pub-row">
+      <div class="pub-year">2022</div>
+      <div><div class="pub-title">차명훈, 임현우. 1인 가구 에너지 사용량을 이용한 재실자 스케줄 파악.</div><div class="pub-journal">대한설비공학회 2022년도 하계학술발표대회</div></div>
+      <div><span class="pub-badge conf">CONF</span></div>
+    </div>
+
   </div>
 </div>
 <div style="height:80px;"></div>
@@ -2204,31 +2486,34 @@ a { color: inherit; text-decoration: none; }
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;">
     <div>
       <div style="height:320px;border-radius:12px;overflow:hidden;margin-bottom:32px;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.5!2d127.074!3d37.5407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4e0e6bfffff%3A0x11111111!2z6rG06rWt64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1581.3!2d127.0786!3d37.5407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4e883d4a0a1%3A0x8e0e3a0a0a0a0a0a!2z6rG06rWt64yA7ZWZ6rWQIOqxtOy2leuMgA!5e0!3m2!1sko!2skr!4v1" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
       <div style="font-size:15px;color:var(--text-mid);line-height:2;">
         <div><strong>주소</strong>　서울특별시 광진구 능동로 120<br><span style="visibility:hidden;"><strong>주소</strong>　</span>건국대학교 건축관 A동 509호</div>
+        <div style="margin-top:8px;"><strong>Email</strong>　hyunwoolim@konkuk.ac.kr</div>
       </div>
     </div>
     <div>
       <div style="font-size:22px;font-weight:700;margin-bottom:24px;">Get in Touch</div>
-      <div style="margin-bottom:16px;">
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Name</div>
-        <input type="text" placeholder="이름을 입력하세요" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;background:var(--bg);">
-      </div>
-      <div style="margin-bottom:16px;">
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Email</div>
-        <input type="email" placeholder="이메일을 입력하세요" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;background:var(--bg);">
-      </div>
-      <div style="margin-bottom:16px;">
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Subject</div>
-        <input type="text" placeholder="제목을 입력하세요" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;background:var(--bg);">
-      </div>
-      <div style="margin-bottom:24px;">
-        <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Message</div>
-        <textarea placeholder="내용을 입력하세요" rows="5" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;resize:vertical;background:var(--bg);"></textarea>
-      </div>
-      <button style="padding:14px 40px;background:#000;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font);">Send Message</button>
+      <form id="contact-form" onsubmit="sendContactEmail(event)">
+        <div style="margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Name</div>
+          <input type="text" id="cf-name" required placeholder="이름을 입력하세요" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;background:var(--bg);">
+        </div>
+        <div style="margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Email</div>
+          <input type="email" id="cf-email" required placeholder="이메일을 입력하세요" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;background:var(--bg);">
+        </div>
+        <div style="margin-bottom:16px;">
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Subject</div>
+          <input type="text" id="cf-subject" required placeholder="제목을 입력하세요" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;background:var(--bg);">
+        </div>
+        <div style="margin-bottom:24px;">
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-muted);">Message</div>
+          <textarea id="cf-message" required placeholder="내용을 입력하세요" rows="5" style="width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);outline:none;resize:vertical;background:var(--bg);"></textarea>
+        </div>
+        <button type="submit" style="padding:14px 40px;background:#000;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font);">Send Message</button>
+      </form>
     </div>
   </div>
 </div>
@@ -2263,8 +2548,6 @@ function showPage(id, restoreScroll) {
     }
   }
   currentPage = id;
-  // Hide nav bar on main landing page
-  document.querySelector('.top-bar').style.display = (id === 'intro') ? 'none' : '';
   history.pushState(null,'','#'+id);
 }
 
@@ -2283,6 +2566,16 @@ window.addEventListener('popstate',function(){
   if(h)showPage(h, true); else showPage('intro', true);
 });
 if(location.hash){var h=location.hash.replace('#','');if(h)showPage(h);}
+
+function sendContactEmail(e) {
+  e.preventDefault();
+  var name = document.getElementById('cf-name').value;
+  var email = document.getElementById('cf-email').value;
+  var subject = document.getElementById('cf-subject').value;
+  var message = document.getElementById('cf-message').value;
+  var body = 'From: ' + name + ' (' + email + ')%0A%0A' + message;
+  window.location.href = 'mailto:hjw970301@gmail.com?subject=' + encodeURIComponent('[BEE Lab Contact] ' + subject) + '&body=' + body;
+}
 </script>
 
 </body>
