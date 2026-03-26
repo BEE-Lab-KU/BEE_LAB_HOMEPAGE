@@ -1362,36 +1362,6 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- DA RESEARCH DETAIL: Pattern Classification -->
-<div id="page-research-da-pattern" class="page-view">
-  <div class="detail-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
-    <div class="detail-grid">
-      <div>
-        <h1 style="font-size:32px;">건물 에너지 소비 패턴 분류 및 이상 탐지</h1>
-        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
-        <div class="detail-content">
-          <h3>Research Overview</h3>
-          <p>건물 에너지 관리 시스템(BEMS)에서 수집된 대규모 에너지 소비 데이터를 기반으로, 비지도 학습(K-Means, DBSCAN 등) 기법을 활용하여 건물 에너지 소비 패턴을 자동 분류합니다. 또한 Isolation Forest, Autoencoder 기반 이상 탐지 모델을 적용하여 비정상적 에너지 소비를 실시간으로 감지하는 프레임워크를 개발하고 있습니다.</p>
-          <h3>Methodology</h3>
-          <p>시계열 에너지 데이터를 특징 추출(Feature Engineering)하여 차원 축소(PCA, t-SNE) 후 클러스터링을 수행합니다. 이상 탐지는 통계적 방법과 딥러닝 기반 방법을 비교 분석하여 건물 유형별 최적 모델을 제안합니다.</p>
-          <h3>Keywords</h3>
-          <p>Clustering · Anomaly Detection · BEMS · Unsupervised Learning · Time Series</p>
-        </div>
-      </div>
-      <div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Researcher</div>
-          <div class="sidebar-person" onclick="showPage('member-doyeon')"><img src="Photos/이도연.png" alt=""/><div><div class="name">이도연</div><div class="role">Ph.D. Candidate</div></div></div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Tools</div>
-          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">scikit-learn</span><span class="sidebar-tag">TensorFlow</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- DA RESEARCH DETAIL: UBEM Energy Pattern Calibration -->
 <div id="page-research-da-ubem-pattern" class="page-view">
   <div class="detail-page fade-in">
@@ -1520,36 +1490,6 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- DA RESEARCH DETAIL: Forecasting -->
-<div id="page-research-da-forecast" class="page-view">
-  <div class="detail-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
-    <div class="detail-grid">
-      <div>
-        <h1 style="font-size:32px;">딥러닝 기반 건물 에너지 수요 예측</h1>
-        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
-        <div class="detail-content">
-          <h3>Research Overview</h3>
-          <p>LSTM, GRU, Transformer 등 시계열 딥러닝 모델을 활용하여 건물 에너지 수요를 단기(1시간~1일) 및 중기(1주~1개월) 단위로 예측하는 모델을 개발합니다. 기상 데이터, 재실 스케줄, 건물 특성 등 다양한 외부 변수를 결합한 멀티모달 예측 프레임워크를 구축하고 있습니다.</p>
-          <h3>Methodology</h3>
-          <p>Attention 메커니즘 기반의 Seq2Seq 모델과 Temporal Fusion Transformer를 적용하여 다변량 시계열 예측 성능을 비교합니다. 전이 학습(Transfer Learning)을 통해 소규모 데이터 건물에 대한 예측 정확도 향상을 도모합니다.</p>
-          <h3>Keywords</h3>
-          <p>Deep Learning · LSTM · Transformer · Energy Forecasting · Transfer Learning</p>
-        </div>
-      </div>
-      <div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Researcher</div>
-          <div class="sidebar-person" onclick="showPage('member-inseob')"><img src="Photos/김인섭.png" alt=""/><div><div class="name">김인섭</div><div class="role">Master's Student</div></div></div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Tools</div>
-          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">PyTorch</span><span class="sidebar-tag">EnergyPlus</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- DA MEMBER PROFILES -->
 <div id="page-member-doyeon" class="page-view">
   <div class="profile-page fade-in">
@@ -1563,7 +1503,6 @@ a { color: inherit; text-decoration: none; }
       <div class="profile-research-item" onclick="showPage('research-da-ref-building')"><h4>업무시설의 에너지 기여도 기반 대표형상 건물(Reference Building) 도출 프레임워크</h4><p>#reference_building #building_shape #office_building</p></div>
       <div class="profile-research-item" onclick="showPage('research-da-eui-framework')"><h4>업종별 EUI 도출 프레임워크</h4><p>#mixed_use_building #energy_benchmarking #eui_framework</p></div>
       <div class="profile-research-item" onclick="showPage('research-da-green-retrofit')"><h4>에너지 시그니처를 활용한 그린 리모델링 효과 분석</h4><p>#building_retrofit #energy_signature #energy_performance</p></div>
-      <div class="profile-research-item" onclick="showPage('research-da-pattern')"><h4>건물 에너지 소비 패턴 분류 및 이상 탐지</h4><p>#clustering #anomaly_detection #BEMS</p></div>
     </div>
   </div>
 </div>
@@ -1889,22 +1828,6 @@ a { color: inherit; text-decoration: none; }
         <p>CPM 기반 에너지 시그니처 도출 및 계층적 군집분석을 통해 그린 리모델링의 실질적 에너지 절감 효과를 정량적으로 평가</p>
         <div class="tag-row"><span class="tag">Energy Signature</span><span class="tag">Building Retrofit</span><span class="tag">Data Analysis</span></div>
         <div class="people-row"><img src="Photos/이도연.png" alt=""/><span class="label">이도연</span></div>
-      </div>
-      <div class="project-card" onclick="showPage('research-da-pattern')">
-        <span class="card-arrow">→</span>
-        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
-        <h4>건물 에너지 소비 패턴 분류 및 이상 탐지</h4>
-        <p>비지도 학습 기반 클러스터링 기법을 활용하여 건물 에너지 소비 패턴을 분류하고 이상 소비를 자동 탐지하는 연구</p>
-        <div class="tag-row"><span class="tag">Clustering</span><span class="tag">Anomaly Detection</span><span class="tag">Energy Data</span></div>
-        <div class="people-row"><img src="Photos/이도연.png" alt=""/><span class="label">이도연</span></div>
-      </div>
-      <div class="project-card" onclick="showPage('research-da-forecast')">
-        <span class="card-arrow">→</span>
-        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
-        <h4>딥러닝 기반 건물 에너지 수요 예측</h4>
-        <p>LSTM, Transformer 등 시계열 딥러닝 모델을 활용한 건물 에너지 수요 예측 모델 개발</p>
-        <div class="tag-row"><span class="tag">Deep Learning</span><span class="tag">Time Series</span><span class="tag">Forecasting</span></div>
-        <div class="people-row"><img src="Photos/김인섭.png" alt=""/><span class="label">김인섭</span></div>
       </div>
       <div class="project-card" onclick="showPage('research-da-thermal-seat')">
         <span class="card-arrow">→</span>
