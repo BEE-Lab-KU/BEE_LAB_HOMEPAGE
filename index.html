@@ -2949,7 +2949,8 @@ function goBack(id) {
 function switchRP(btn, panelId) {
   btn.parentElement.querySelectorAll('.pill').forEach(function(p){p.classList.remove('active');});
   btn.classList.add('active');
-  document.querySelectorAll('.rp-panel').forEach(function(p){p.classList.remove('active');});
+  var container = btn.parentElement.parentElement;
+  container.querySelectorAll('.rp-panel').forEach(function(p){p.classList.remove('active');});
   document.getElementById(panelId).classList.add('active');
 }
 window.addEventListener('popstate',function(){
