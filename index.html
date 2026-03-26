@@ -775,9 +775,20 @@ a { color: inherit; text-decoration: none; }
       <div class="project-card" onclick="showPage('research-chpwh')">
         <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
-        <h4>CO₂ 히트펌프 급탕기(CHPWH) 동적 시뮬레이션</h4>
-        <p>Modelica 기반 초임계 CO₂ 열역학 사이클 모델링 — 가스쿨러, 증발기, 압축기 컴포넌트 개발 및 시스템 통합 검증</p>
-        <div class="tag-row"><span class="tag">Modelica</span><span class="tag">CO₂ Heat Pump</span><span class="tag">Dynamic Simulation</span></div>
+        <h4>부하 분리 기반 CHPWH 시스템 Physical Modeling 및 적응형 Load Shift 최적화</h4>
+        <p>반환수로 인한 성능 저하를 방지하기 위한 부하 분리 기반 CHPWH Physical modeling 구축 및 적응형 Load Shift 전략 최적화</p>
+        <div class="tag-row"><span class="tag">CHPWH</span><span class="tag">Load Shift</span><span class="tag">TRNSYS</span></div>
+        <div class="people-row">
+          <img src="Photos/이상민.png" alt="이상민"/>
+          <span class="label">이상민</span>
+        </div>
+      </div>
+      <div class="project-card" onclick="showPage('research-pmv-sensor')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot" style="background:#999999;"></span><span class="status-text">진행 완료</span></div>
+        <h4>도서관 최적 좌석 제시를 위한 PMV 가상센서 시스템 구축</h4>
+        <p>PMV 가상센서를 구축하여 각 좌석의 열적쾌적성을 예측하고 개인 맞춤형 최적 좌석 선택 시스템 구현</p>
+        <div class="tag-row"><span class="tag">Virtual Sensor</span><span class="tag">PMV</span><span class="tag">Thermal Comfort</span></div>
         <div class="people-row">
           <img src="Photos/이상민.png" alt="이상민"/>
           <span class="label">이상민</span>
@@ -971,33 +982,84 @@ a { color: inherit; text-decoration: none; }
     <div class="back-link" onclick="goBack('main')">← Building Systems</div>
     <div class="detail-grid">
       <div>
-        <h1>CO₂ 히트펌프 급탕기 동적 시뮬레이션</h1>
-        <div class="detail-meta"><span class="badge individual">개인 연구</span></div>
+        <h1 style="font-size:32px;">부하 분리 기반 CHPWH 시스템 Physical Modeling 및 적응형 Load Shift 최적화</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2025–</span></div>
         <div class="detail-content">
-          <h3>연구 개요</h3>
-          <p>초임계 CO₂ 냉매를 활용한 히트펌프 급탕기(CHPWH)의 Modelica 기반 동적 시뮬레이션 모델을 개발합니다. 가스쿨러, 증발기, 압축기 등 각 컴포넌트의 열역학적 거동을 정밀하게 모사하고, 전체 시스템의 과도 응답 특성과 제어 성능을 검증합니다.</p>
-          <h3>연구 방법</h3>
-          <p>Modelica 기반으로 GasCooler/Evaporator 모델링부터 정상상태 사이클, 동적 모델, 제어 시스템, 전체 통합, 검증까지의 단계별 접근을 수행합니다.</p>
-          <h3>진행 현황</h3>
-          <div style="margin:12px 0;">
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-              <span style="background:#4ADE80;width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 1–2</strong> — GasCooler/Evaporator 컴포넌트 모델링 완료</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-              <span style="background:#FBBF24;width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 3–4</strong> — 정상상태 사이클 및 동적 모델 개발 진행 중</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;">
-              <span style="background:var(--text-muted);width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 5–6</strong> — 전체 시스템 통합 및 실험 데이터 검증 (예정)</span>
-            </div>
-          </div>
+          <h3>연구배경</h3>
+          <p>중앙식 급탕 시스템에서는 온수 재순환 시스템으로 인한 반환수가 고려되고 있습니다. 하지만 반환수의 유입으로 인한 시스템의 성능 저하를 고려하거나, 이를 모델링 과정에 반영한 연구는 미흡한 실정입니다. 또한, 기존 Load Shift 전략은 운영자의 도메인 지식에 의존하며, 사전에 고정된 채 변화하지 않는 정적인 단계에 머물고 있습니다. 이에 따라, 반환수로 인한 성능 저하를 방지하기 위한 부하 분리 기반 CHPWH 시스템 Physical modeling 구축과 급탕 부하 및 외기 조건에 따라 변화하는 적응형 Load Shift 전략의 도입이 필요합니다.</p>
+          <h3>연구목표</h3>
+          <p>CHPWH 시스템에서 반환수로 인한 성능 저하를 방지하기 위한 부하 분리 방법론을 제시하고, 반환수를 고려한 부하 분리 기반의 CHPWH Physical modeling을 구축합니다. 또한 급탕 부하와 외기 조건에 따라 변화하는 적응형 Load Shift 전략을 제시하고 비용 최적화 방안을 연구합니다.</p>
+          <h3>Keywords</h3>
+          <p>Building Energy Simulation · Central Heat Pump Water Heater · Domestic Hot Water · Hot Water Recirculation · Load Shift · TRNSYS</p>
         </div>
       </div>
-      <div><div class="sidebar-block"><div class="sidebar-label">Researcher</div>
-        <div class="sidebar-person" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
-      </div></div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">TRNSYS</span><span class="sidebar-tag">Python</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">급탕 환수 부하의 분리를 통한 중앙식 히트펌프 온수기의 성능 향상 분석</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">이상민, 임현우 · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">한국지열수열에너지학회 추계학술발표대회</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">TRNSYS를 활용한 공동주택 Central Heat Pump Water Heater 시스템 구축</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">이상민, 임현우 · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">대한설비공학회 하계학술발표대회</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL: PMV Virtual Sensor -->
+<div id="page-research-pmv-sensor" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">도서관 최적 좌석 제시를 위한 PMV 가상센서 시스템 구축</h1>
+        <div class="detail-meta"><span class="status-dot" style="background:#999999;"></span><span class="status-text">진행 완료 · 2024</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>같은 공간 내에서도 좌석 구조에 따라 열적 쾌적성은 달라지며, 같은 좌석을 사용하더라도 개인마다 열적 쾌적성을 다르게 느낄 수 있습니다. 그러나, 현재 도서관 열람실에 도입된 좌석 선택 시스템은 이러한 차이점을 고려하지 않아 재실자의 불만족도가 증가하고 있는 상황입니다. 이에 도서관 이용 시 개인의 열적쾌적성을 고려하는 좌석 선택 시스템이 필요하며, 이를 위해 PMV 가상센서를 구축하여 불만족도를 해결하고자 합니다.</p>
+          <h3>연구목표</h3>
+          <p>PMV 가상센서를 구축하여 각 좌석마다의 열적쾌적성을 예측하고, 이를 실제 좌석 선택 시스템에 반영하여 재실자의 불만족도를 줄이고자 합니다.</p>
+          <h3>Keywords</h3>
+          <p>Virtual Sensor · Thermal Comfort · Predicted Mean Vote · Optimal Seat Reservation</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python-sklearn</span><span class="sidebar-tag">REVIT</span><span class="sidebar-tag">3D AutoCAD</span><span class="sidebar-tag">CFD Simulation</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">도시 단위에서 건물 유형별 에너지 사용량을 대표하는 최소 샘플 크기 추정</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">이상민, 임현우 · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">대한설비공학회 하계학술발표대회</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">도서관 최적 좌석 제시를 위한 PMV 가상센서 시스템 구축</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">이상민, 임현우 · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">한국태양에너지학회 추계학술발표대회</div>
+      </div>
     </div>
   </div>
 </div>
@@ -1119,7 +1181,8 @@ a { color: inherit; text-decoration: none; }
       <div class="bio">건물 에너지 시스템의 동적 시뮬레이션 및 최적 제어를 연구하고 있습니다. 특히 CO₂ 히트펌프 시스템의 Modelica 기반 모델링과 실측 데이터 기반 검증에 집중하고 있습니다.</div></div>
     </div>
     <div class="profile-research-list"><h3>Research</h3>
-      <div class="profile-research-item" onclick="showPage('research-chpwh')"><h4>CO₂ 히트펌프 급탕기(CHPWH) 동적 시뮬레이션</h4><p>#modelica #CO2_heat_pump #dynamic_simulation</p></div>
+      <div class="profile-research-item" onclick="showPage('research-chpwh')"><h4>부하 분리 기반 CHPWH 시스템 Physical Modeling 및 적응형 Load Shift 최적화</h4><p>#CHPWH #load_shift #TRNSYS #hot_water_recirculation</p></div>
+      <div class="profile-research-item" onclick="showPage('research-pmv-sensor')"><h4>도서관 최적 좌석 제시를 위한 PMV 가상센서 시스템 구축</h4><p>#virtual_sensor #thermal_comfort #PMV #optimal_seat</p></div>
       <div class="profile-research-item" onclick="showPage('research-sample-size')"><h4>최소 샘플 크기 추정</h4><p>#sample_size #representation #building_type #urban_energy</p></div>
     </div>
   </div>
