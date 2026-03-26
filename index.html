@@ -827,6 +827,17 @@ a { color: inherit; text-decoration: none; }
           <span class="label">백재욱</span>
         </div>
       </div>
+      <div class="project-card" onclick="showPage('research-zeb-economy')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
+        <h4>ZEB 에너지 사용량, 경제성 분석</h4>
+        <p>실제 에너지사용량 데이터 기반 편차 분석을 통해 설계요소를 도출하고 ZEB 등급 향상의 경제성을 검증</p>
+        <div class="tag-row"><span class="tag">ZEB</span><span class="tag">ECO2</span><span class="tag">BEMS</span><span class="tag">LCC</span></div>
+        <div class="people-row">
+          <img src="Photos/백재욱.png" alt="백재욱"/>
+          <span class="label">백재욱</span>
+        </div>
+      </div>
       <div class="project-card" onclick="showPage('research-whr-dc')">
         <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
@@ -1161,6 +1172,37 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
+<!-- DETAIL: ZEB Economy -->
+<div id="page-research-zeb-economy" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">ZEB 에너지 사용량, 경제성 분석</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>ZEB 공동주택에서 에너지사용량의 예측값과 실측값의 편차가 존재합니다. 실제 운영데이터 분석을 통한 에너지 절감에 영향을 미치는 설계요소와 경제성에 관한 검증이 필요합니다.</p>
+          <h3>연구목표</h3>
+          <p>실제 에너지사용량 데이터 기반의 편차 분석을 통해 민감도를 반영한 설계요소를 도출하고, ZEB 등급 향상 시 추가공사비와 생애주기 에너지 절감액을 비교하여 경제성 및 합리적 의사결정 기준을 제시합니다.</p>
+          <h3>Keywords</h3>
+          <p>ZEB · ECO2 · BEMS · LCC</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-jaeuk')"><img src="Photos/백재욱.png" alt=""/><div><div class="name">백재욱</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">ECO2</span><span class="sidebar-tag">Python</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- MEMBER PROFILES -->
 <div id="page-member-sangmin" class="page-view">
   <div class="profile-page fade-in">
@@ -1202,6 +1244,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="profile-research-list"><h3>Research</h3>
       <div class="profile-research-item" onclick="showPage('research-zeb')"><h4>제로에너지 건축물 등급 평가 연구</h4><p>#zero_energy #ZEB_certification #energy_rating</p></div>
+      <div class="profile-research-item" onclick="showPage('research-zeb-economy')"><h4>ZEB 에너지 사용량, 경제성 분석</h4><p>#ZEB #ECO2 #BEMS #LCC</p></div>
     </div>
   </div>
 </div>
