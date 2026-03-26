@@ -783,6 +783,17 @@ a { color: inherit; text-decoration: none; }
           <span class="label">이상민</span>
         </div>
       </div>
+      <div class="project-card" onclick="showPage('research-sample-size')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
+        <h4>최소 샘플 크기 추정</h4>
+        <p>서울시 전기사용량 데이터를 활용하여 건물 유형과 지표를 고려한 조합법으로 도시 단위 건물 에너지 사용량의 최소 샘플 크기 추정</p>
+        <div class="tag-row"><span class="tag">Sample Size</span><span class="tag">Representation</span><span class="tag">Urban Energy</span></div>
+        <div class="people-row">
+          <img src="Photos/이상민.png" alt="이상민"/>
+          <span class="label">이상민</span>
+        </div>
+      </div>
       <div class="project-card" onclick="showPage('research-elevator')">
         <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
@@ -991,6 +1002,45 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
+<!-- DETAIL: Minimum Sample Size -->
+<div id="page-research-sample-size" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">최소 샘플 크기 추정</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>도시 단위에서 건물 에너지 사용량을 파악하기 위해선 방대한 양의 에너지 사용량 데이터가 필요합니다. 일반적으로 모든 데이터를 수집할 수 없기에, 대부분의 경우 통계적 이론을 활용한 공식을 통해 샘플 크기를 추정합니다. 하지만 이러한 방식이 실제 에너지 사용량을 대표하는지는 미지수이며, 다양한 지표에 따른 샘플 크기에 관한 연구도 여전히 진행이 필요한 실정입니다. 이에 실제 서울시 건물의 전기 에너지 사용량 데이터를 사용해, 건물 유형과 건물 지표를 고려한 조합법을 통하여 전체를 대표할 수 있는 최소 샘플 크기를 추정하고자 합니다.</p>
+          <h3>연구목표</h3>
+          <p>본 연구는 실제 서울시 전기사용량 데이터를 사용하여 해당 연구에서 정의하는 다양한 건물 유형과 건물 지표를 통해, 도시 단위 건물 에너지 사용량에 대한 최소 샘플 크기를 추정하고, 그 크기를 줄이는 방법에 대해 논하고자 합니다.</p>
+          <h3>Keywords</h3>
+          <p>Sample Size · Representation · Building Type · Urban Scale Energy Simulation · Building Energy Consumption</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">도시 단위에서 건물 유형별 에너지 사용량을 대표하는 최소 샘플 크기 추정</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">이상민, 임현우 · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">대한설비공학회 하계학술발표대회</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- DETAIL: Elevator -->
 <div id="page-research-elevator" class="page-view">
   <div class="detail-page fade-in">
@@ -1070,6 +1120,7 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="profile-research-list"><h3>Research</h3>
       <div class="profile-research-item" onclick="showPage('research-chpwh')"><h4>CO₂ 히트펌프 급탕기(CHPWH) 동적 시뮬레이션</h4><p>#modelica #CO2_heat_pump #dynamic_simulation</p></div>
+      <div class="profile-research-item" onclick="showPage('research-sample-size')"><h4>최소 샘플 크기 추정</h4><p>#sample_size #representation #building_type #urban_energy</p></div>
     </div>
   </div>
 </div>
