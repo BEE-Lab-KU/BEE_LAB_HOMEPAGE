@@ -827,12 +827,23 @@ a { color: inherit; text-decoration: none; }
           <span class="label">백재욱</span>
         </div>
       </div>
+      <div class="project-card" onclick="showPage('research-whr-dc')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
+        <h4>수열원 히트펌프 기반 데이터센터 폐열의 급탕 활용과 방류온도 제어</h4>
+        <p>수열원을 통해 데이터센터 폐열 회수 시 방류 수온을 제어하고 에너지 성능을 향상</p>
+        <div class="tag-row"><span class="tag">Data Center</span><span class="tag">WWHP</span><span class="tag">Waste Heat Recovery</span></div>
+        <div class="people-row">
+          <img src="Photos/한지웅.png" alt="한지웅"/>
+          <span class="label">한지웅</span>
+        </div>
+      </div>
       <div class="project-card" onclick="showPage('research-ai')">
         <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
-        <h4>건물 에너지 온톨로지 기반 AI Agent</h4>
-        <p>IFC/BOT/BRICK Schema 온톨로지와 LLM을 결합한 건축 도면 자동 분석 및 자연어 질의응답 시스템 개발</p>
-        <div class="tag-row"><span class="tag">Ontology</span><span class="tag">LLM Agent</span><span class="tag">DWG/DXF</span></div>
+        <h4>CAD 공간 자동 인식 엔진 및 LLM 기반 질의응답 시스템</h4>
+        <p>건축 CAD 도면의 공간 정보를 AI가 활용 가능하도록 구조화된 데이터로 자동 변환하는 파이프라인 개발</p>
+        <div class="tag-row"><span class="tag">AI</span><span class="tag">LLM</span><span class="tag">CAD</span></div>
         <div class="people-row">
           <img src="Photos/한지웅.png" alt="한지웅"/>
           <span class="label">한지웅</span>
@@ -896,81 +907,63 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- DETAIL: AI Agent -->
-<div id="page-research-ai" class="page-view">
+<!-- DETAIL: WHR Data Center -->
+<div id="page-research-whr-dc" class="page-view">
   <div class="detail-page fade-in">
     <div class="back-link" onclick="goBack('main')">← Building Systems</div>
     <div class="detail-grid">
       <div>
-        <h1>건물 에너지 온톨로지 기반 AI Agent</h1>
-        <div class="detail-meta"><span class="badge individual">개인 연구</span><span class="status-text">진행 중</span></div>
+        <h1 style="font-size:32px;">수열원 히트펌프 기반 데이터센터 폐열의 급탕 활용과 방류온도 제어</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2025–</span></div>
         <div class="detail-content">
-          <h3>연구 배경</h3>
-          <p>건축 도면(DWG/DXF)에 포함된 공간 정보는 설비 설계, 에너지 시뮬레이션, 유지관리 등 다양한 단계에서 핵심적인 역할을 합니다. 그러나 이러한 정보는 대부분 비정형 데이터로 존재하며, 활용을 위해서는 수작업 기반의 데이터 추출 과정이 필요합니다.</p>
-          <h3>연구 목표</h3>
-          <p>IFC, BOT, BRICK Schema 등 건축 도메인 온톨로지와 대규모 언어 모델(LLM)을 결합하여, 건축 도면에서 자동으로 공간 정보를 추출하고 자연어 질의응답이 가능한 AI Agent 시스템을 개발합니다.</p>
-          <h3>연구 방법</h3>
-          <p>DWG/DXF 파일에서 레이어 분석 → 선분 세그멘테이션 → Noding → Polygonize → 공간 속성 추출 → JSON 변환 → 자연어 쿼리의 파이프라인을 구축합니다. 온톨로지는 Protégé와 GraphDB를 통해 관리하며, LangChain/LangGraph 기반의 에이전트가 CLIP 멀티모달 임베딩을 활용합니다.</p>
-          <h3>연구 프레임워크</h3>
-          <div style="background:var(--bg-light);border-radius:12px;padding:32px;margin:16px 0;text-align:center;">
-            <div style="display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;">
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">DWG/DXF</span>
-              <span style="color:var(--text-muted);">→</span>
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">Layer Analysis</span>
-              <span style="color:var(--text-muted);">→</span>
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">Segmentation</span>
-              <span style="color:var(--text-muted);">→</span>
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">Noding</span>
-              <span style="color:var(--text-muted);">→</span>
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">Polygonize</span>
-              <span style="color:var(--text-muted);">→</span>
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">JSON</span>
-              <span style="color:var(--text-muted);">→</span>
-              <span style="background:#000;color:#fff;padding:8px 16px;border-radius:100px;font-size:13px;font-weight:600;">NL Query</span>
-            </div>
-            <p style="margin-top:16px;font-size:12px;color:var(--text-muted);">Research Pipeline Overview</p>
-          </div>
-          <h3>주요 성과 및 진행 현황</h3>
-          <div style="margin:12px 0;">
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-              <span style="background:#4ADE80;width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 1</strong> — DWG/DXF 레이어 분석 및 선분 세그멘테이션 모듈 개발 완료</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-              <span style="background:#4ADE80;width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 2</strong> — Noding 및 Polygonize 알고리즘 구현 완료</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-              <span style="background:#FBBF24;width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 3</strong> — 온톨로지 통합 및 LLM Agent 개발 진행 중</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:12px;padding:12px 0;">
-              <span style="background:var(--text-muted);width:8px;height:8px;border-radius:50%;flex-shrink:0;"></span>
-              <span style="font-size:14px;"><strong>Phase 4</strong> — 자연어 질의응답 시스템 통합 및 검증 (예정)</span>
-            </div>
-          </div>
-          <h3>관련 논문</h3>
-          <div style="padding:16px;border:1px solid var(--border);border-radius:8px;cursor:pointer;margin:8px 0;" onclick="showPage('pub-whr')">
-            <div style="font-size:14px;font-weight:600;">Data Center Waste Heat Recovery Using Water-Source Heat Pump with Han River Thermal Energy</div>
-            <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">2026 · SCI Journal</div>
-          </div>
+          <h3>연구배경</h3>
+          <p>생성형 인공지능의 급격한 확산에 따라 데이터센터 수요가 폭발적으로 증가하고 있습니다. 데이터센터는 운영 과정에서 대량의 폐열을 지속적으로 발생시키며, 이를 효과적으로 활용하기 위한 연구가 활발히 진행되고 있습니다. 그러나 기존의 수열원 기반 폐열 활용 연구는 폐열 방류로 인한 수온 상승의 환경적 영향을 충분히 고려하지 못했습니다. 따라서 폐열의 에너지 활용 성능을 높이는 동시에, 방류수의 수온 변화까지 종합적으로 검토하는 접근이 필요합니다.</p>
+          <h3>연구목표</h3>
+          <p>수열원을 통해 폐열 회수 시, 시스템을 통해 방류 수온을 제어하고 폐열 활용에 따른 에너지 성능을 향상시킨다.</p>
+          <h3>Keywords</h3>
+          <p>Data Center · Water to Water Heat Pump · Waste Heat Recovery</p>
         </div>
       </div>
       <div>
         <div class="sidebar-block">
           <div class="sidebar-label">Researcher</div>
-          <div class="sidebar-person" onclick="showPage('member-jiung')">
-            <img src="Photos/한지웅.png" alt=""/><div><div class="name">한지웅</div><div class="role">Master's Student</div></div>
-          </div>
-        </div>
-        <div class="sidebar-block">
-          <div class="sidebar-label">Keywords</div>
-          <div class="sidebar-tags"><span class="sidebar-tag">ontology</span><span class="sidebar-tag">LLM</span><span class="sidebar-tag">DWG</span><span class="sidebar-tag">IFC</span><span class="sidebar-tag">BOT</span><span class="sidebar-tag">BRICK</span><span class="sidebar-tag">LangChain</span><span class="sidebar-tag">GNN</span></div>
+          <div class="sidebar-person" onclick="showPage('member-jiung')"><img src="Photos/한지웅.png" alt=""/><div><div class="name">한지웅</div><div class="role">Master's Student</div></div></div>
         </div>
         <div class="sidebar-block">
           <div class="sidebar-label">Tools</div>
-          <div style="font-size:13px;color:var(--text-muted);line-height:1.8;">Protégé · GraphDB · Python · LangGraph · CLIP</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">TRNSYS</span></div>
         </div>
-        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL: CAD Space Recognition -->
+<div id="page-research-ai" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">벡터 데이터 기반 CAD 공간 자동 인식 엔진 및 LLM 기반 자연어 질의응답 시스템 개발</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2025–</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>CAD 도면은 건물과 관련된 정보를 포함하고 있으며, AI Agent 구축을 위한 필수적인 정보를 포함하고 있습니다. 하지만, CAD의 데이터 추출은 수작업에 의존하고 있다는 한계가 있습니다.</p>
+          <h3>연구목표</h3>
+          <p>건축 CAD 도면의 공간 정보를 AI가 활용 가능하도록 구조화된 데이터로 자동 변환하는 파이프라인을 개발한다.</p>
+          <h3>Keywords</h3>
+          <p>AI · LLM · CAD</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-jiung')"><img src="Photos/한지웅.png" alt=""/><div><div class="name">한지웅</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">CAD</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1222,7 +1215,8 @@ a { color: inherit; text-decoration: none; }
       <div class="bio">건물 에너지 온톨로지와 AI를 결합한 건축 데이터 자동 분석 시스템을 연구하고 있습니다. IFC/BOT/BRICK Schema 기반 지식 그래프와 LLM Agent를 활용한 자연어 질의응답 파이프라인 구축에 집중하고 있습니다.</div></div>
     </div>
     <div class="profile-research-list"><h3>Research</h3>
-      <div class="profile-research-item" onclick="showPage('research-ai')"><h4>건물 에너지 온톨로지 기반 AI Agent</h4><p>#ontology #LLM_agent #DWG #IFC #BRICK_schema</p></div>
+      <div class="profile-research-item" onclick="showPage('research-whr-dc')"><h4>수열원 히트펌프 기반 데이터센터 폐열의 급탕 활용과 방류온도 제어</h4><p>#data_center #WWHP #waste_heat_recovery</p></div>
+      <div class="profile-research-item" onclick="showPage('research-ai')"><h4>벡터 데이터 기반 CAD 공간 자동 인식 엔진 및 LLM 기반 자연어 질의응답 시스템 개발</h4><p>#AI #LLM #CAD</p></div>
     </div>
   </div>
 </div>
