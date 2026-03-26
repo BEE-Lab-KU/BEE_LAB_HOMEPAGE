@@ -1392,6 +1392,133 @@ a { color: inherit; text-decoration: none; }
   </div>
 </div>
 
+<!-- DA RESEARCH DETAIL: UBEM Energy Pattern Calibration -->
+<div id="page-research-da-ubem-pattern" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">UBEM 에너지 사용 패턴 보정</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>도시 건물 에너지 모델(UBEM)에서 대표 건물을 활용하여 확률론적으로 에너지 사용량을 도출할 때, 대표 건물의 형상과 스케줄이 고정값으로 사용되어 같은 유형 건물 간의 월별 에너지 사용 패턴 차이를 반영하지 못하는 불확실성이 존재합니다. 이러한 고정된 패턴 기반의 베이지안 보정은 오차가 누적되어 UBEM의 분포 예측 정확도를 저하시킬 수 있습니다.</p>
+          <h3>연구목표</h3>
+          <p>대표 건물의 에너지 사용 패턴이 UBEM 베이지안 보정의 정확도에 미치는 영향을 파악하고, 실제 측정 패턴과 모수적 분포에서 재추출한 규칙적 패턴의 보정 성능을 비교하여 대규모 UBEM에서의 샘플링 데이터 활용 가능성을 검증합니다.</p>
+          <h3>Keywords</h3>
+          <p>Urban Building Energy Model · Building Energy Pattern · Bayesian Calibration · Sampling Data · Energy Consumption Prediction</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-inseob')"><img src="Photos/김인섭.png" alt=""/><div><div class="name">김인섭</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">R</span><span class="sidebar-tag">JAGS</span><span class="sidebar-tag">Bayesian Inference</span><span class="sidebar-tag">DOE Reference Building</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">도시 건물 에너지 소비량 예측 및 정확도 향상을 위한 에너지 사용 패턴 재구성</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">김인섭, 임현우 · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">대한설비공학회 하계학술발표대회, pp. 484-487</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DA RESEARCH DETAIL: Urban Load Flattening -->
+<div id="page-research-da-urban-load" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">도시 에너지 부하 평탄화</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>도시에서 건물 용도별 에너지 사용 패턴의 차이로 인해 시간대별·계절별 전력 수요 변동성이 커지고, 피크 부하가 전력망 안정성을 위협하고 있습니다. 기존 연구는 개별 건물 수준의 에너지 효율 향상이나 수요 반응(DR) 전략에 집중되었으나, 도시 규모에서 건물 용도 구성 비율 조정을 통한 에너지 수요 평탄화 접근은 거의 없었습니다.</p>
+          <h3>연구목표</h3>
+          <p>특정 지구를 대상으로 건물 용도별 에너지 사용 패턴을 분석하고, 최적화 알고리즘을 적용하여 용도별 비율을 조정함으로써 월별·시간별 전력 부하곡선의 평탄화 효과를 검증합니다. 최소한의 도시 용도 비율 변경에서도 유의미한 피크 부하 저감이 가능함을 실증합니다.</p>
+          <h3>Keywords</h3>
+          <p>Load Flattening · Building Use Optimization · Optimization Algorithm · Peak Load Shaving · Grid Stability</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-inseob')"><img src="Photos/김인섭.png" alt=""/><div><div class="name">김인섭</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">Harmony Search</span><span class="sidebar-tag">K-means Clustering</span><span class="sidebar-tag">PCA</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">건물 용도 조정을 통한 도시 에너지 사용량 패턴 평탄화 가능성 검토</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">김인섭, 서준원, 이성민, 임현우 · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">한국태양에너지학회 논문집, Vol.45, No.1, pp.23-38 · DOI: 10.7836/kses.2025.45.1.023</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">건물 용도 조정을 통한 도시 에너지 사용량 패턴 평탄화</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">김인섭, 임현우 · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">한국태양에너지학회 추계학술발표대회</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">도시 에너지 사용량 패턴 평탄화를 위한 건물 용도 비율 최적화</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">김인섭, 임현우 · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">대한설비공학회 하계학술발표대회</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DA RESEARCH DETAIL: Apartment EUI Comparison -->
+<div id="page-research-da-apt-eui" class="page-view">
+  <div class="detail-page fade-in">
+    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="detail-grid">
+      <div>
+        <h1 style="font-size:32px;">아파트·주상복합 EUI 비교 분석</h1>
+        <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
+        <div class="detail-content">
+          <h3>연구배경</h3>
+          <p>국내 건물에너지통계에서 주상복합은 건축법상 아파트로 분류되어 동일 용도로 집계되고 있으나, 주상복합은 상업시설과 대규모 공용부를 포함하여 에너지 사용 구조가 아파트와 근본적으로 다릅니다. 기존 연면적 기반의 단일 EUI 지표는 주상복합의 주거 성능을 실제보다 불리하게 평가할 수 있는 구조적 왜곡을 내포하고 있습니다.</p>
+          <h3>연구목표</h3>
+          <p>서울시 2010년 이후 준공 공동주택을 대상으로 연면적 EUI와 전용면적 EUI를 비교 분석하여, 아파트와 주상복합의 에너지 사용 특성 차이와 상업·공용면적 전력 밀도의 영향을 정량적으로 규명하고, 이원화된 EUI 분석 접근의 필요성을 제시합니다.</p>
+          <h3>Keywords</h3>
+          <p>Energy Use Intensity · Apartment · Mixed-use Residential · Gross Floor Area · Net Floor Area</p>
+        </div>
+      </div>
+      <div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Researcher</div>
+          <div class="sidebar-person" onclick="showPage('member-inseob')"><img src="Photos/김인섭.png" alt=""/><div><div class="name">김인섭</div><div class="role">Master's Student</div></div></div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Tools</div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Python</span><span class="sidebar-tag">Data Analysis</span><span class="sidebar-tag">Seoul Open Data</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">연면적과 전용면적 EUI 비교를 통한 아파트와 주상복합 에너지사용 특성 분석</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">김인섭, 임현우 · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">한국건축친환경설비학회 추계학술발표대회</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- DA RESEARCH DETAIL: Forecasting -->
 <div id="page-research-da-forecast" class="page-view">
   <div class="detail-page fade-in">
@@ -1450,7 +1577,9 @@ a { color: inherit; text-decoration: none; }
         <div class="bio">딥러닝 기반 건물 에너지 수요 예측 연구를 수행하고 있으며, 시계열 모델링 및 전이 학습 기법에 관심이 있습니다.</div></div>
     </div>
     <div class="profile-research-list"><h3>Research</h3>
-      <div class="profile-research-item" onclick="showPage('research-da-forecast')"><h4>딥러닝 기반 건물 에너지 수요 예측</h4><p>#deep_learning #time_series #forecasting</p></div>
+      <div class="profile-research-item" onclick="showPage('research-da-ubem-pattern')"><h4>UBEM 에너지 사용 패턴 보정</h4><p>#UBEM #bayesian_calibration #energy_pattern</p></div>
+      <div class="profile-research-item" onclick="showPage('research-da-urban-load')"><h4>도시 에너지 부하 평탄화</h4><p>#load_flattening #building_optimization #peak_demand</p></div>
+      <div class="profile-research-item" onclick="showPage('research-da-apt-eui')"><h4>아파트·주상복합 EUI 비교 분석</h4><p>#EUI #apartment #mixed_use_residential</p></div>
     </div>
   </div>
 </div>
@@ -1713,6 +1842,30 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-da-research" class="rp-panel active">
     <div class="project-grid">
+      <div class="project-card" onclick="showPage('research-da-ubem-pattern')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
+        <h4>UBEM 에너지 사용 패턴 보정</h4>
+        <p>베이지안 보정의 정확도 향상을 위해 실제 측정 패턴과 모수적 분포 기반 패턴을 비교하여 대규모 UBEM에서의 샘플링 데이터 활용 가능성 검증</p>
+        <div class="tag-row"><span class="tag">UBEM</span><span class="tag">Bayesian Calibration</span><span class="tag">Energy Pattern</span></div>
+        <div class="people-row"><img src="Photos/김인섭.png" alt=""/><span class="label">김인섭</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('research-da-urban-load')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
+        <h4>도시 에너지 부하 평탄화</h4>
+        <p>건물 용도 비율 최적화를 통해 월별·시간별 전력 부하곡선의 평탄화 효과를 검증하고 피크 부하 저감 가능성을 실증</p>
+        <div class="tag-row"><span class="tag">Load Flattening</span><span class="tag">Optimization</span><span class="tag">Peak Demand</span></div>
+        <div class="people-row"><img src="Photos/김인섭.png" alt=""/><span class="label">김인섭</span></div>
+      </div>
+      <div class="project-card" onclick="showPage('research-da-apt-eui')">
+        <span class="card-arrow">→</span>
+        <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
+        <h4>아파트·주상복합 EUI 비교 분석</h4>
+        <p>연면적/전용면적 기반 EUI 비교를 통해 아파트와 주상복합의 에너지 사용 특성 차이를 정량적으로 규명</p>
+        <div class="tag-row"><span class="tag">EUI</span><span class="tag">Apartment</span><span class="tag">Mixed-use Residential</span></div>
+        <div class="people-row"><img src="Photos/김인섭.png" alt=""/><span class="label">김인섭</span></div>
+      </div>
       <div class="project-card" onclick="showPage('research-da-ref-building')">
         <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
