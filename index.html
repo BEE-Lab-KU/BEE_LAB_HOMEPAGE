@@ -1712,20 +1712,20 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- UM RESEARCH DETAIL: GIS -->
-<div id="page-research-um-gis" class="page-view">
+<div id="page-research-um-ubem" class="page-view">
   <div class="detail-page fade-in">
     <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
     <div class="detail-grid">
       <div>
-        <h1 style="font-size:32px;">GIS 기반 도시 건물군 에너지 모델링</h1>
+        <h1 style="font-size:32px;">도시 건물 에너지 모델(UBEM) 기반의 도시 단위 에너지 사용량 해석</h1>
         <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2024–</span></div>
         <div class="detail-content">
-          <h3>Research Overview</h3>
-          <p>GIS 공간 데이터와 건물 에너지 시뮬레이션을 연계하여 도시 스케일의 에너지 소비 분포를 분석하고 예측합니다. 건물 유형, 연면적, 준공년도, 기후 데이터 등을 변수로 활용하여 건물군 에너지 수요 모델을 구축하고, 탄소중립 시나리오를 평가합니다.</p>
-          <h3>Methodology</h3>
-          <p>QGIS와 Python 기반 공간 분석 도구를 활용하여 건물군 데이터를 구축하고, 건물별 에너지 시뮬레이션(EnergyPlus)과 통계 모델(회귀분석, Random Forest)을 병행하여 도시 에너지 맵을 생성합니다.</p>
+          <h3>연구배경</h3>
+          <p>도시로의 에너지 집중 현상에 따라 지속가능한 도시를 설계하는 것이 중요해지고 있습니다. 이를 위해 도시 에너지 생태계를 이해할 수 있어야 하며, 도시 내의 건물 요소와 에너지 사용량의 상호작용을 재현하고 분석하여 도시 단위에서 건물의 에너지 생태계를 분석하는 것이 필수입니다.</p>
+          <h3>연구목표</h3>
+          <p>도시 단위 에너지 소비량 해석을 위해 대리모델 기반의 연산 효율화와 불확실성 정량화, 자동 보정 프로세스를 구축하여, 고정밀 UBEM 모델을 구축하고 건물 요소와 에너지 사용량 간의 상관관계를 규명합니다.</p>
           <h3>Keywords</h3>
-          <p>GIS · Urban Energy Modeling · Building Stock · Carbon Neutral · Spatial Analysis</p>
+          <p>Urban Building Energy Model (UBEM) · Surrogate Model · Uncertainty Quantification · Auto-Calibration · Energy Consumption</p>
         </div>
       </div>
       <div>
@@ -1735,8 +1735,31 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="sidebar-block">
           <div class="sidebar-label">Tools</div>
-          <div class="sidebar-tags"><span class="sidebar-tag">QGIS</span><span class="sidebar-tag">Python</span><span class="sidebar-tag">EnergyPlus</span></div>
+          <div class="sidebar-tags"><span class="sidebar-tag">Rhino</span><span class="sidebar-tag">Grasshopper</span><span class="sidebar-tag">Ladybug</span><span class="sidebar-tag">URBANopt</span><span class="sidebar-tag">EnergyPlus</span><span class="sidebar-tag">Python</span><span class="sidebar-tag">R</span><span class="sidebar-tag">QGIS</span></div>
         </div>
+      </div>
+    </div>
+    <div style="margin-top:64px;border-top:1px solid var(--border);padding-top:48px;">
+      <h3>관련 논문</h3>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">Analysis of energy consumption impacts using public data-based building shape index: a case study of office buildings in Seoul</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Jeongyun Hwang, Kyungjae Lee, Doyeon Lee, Deuk-Woo Kim, Hyunwoo Lim · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Journal of Building Engineering · DOI: 10.1016/j.jobe.2025.114643</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">Reducing uncertainty of building shape information in urban building energy modeling using Bayesian calibration</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Jeongyun Hwang, Hyunwoo Lim, Jongyeon Lim · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Sustainable Cities and Society · DOI: 10.1016/j.scs.2024.105895</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;margin-bottom:16px;">
+        <div style="font-size:14px;font-weight:600;">Design and Feasibility Study of a Real-Time Controlled Kinetic Facade System for Natural Lighting and Ventilation</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Jeongyun Hwang, Dohun Lim, Gaeun Kim, Hyunwoo Lim · 2024</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Journal of the Korean Solar Energy Society · DOI: 10.7836/kses.2024.44.1.001</div>
+      </div>
+      <div style="padding:16px;border:1px solid var(--border);border-radius:8px;margin:8px 0;">
+        <div style="font-size:14px;font-weight:600;">Developing building shape indexes at the city-scale for understanding building energy consumption</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Jeongyun Hwang, Sangmin Lee, Jisoo Lim, Hyunwoo Lim · 2025</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Building Simulation 2025: 19th Conference of IBPSA · DOI: 10.26868/25222708.2025.1603</div>
       </div>
     </div>
   </div>
@@ -1780,10 +1803,10 @@ a { color: inherit; text-decoration: none; }
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/황정윤.png" alt=""/>
       <div class="profile-info"><h1>황정윤</h1><div class="role-line">Ph.D. Candidate · Building & Urban Modeling Group</div>
-        <div class="bio">GIS 기반 도시 스케일 에너지 모델링 및 탄소중립 시나리오 분석 연구를 수행하고 있으며, 공간 데이터 분석과 건물군 에너지 시뮬레이션에 관심이 있습니다.</div></div>
+        <div class="bio">도시 건물 에너지 모델(UBEM) 기반의 도시 단위 에너지 사용량 해석 연구를 수행하고 있으며, 대리모델 기반 연산 효율화와 불확실성 정량화에 관심이 있습니다.</div></div>
     </div>
     <div class="profile-research-list"><h3>Research</h3>
-      <div class="profile-research-item" onclick="showPage('research-um-gis')"><h4>GIS 기반 도시 건물군 에너지 모델링</h4><p>#GIS #urban_energy #building_stock #carbon_neutral</p></div>
+      <div class="profile-research-item" onclick="showPage('research-um-ubem')"><h4>도시 건물 에너지 모델(UBEM) 기반의 도시 단위 에너지 사용량 해석</h4><p>#UBEM #surrogate_model #uncertainty_quantification #auto_calibration</p></div>
     </div>
   </div>
 </div>
@@ -2043,12 +2066,12 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-um-research" class="rp-panel active">
     <div class="project-grid">
-      <div class="project-card" onclick="showPage('research-um-gis')">
+      <div class="project-card" onclick="showPage('research-um-ubem')">
         <span class="card-arrow">→</span>
         <div class="project-meta"><span class="badge individual">개인 연구</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
-        <h4>GIS 기반 도시 건물군 에너지 모델링</h4>
-        <p>GIS 데이터와 건물 에너지 시뮬레이션을 연계하여 도시 스케일의 에너지 소비 분포를 분석하고 예측하는 연구</p>
-        <div class="tag-row"><span class="tag">GIS</span><span class="tag">Urban Energy</span><span class="tag">Building Stock</span></div>
+        <h4>UBEM 기반 도시 단위 에너지 사용량 해석</h4>
+        <p>대리모델 기반 연산 효율화와 불확실성 정량화, 자동 보정 프로세스를 통해 고정밀 UBEM 모델을 구축하고 건물 요소와 에너지 사용량 간 상관관계 규명</p>
+        <div class="tag-row"><span class="tag">UBEM</span><span class="tag">Surrogate Model</span><span class="tag">Auto-Calibration</span></div>
         <div class="people-row"><img src="Photos/황정윤.png" alt=""/><span class="label">황정윤</span></div>
       </div>
       <div class="project-card" onclick="showPage('research-um-dbem')">
