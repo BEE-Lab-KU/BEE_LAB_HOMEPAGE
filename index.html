@@ -2948,10 +2948,11 @@ a { color: inherit; text-decoration: none; }
 <script>
 var scrollPositions = {};
 var currentPage = 'intro';
+var pageHistory = [];
 
 function showPage(id, restoreScroll) {
-  // Save current scroll position before leaving
   scrollPositions[currentPage] = window.scrollY;
+  pageHistory.push(currentPage);
 
   document.querySelectorAll('.page-view').forEach(function(p){p.classList.remove('active');});
   var el = document.getElementById('page-' + id);
@@ -2960,8 +2961,6 @@ function showPage(id, restoreScroll) {
     el.style.animation = 'none';
     el.offsetHeight;
     el.style.animation = 'fadeIn 0.35s ease-out';
-
-    // Restore scroll if going back, otherwise scroll to top
     if(restoreScroll && scrollPositions[id] !== undefined){
       window.scrollTo({top: scrollPositions[id], behavior:'instant'});
     } else {
@@ -2972,8 +2971,25 @@ function showPage(id, restoreScroll) {
   history.pushState(null,'','#'+id);
 }
 
-function goBack(id) {
-  showPage(id, true);
+function goBack() {
+  var prev = pageHistory.pop();
+  if(!prev) prev = 'intro';
+  scrollPositions[currentPage] = window.scrollY;
+  document.querySelectorAll('.page-view').forEach(function(p){p.classList.remove('active');});
+  var el = document.getElementById('page-' + prev);
+  if(el){
+    el.classList.add('active');
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = 'fadeIn 0.35s ease-out';
+    if(scrollPositions[prev] !== undefined){
+      window.scrollTo({top: scrollPositions[prev], behavior:'instant'});
+    } else {
+      window.scrollTo({top:0, behavior:'instant'});
+    }
+  }
+  currentPage = prev;
+  history.pushState(null,'','#'+prev);
 }
 
 function switchRP(btn, panelId) {
@@ -2985,7 +3001,7 @@ function switchRP(btn, panelId) {
 }
 window.addEventListener('popstate',function(){
   var h=location.hash.replace('#','');
-  if(h)showPage(h, true); else showPage('intro', true);
+  if(h)showPage(h); else showPage('intro');
 });
 if(location.hash){var h=location.hash.replace('#','');if(h)showPage(h);}
 
