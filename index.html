@@ -689,59 +689,91 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* BLOG / NEWS DYNAMIC GRID */
+.bn-featured {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.bn-featured .bn-card:first-child .bn-card-img,
+.bn-featured .bn-card:first-child .bn-no-img { aspect-ratio: 4/3; }
+.bn-featured .bn-card .bn-card-img,
+.bn-featured .bn-card .bn-no-img { aspect-ratio: 1/1; }
+.bn-featured .bn-card-title {
+  font-size: 15px;
+  -webkit-line-clamp: 2;
+}
+.bn-featured .bn-card-date {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
 .bn-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 .bn-card {
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.25s;
 }
 .bn-card:hover {
   border-color: var(--text);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 .bn-card-img {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;
   object-fit: cover;
   display: block;
   background: #f0f0f0;
 }
 .bn-card-body {
-  padding: 12px 14px;
+  padding: 16px 18px;
 }
 .bn-card-title {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
   word-break: keep-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.bn-card-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
 .bn-no-img {
   width: 100%;
-  aspect-ratio: 4/3;
-  background: #f5f5f5;
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #f8f8f8 0%, #efefef 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #bbb;
-  font-size: 13px;
+  color: #ccc;
+  font-size: 40px;
+}
+.bn-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
 }
 #bn-modal { display: none; }
-@media (max-width: 1100px) {
-  .bn-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 700px) {
-  .bn-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) {
+  .bn-featured { grid-template-columns: 1fr; }
+  .bn-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -2849,7 +2881,9 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:13px;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">BEE Lab Blog</div>
     <h1 style="font-size:56px;font-weight:900;letter-spacing:-0.05em;">BLOG</h1>
   </div>
-  <div id="blog-grid" class="bn-grid" style="min-height:200px;"></div>
+  <div id="blog-featured" class="bn-featured"></div>
+  <div class="bn-section-label">All Posts</div>
+  <div id="blog-grid" class="bn-grid" style="margin-bottom:80px;"></div>
 </div>
 </div>
 <!-- ============================================ -->
@@ -2861,7 +2895,9 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:13px;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">BEE Lab News</div>
     <h1 style="font-size:56px;font-weight:900;letter-spacing:-0.05em;">NEWS</h1>
   </div>
-  <div id="news-grid" class="bn-grid" style="min-height:200px;"></div>
+  <div id="news-featured" class="bn-featured"></div>
+  <div class="bn-section-label">All News</div>
+  <div id="news-grid" class="bn-grid" style="margin-bottom:80px;"></div>
 </div>
 </div>
 <!-- ============================================ -->
@@ -2990,40 +3026,73 @@ var bnData = { Blog: [], News: [] };
 function loadBlogNews() {
   fetch('News_Blog_JPG/beelab_content/blog.json')
     .then(function(r) { return r.json(); })
-    .then(function(data) { bnData.Blog = data; renderBNGrid('blog-grid', data, 'Blog'); })
+    .then(function(data) { bnData.Blog = data; renderBNPage('blog', data, 'Blog'); })
     .catch(function(e) { console.error('Blog load error:', e); });
   fetch('News_Blog_JPG/beelab_content/news.json')
     .then(function(r) { return r.json(); })
-    .then(function(data) { bnData.News = data; renderBNGrid('news-grid', data, 'News'); })
+    .then(function(data) { bnData.News = data; renderBNPage('news', data, 'News'); })
     .catch(function(e) { console.error('News load error:', e); });
 }
 
-function renderBNGrid(id, items, type) {
-  var c = document.getElementById(id);
-  if (!c) return;
-  var html = '';
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    var hasImg = item.image_count > 0;
-    var imgSrc = hasImg
-      ? 'News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/001.jpg'
-      : '';
-    html += '<div class="bn-card" data-type="' + type + '" data-idx="' + i + '">';
-    if (hasImg) {
-      html += '<img class="bn-card-img" src="' + imgSrc + '" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling&&(this.nextElementSibling.style.display=\'flex\')">';
-      html += '<div class="bn-no-img" style="display:none;">No Image</div>';
-    } else {
-      html += '<div class="bn-no-img">No Image</div>';
-    }
-    html += '<div class="bn-card-body"><div class="bn-card-title">' + escapeHtml(item.title) + '</div></div></div>';
+function renderBNPage(prefix, items, type) {
+  var featured = document.getElementById(prefix + '-featured');
+  var grid = document.getElementById(prefix + '-grid');
+  if (!featured || !grid) return;
+
+  var top3 = items.slice(0, 3);
+  var rest = items.slice(3);
+
+  featured.innerHTML = top3.map(function(item, i) {
+    return buildCard(item, i, type);
+  }).join('');
+
+  grid.innerHTML = rest.map(function(item, i) {
+    return buildCard(item, i + 3, type);
+  }).join('');
+}
+
+function buildCard(item, idx, type) {
+  var hasImg = item.image_count > 0;
+  var imgSrc = hasImg
+    ? 'News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/001.jpg'
+    : '';
+  var dateStr = item.date ? item.date : '';
+
+  var html = '<div class="bn-card" data-type="' + type + '" data-idx="' + idx + '">';
+  if (hasImg) {
+    html += '<img class="bn-card-img" src="' + imgSrc + '" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling&&(this.nextElementSibling.style.display=\'flex\')">';
+    html += '<div class="bn-no-img" style="display:none;">📷</div>';
+  } else {
+    html += '<div class="bn-no-img">📷</div>';
   }
-  c.innerHTML = html;
+  html += '<div class="bn-card-body">';
+  html += '<div class="bn-card-title">' + escapeHtml(item.title) + '</div>';
+  if (dateStr) html += '<div class="bn-card-date">' + escapeHtml(dateStr) + '</div>';
+  html += '</div></div>';
+  return html;
 }
 
 function escapeHtml(t) {
   var d = document.createElement('div');
   d.textContent = t;
   return d.innerHTML;
+}
+
+function cleanBody(item) {
+  var body = item.body || '';
+  if (!body) return '';
+  // Remove date/location lines that duplicate the separate fields
+  if (item.date) {
+    body = body.replace(new RegExp(item.date.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'), '');
+  }
+  if (item.location) {
+    body = body.replace(new RegExp('@?' + item.location.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'), '');
+  }
+  // Clean up common patterns
+  body = body.replace(/\n\s*@\s*\n/g, '\n');
+  body = body.replace(/\n{3,}/g, '\n\n');
+  body = body.trim();
+  return body;
 }
 
 document.addEventListener('click', function(e) {
@@ -3044,17 +3113,18 @@ function openBNDetail(type, item) {
     imgs += '<img src="News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/' + num + '.jpg" style="width:100%;border-radius:8px;margin-bottom:12px;" loading="lazy" onerror="this.style.display=\'none\'">';
   }
 
-  var body = (item.body || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  var body = cleanBody(item);
+  body = body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
   m.style.display = 'block';
   document.body.style.overflow = 'hidden';
   m.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto;padding:40px 20px;-webkit-overflow-scrolling:touch;" onclick="if(event.target===this){closeBNModal();}">' +
     '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:14px;padding:36px;position:relative;">' +
-    '<div onclick="closeBNModal()" style="position:sticky;top:0;float:right;font-size:22px;cursor:pointer;color:#999;z-index:1;background:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50;">✕</div>' +
-    '<h2 style="font-size:22px;font-weight:800;margin-bottom:8px;letter-spacing:-0.02em;line-height:1.3;padding-right:40px;">' + escapeHtml(item.title) + '</h2>' +
-    (item.date ? '<div style="font-size:12px;color:#999;margin-bottom:4px;">' + escapeHtml(item.date) + '</div>' : '') +
-    (item.location ? '<div style="font-size:12px;color:#999;margin-bottom:16px;">' + escapeHtml(item.location) + '</div>' : '<div style="margin-bottom:16px;"></div>') +
-    (body ? '<div style="font-size:13px;color:#555;line-height:1.8;margin-bottom:20px;white-space:pre-line;border-top:1px solid #eee;padding-top:16px;">' + body + '</div>' : '') +
+    '<div onclick="closeBNModal()" style="position:absolute;top:16px;right:20px;font-size:20px;cursor:pointer;color:#999;z-index:1;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#f5f5f5;">✕</div>' +
+    '<h2 style="font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-0.02em;line-height:1.35;padding-right:40px;">' + escapeHtml(item.title) + '</h2>' +
+    (item.date ? '<div style="font-size:13px;color:#999;margin-bottom:4px;">📅 ' + escapeHtml(item.date) + '</div>' : '') +
+    (item.location ? '<div style="font-size:13px;color:#999;margin-bottom:20px;">📍 ' + escapeHtml(item.location) + '</div>' : '<div style="margin-bottom:20px;"></div>') +
+    (body ? '<div style="font-size:14px;color:#444;line-height:1.85;margin-bottom:24px;white-space:pre-line;border-top:1px solid #eee;padding-top:20px;">' + body + '</div>' : '') +
     imgs + '</div></div>';
 }
 
