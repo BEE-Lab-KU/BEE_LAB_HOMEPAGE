@@ -3009,14 +3009,55 @@ window.addEventListener('popstate',function(){
 });
 if(location.hash){var h=location.hash.replace('#','');if(h)showPage(h);}
 
-function sendContactEmail(e) {
+async function sendContactEmail(e) {
   e.preventDefault();
-  var name = document.getElementById('cf-name').value;
-  var email = document.getElementById('cf-email').value;
-  var subject = document.getElementById('cf-subject').value;
-  var message = document.getElementById('cf-message').value;
-  var body = 'From: ' + name + ' (' + email + ')%0A%0A' + message;
-  window.location.href = 'mailto:hjw970301@gmail.com?subject=' + encodeURIComponent('[BEE Lab Contact] ' + subject) + '&body=' + body;
+
+  var btn = e.target.querySelector('button[type="submit"]');
+  var originalText = btn.textContent;
+  btn.textContent = '전송 중...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+
+  var data = {
+    access_key: '여기에_발급받은_키_붙여넣기',
+    name: document.getElementById('cf-name').value,
+    email: document.getElementById('cf-email').value,
+    subject: '[BEE Lab Contact] ' + document.getElementById('cf-subject').value,
+    message: document.getElementById('cf-message').value,
+    from_name: 'BEE Lab Website'
+  };
+
+  try {
+    var res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    var result = await res.json();
+
+    if (result.success) {
+      btn.textContent = '✓ 전송 완료';
+      btn.style.background = '#22c55e';
+      btn.style.opacity = '1';
+      document.getElementById('contact-form').reset();
+      setTimeout(function() {
+        btn.textContent = originalText;
+        btn.style.background = '#000';
+        btn.disabled = false;
+      }, 3000);
+    } else {
+      throw new Error('failed');
+    }
+  } catch(err) {
+    btn.textContent = '전송 실패 — 다시 시도';
+    btn.style.background = '#ef4444';
+    btn.style.opacity = '1';
+    setTimeout(function() {
+      btn.textContent = originalText;
+      btn.style.background = '#000';
+      btn.disabled = false;
+    }, 3000);
+  }
 }
 
 
