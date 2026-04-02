@@ -447,6 +447,128 @@ a { color: inherit; text-decoration: none; }
 .sidebar-tag { font-size: 13px; color: var(--text-muted); }
 .sidebar-tag::before { content: '#'; }
 
+/* PROJECT DETAIL - MIT Media Lab Inspired */
+.project-hero {
+  width: 100%;
+  padding: 100px 40px 60px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.project-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.project-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.project-hero .back-link {
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
+}
+.project-hero .back-link:hover { color: rgba(255,255,255,0.9); }
+.project-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.project-hero-badge .status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #4ade80;
+  display: inline-block;
+}
+.project-hero h1 {
+  font-size: 44px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  max-width: 800px;
+}
+.project-hero-desc {
+  font-size: 18px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+.project-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.project-hero-tags span {
+  padding: 5px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.project-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+}
+.project-body-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 72px;
+}
+.project-body-grid h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 40px 0 14px;
+  letter-spacing: -0.02em;
+}
+.project-body-grid h3:first-child { margin-top: 0; }
+.project-body-grid p {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.9;
+}
+.project-team-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.project-team-card:hover { background: var(--bg-subtle); }
+.project-team-card img {
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+}
+.project-team-card .name { font-weight: 600; font-size: 15px; }
+.project-team-card .role { font-size: 13px; color: var(--text-muted); }
+@media (max-width: 768px) {
+  .project-hero { padding: 80px 20px 40px; }
+  .project-hero h1 { font-size: 28px; }
+  .project-body { padding: 40px 20px 60px; }
+  .project-body-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* MEMBER PROFILE */
 .profile-page {
   max-width: 1200px;
@@ -689,6 +811,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* BLOG / NEWS DYNAMIC GRID */
+<<<<<<< HEAD
 .bn-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -697,35 +820,83 @@ a { color: inherit; text-decoration: none; }
 .bn-card {
   border: 1px solid var(--border);
   border-radius: 10px;
+=======
+.bn-featured {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.bn-featured .bn-card:first-child .bn-card-img,
+.bn-featured .bn-card:first-child .bn-no-img { aspect-ratio: 4/3; }
+.bn-featured .bn-card .bn-card-img,
+.bn-featured .bn-card .bn-no-img { aspect-ratio: 1/1; }
+.bn-featured .bn-card-title {
+  font-size: 15px;
+  -webkit-line-clamp: 2;
+}
+.bn-featured .bn-card-date {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.bn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.bn-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   overflow: hidden;
   cursor: pointer;
   transition: all 0.25s;
 }
 .bn-card:hover {
   border-color: var(--text);
+<<<<<<< HEAD
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 .bn-card-img {
   width: 100%;
   aspect-ratio: 4/3;
+=======
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+.bn-card-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   object-fit: cover;
   display: block;
   background: #f0f0f0;
 }
 .bn-card-body {
+<<<<<<< HEAD
   padding: 12px 14px;
 }
 .bn-card-title {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
+=======
+  padding: 16px 18px;
+}
+.bn-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   word-break: keep-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+<<<<<<< HEAD
 .bn-no-img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -742,6 +913,37 @@ a { color: inherit; text-decoration: none; }
 }
 @media (max-width: 700px) {
   .bn-grid { grid-template-columns: repeat(2, 1fr); }
+=======
+.bn-card-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+.bn-no-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: linear-gradient(135deg, #f8f8f8 0%, #efefef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  font-size: 40px;
+}
+.bn-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+#bn-modal { display: none; }
+@media (max-width: 900px) {
+  .bn-featured { grid-template-columns: 1fr; }
+  .bn-grid { grid-template-columns: 1fr; }
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 }
 </style>
 </head>
@@ -755,8 +957,8 @@ a { color: inherit; text-decoration: none; }
       <a href="#" onclick="showPage('members-all');return false;">Members</a>
       <a href="#" onclick="showPage('research-topics');return false;">Research</a>
       <a href="#" onclick="showPage('publications');return false;">Publications</a>
-      <a href="#" onclick="showPage('blog');return false;">Blog</a>
       <a href="#" onclick="showPage('news');return false;">News</a>
+      <a href="#" onclick="showPage('blog');return false;">Blog</a>
       <a href="#" onclick="showPage('contact');return false;">Contact</a>
     </div>
   </div>
@@ -917,7 +1119,7 @@ a { color: inherit; text-decoration: none; }
 
   <div id="rp-project" class="rp-panel">
     <div class="project-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" onclick="showPage('project-green-remodeling')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 사업</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
           <h4>Green Remodeling 사업</h4>
@@ -933,7 +1135,7 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="featured-vis"></div>
       </div>
-      <div class="project-card">
+      <div class="project-card" onclick="showPage('project-lh-geothermal')" style="cursor:pointer;">
         <div class="project-meta"><span class="badge sub">Sub Project</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
         <h4>LH 지열 히트펌프 과제</h4>
         <p>LH 공동주택 대상 지열 히트펌프 시스템의 성능 분석 및 최적 설계 연구</p>
@@ -1224,7 +1426,7 @@ a { color: inherit; text-decoration: none; }
 <!-- MEMBER PROFILES -->
 <div id="page-member-sangmin" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/이상민.png" alt=""/>
       <div class="profile-info"><h1>이상민</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1240,7 +1442,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-junghyun" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/조정현.png" alt=""/>
       <div class="profile-info"><h1>조정현</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1254,7 +1456,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jaeuk" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/백재욱.png" alt=""/>
       <div class="profile-info"><h1>백재욱</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1268,7 +1470,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jiung" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/한지웅.png" alt=""/>
       <div class="profile-info"><h1>한지웅</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1658,7 +1860,7 @@ a { color: inherit; text-decoration: none; }
 <!-- DA MEMBER PROFILES -->
 <div id="page-member-doyeon" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/이도연.png" alt=""/>
       <div class="profile-info"><h1>이도연</h1><div class="role-line">Ph.D. Candidate · Data & Analysis Group</div>
@@ -1674,7 +1876,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-inseob" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/김인섭.png" alt=""/>
       <div class="profile-info"><h1>김인섭</h1><div class="role-line">Master's Student · Data & Analysis Group</div>
@@ -1690,7 +1892,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jiyoung" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/김지영.png" alt=""/>
       <div class="profile-info"><h1>김지영</h1><div class="role-line">Undergraduate Researcher · Data & Analysis Group</div>
@@ -1862,7 +2064,7 @@ a { color: inherit; text-decoration: none; }
 <!-- UM MEMBER PROFILES -->
 <div id="page-member-jungyun" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/황정윤.png" alt=""/>
       <div class="profile-info"><h1>황정윤</h1><div class="role-line">Ph.D. Candidate · Building & Urban Modeling Group</div>
@@ -1876,7 +2078,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jisu" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/임지수.png" alt=""/>
       <div class="profile-info"><h1>임지수</h1><div class="role-line">Master's Student · Building & Urban Modeling Group</div>
@@ -1890,7 +2092,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-hyunsu" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/이현수.png" alt=""/>
       <div class="profile-info"><h1>이현수</h1><div class="role-line">Undergraduate Researcher · Building & Urban Modeling Group</div>
@@ -2036,7 +2238,7 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-da-project" class="rp-panel">
     <div class="project-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" onclick="showPage('project-ai-bems')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 과제</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
           <h4>AI 기반 건물 에너지 관리 시스템 개발</h4>
@@ -2148,7 +2350,7 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-um-project" class="rp-panel">
     <div class="project-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" onclick="showPage('project-carbon-neutral')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 과제</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
           <h4>탄소중립 도시 에너지 시뮬레이션 플랫폼</h4>
@@ -2249,12 +2451,199 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- ============================================ -->
+<!-- PROJECT DETAIL: Green Remodeling -->
+<!-- ============================================ -->
+<div id="page-project-green-remodeling" class="page-view">
+<div class="project-hero">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> 정부 사업 · 진행 중</div>
+    <h1>Green Remodeling 사업</h1>
+    <p class="project-hero-desc">노후 건축물의 에너지 성능 개선을 위한 그린리모델링 설계 및 시공 — 단열, 설비, 신재생에너지 통합 적용을 통해 건물의 에너지 효율을 혁신적으로 개선합니다.</p>
+    <div class="project-hero-tags">
+      <span>Green Remodeling</span><span>Energy Retrofit</span><span>Building Envelope</span><span>Renewable Energy</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>Green Remodeling 사업은 노후화된 공공 및 민간 건축물의 에너지 성능을 체계적으로 개선하는 국가 정책 사업입니다. BEE Lab은 건물 에너지 진단, 리모델링 설계, 시공 관리 및 성능 검증 전 과정에 참여하여 실질적인 에너지 절감을 달성하고 있습니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>건물 외피(단열, 창호) 성능 개선과 고효율 설비(냉난방, 환기, 조명) 교체를 통합적으로 설계하며, 신재생에너지(태양광, 지열 등) 도입 방안을 검토합니다. Change Point Model을 활용한 리모델링 전후 에너지 사용량 비교 분석을 수행하여 실질적인 에너지 절감 효과를 정량화합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>노후 건축물의 에너지 소비량 30% 이상 절감, 온실가스 배출 저감, 재실자 쾌적성 향상을 목표로 합니다. 축적된 데이터와 분석 결과는 향후 그린리모델링 정책 수립의 근거 자료로 활용됩니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Team</div>
+        <div class="project-team-card" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-junghyun')"><img src="Photos/조정현.png" alt=""/><div><div class="name">조정현</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-jaeuk')"><img src="Photos/백재욱.png" alt=""/><div><div class="name">백재욱</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-jiung')"><img src="Photos/한지웅.png" alt=""/><div><div class="name">한지웅</div><div class="role">Master's Student</div></div></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">Green Remodeling</span><span class="sidebar-tag">Energy Retrofit</span><span class="sidebar-tag">Change Point Model</span><span class="sidebar-tag">Building Envelope</span></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Related Publication</div>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">Lee, D., Lim, H. — Comparative analysis of energy usage before and after Green Remodeling through Change Point Model (ISAIA 2024)</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT DETAIL: LH 지열 히트펌프 -->
+<!-- ============================================ -->
+<div id="page-project-lh-geothermal" class="page-view">
+<div class="project-hero">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> Sub Project · 진행 중</div>
+    <h1>LH 지열 히트펌프 과제</h1>
+    <p class="project-hero-desc">LH 공동주택 대상 지열 히트펌프 시스템의 성능 분석 및 최적 설계 연구를 수행합니다.</p>
+    <div class="project-hero-tags">
+      <span>Geothermal</span><span>Heat Pump</span><span>LH</span><span>Residential</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>LH(한국토지주택공사) 공동주택 단지에 적용된 지열 히트펌프 시스템의 실측 운전 데이터를 기반으로 시스템 성능을 분석하고, 최적 설계 방안을 도출하는 연구입니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>지열 히트펌프 시스템의 냉난방 성능계수(COP) 분석, 지중열교환기 설계 최적화, 부하 패턴에 따른 운전 전략 수립을 수행합니다. 실측 데이터 기반의 시뮬레이션 모델을 구축하여 다양한 설계 대안의 에너지 성능을 비교 평가합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>공동주택 지열 히트펌프 시스템의 설계 및 운전 최적화를 통한 에너지 효율 향상과 탄소 배출 저감에 기여합니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Team</div>
+        <div class="project-team-card" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-jaeuk')"><img src="Photos/백재욱.png" alt=""/><div><div class="name">백재욱</div><div class="role">Master's Student</div></div></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">Geothermal Heat Pump</span><span class="sidebar-tag">Ground Heat Exchanger</span><span class="sidebar-tag">COP</span><span class="sidebar-tag">LH</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT DETAIL: AI BEMS -->
+<!-- ============================================ -->
+<div id="page-project-ai-bems" class="page-view">
+<div class="project-hero" style="background:linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #1e3a5f 100%);">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> 정부 과제 · 진행 중</div>
+    <h1>AI 기반 건물 에너지 관리 시스템 개발</h1>
+    <p class="project-hero-desc">건물 에너지 데이터의 실시간 수집·분석·예측을 통합하는 AI 플랫폼을 연구개발하여 스마트 빌딩 에너지 관리의 새로운 패러다임을 제시합니다.</p>
+    <div class="project-hero-tags">
+      <span>AI Platform</span><span>BEMS</span><span>Real-time</span><span>Machine Learning</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>AI 기반 건물 에너지 관리 시스템(BEMS) 개발 과제는 건물에서 발생하는 방대한 에너지 데이터를 인공지능 기술로 분석·예측하여 에너지 효율을 극대화하는 통합 플랫폼을 개발하는 정부 연구과제입니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>머신러닝 및 딥러닝 기반의 건물 에너지 소비 예측 모델 개발, 이상 탐지 알고리즘을 통한 에너지 낭비 요인 자동 진단, 실시간 최적 제어 전략 수립을 수행합니다. IoT 센서 네트워크와 연계하여 건물 에너지 데이터를 실시간으로 수집·처리하는 데이터 파이프라인을 구축합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>건물 에너지 소비의 실시간 모니터링 및 예측을 통해 운영 비용 절감과 탄소 배출 저감을 동시에 달성하며, 스마트 빌딩 산업의 기술 경쟁력을 강화합니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Group</div>
+        <p style="font-size:14px;color:var(--text-mid);">Data & Analysis</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">AI</span><span class="sidebar-tag">BEMS</span><span class="sidebar-tag">Machine Learning</span><span class="sidebar-tag">IoT</span><span class="sidebar-tag">Energy Prediction</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT DETAIL: 탄소중립 도시 시뮬레이션 -->
+<!-- ============================================ -->
+<div id="page-project-carbon-neutral" class="page-view">
+<div class="project-hero" style="background:linear-gradient(135deg, #0a0a0a 0%, #112222 40%, #0d3320 100%);">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> 정부 과제 · 진행 중</div>
+    <h1>탄소중립 도시 에너지 시뮬레이션 플랫폼</h1>
+    <p class="project-hero-desc">도시 스케일 에너지 모델링과 탄소 배출량 분석을 위한 통합 시뮬레이션 플랫폼을 개발하여 탄소중립 도시 실현을 위한 과학적 근거를 제공합니다.</p>
+    <div class="project-hero-tags">
+      <span>Carbon Neutral</span><span>Urban Simulation</span><span>Platform</span><span>GIS</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>탄소중립 도시 에너지 시뮬레이션 플랫폼은 도시 단위의 건물 에너지 소비와 탄소 배출을 종합적으로 시뮬레이션하여, 정책 입안자와 도시 계획가에게 데이터 기반의 의사결정 도구를 제공하는 정부 연구과제입니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>UBEM(Urban Building Energy Model)과 GIS 기반 공간 분석을 결합하여 도시 전체의 에너지 흐름을 모델링합니다. 건물군 에너지 데이터, 기상 데이터, 도시 형태 정보를 통합 분석하여 탄소 배출 시나리오를 구축하고, 다양한 정책 대안의 효과를 정량적으로 평가합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>도시 단위 탄소중립 로드맵 수립을 위한 과학적 근거를 제공하며, 에너지 정책의 실효성을 사전 검증할 수 있는 시뮬레이션 환경을 구축합니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Group</div>
+        <p style="font-size:14px;color:var(--text-mid);">Building & Urban Modeling</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">Carbon Neutral</span><span class="sidebar-tag">UBEM</span><span class="sidebar-tag">Urban Simulation</span><span class="sidebar-tag">GIS</span><span class="sidebar-tag">Policy Analysis</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
 <!-- MEMBERS (ALL) PAGE -->
 <!-- ============================================ -->
 <div id="page-members-all" class="page-view">
 <div style="max-width:1200px;margin:0 auto;padding:72px 40px 0;">
   <h1 style="font-size:48px;font-weight:900;letter-spacing:-0.04em;margin-bottom:8px;">Members</h1>
-  <div class="subtitle" style="margin-bottom:32px;">BEE Lab 구성원</div>
 
   <div class="pill-row" style="margin-bottom:40px;">
     <div class="pill active" onclick="switchRP(this,'mem-professor')">Professor</div>
@@ -2849,7 +3238,13 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:13px;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">BEE Lab Blog</div>
     <h1 style="font-size:56px;font-weight:900;letter-spacing:-0.05em;">BLOG</h1>
   </div>
+<<<<<<< HEAD
   <div id="blog-grid" class="bn-grid" style="min-height:200px;"></div>
+=======
+  <div id="blog-featured" class="bn-featured"></div>
+  <div class="bn-section-label">All Posts</div>
+  <div id="blog-grid" class="bn-grid" style="margin-bottom:80px;"></div>
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 </div>
 </div>
 <!-- ============================================ -->
@@ -2861,7 +3256,13 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:13px;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">BEE Lab News</div>
     <h1 style="font-size:56px;font-weight:900;letter-spacing:-0.05em;">NEWS</h1>
   </div>
+<<<<<<< HEAD
   <div id="news-grid" class="bn-grid" style="min-height:200px;"></div>
+=======
+  <div id="news-featured" class="bn-featured"></div>
+  <div class="bn-section-label">All News</div>
+  <div id="news-grid" class="bn-grid" style="margin-bottom:80px;"></div>
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 </div>
 </div>
 <!-- ============================================ -->
@@ -2972,6 +3373,7 @@ var bnData = { Blog: [], News: [] };
 function loadBlogNews() {
   fetch('News_Blog_JPG/beelab_content/blog.json')
     .then(function(r) { return r.json(); })
+<<<<<<< HEAD
     .then(function(data) { bnData.Blog = data; renderBNGrid('blog-grid', data, 'Blog'); })
     .catch(function(e) { console.error('Blog load error:', e); });
   fetch('News_Blog_JPG/beelab_content/news.json')
@@ -3000,6 +3402,63 @@ function renderBNGrid(id, items, type) {
     html += '<div class="bn-card-body"><div class="bn-card-title">' + escapeHtml(item.title) + '</div></div></div>';
   }
   c.innerHTML = html;
+=======
+    .then(function(data) { bnData.Blog = data; renderBNPage('blog', data, 'Blog'); })
+    .catch(function(e) { console.error('Blog load error:', e); });
+  fetch('News_Blog_JPG/beelab_content/news.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) { bnData.News = data; renderBNPage('news', data, 'News'); })
+    .catch(function(e) { console.error('News load error:', e); });
+}
+
+function renderBNPage(prefix, items, type) {
+  var featured = document.getElementById(prefix + '-featured');
+  var grid = document.getElementById(prefix + '-grid');
+  if (!featured || !grid) return;
+  var top3 = items.slice(0, 3);
+  var rest = items.slice(3);
+  featured.innerHTML = top3.map(function(item, i) {
+    return buildCard(item, i, type);
+  }).join('');
+  grid.innerHTML = rest.map(function(item, i) {
+    return buildCard(item, i + 3, type);
+  }).join('');
+}
+
+// Image extension fallback: .jpg -> .png -> .jpeg -> .webp
+var bnExtFallbacks = ['.png', '.jpeg', '.webp'];
+
+function bnImgFallback(img) {
+  var bp = img.getAttribute('data-basepath');
+  var tried = parseInt(img.getAttribute('data-ext-idx') || '0');
+  if (tried >= bnExtFallbacks.length) {
+    img.style.display = 'none';
+    var ph = img.nextElementSibling;
+    if (ph) ph.style.display = 'flex';
+    img.onerror = null;
+    return;
+  }
+  img.setAttribute('data-ext-idx', tried + 1);
+  img.src = bp + bnExtFallbacks[tried];
+}
+
+function buildCard(item, idx, type) {
+  var hasImg = item.image_count > 0;
+  var basePath = 'News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/001';
+  var dateStr = item.date ? item.date : '';
+  var html = '<div class="bn-card" data-type="' + type + '" data-idx="' + idx + '">';
+  if (hasImg) {
+    html += '<img class="bn-card-img" data-basepath="' + escapeHtml(basePath) + '" src="' + basePath + '.jpg" alt="" loading="lazy" onerror="bnImgFallback(this)">';
+    html += '<div class="bn-no-img" style="display:none;">📷</div>';
+  } else {
+    html += '<div class="bn-no-img">📷</div>';
+  }
+  html += '<div class="bn-card-body">';
+  html += '<div class="bn-card-title">' + escapeHtml(item.title) + '</div>';
+  if (dateStr) html += '<div class="bn-card-date">' + escapeHtml(dateStr) + '</div>';
+  html += '</div></div>';
+  return html;
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 }
 
 function escapeHtml(t) {
@@ -3008,6 +3467,32 @@ function escapeHtml(t) {
   return d.innerHTML;
 }
 
+<<<<<<< HEAD
+=======
+function cleanBody(item) {
+  var body = item.body || '';
+  if (!body) return '';
+  // Remove title if duplicated at start
+  if (item.title && body.indexOf(item.title) === 0) {
+    body = body.substring(item.title.length).replace(/^\s*\n/, '');
+  }
+  // Remove date/location that duplicate the separate fields
+  if (item.date) {
+    body = body.replace(new RegExp(item.date.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'), '');
+  }
+  if (item.location) {
+    body = body.replace(new RegExp('@?\\s*' + item.location.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'), '');
+  }
+  // Remove trailing date patterns like "November\n28, 2025 @Seoul,  Korea"
+  body = body.replace(/\n?(January|February|March|April|May|June|July|August|September|October|November|December)\s*\n?\s*\d{1,2}(?:-\d{1,2})?\s*,?\s*\d{4}\s*@[^\n]*/gi, '');
+  // Clean up
+  body = body.replace(/\n\s*@\s*\n/g, '\n');
+  body = body.replace(/\n{3,}/g, '\n\n');
+  body = body.trim();
+  return body;
+}
+
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 document.addEventListener('click', function(e) {
   var card = e.target.closest('.bn-card');
   if (!card) return;
@@ -3019,6 +3504,7 @@ document.addEventListener('click', function(e) {
 function openBNDetail(type, item) {
   var m = document.getElementById('bn-modal');
   if (!m) { m = document.createElement('div'); m.id = 'bn-modal'; document.body.appendChild(m); }
+<<<<<<< HEAD
 
   var imgs = '';
   for (var i = 1; i <= item.image_count; i++) {
@@ -3028,15 +3514,33 @@ function openBNDetail(type, item) {
 
   var body = (item.body || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
+=======
+  var imgs = '';
+  for (var i = 1; i <= item.image_count; i++) {
+    var num = String(i).padStart(3, '0');
+    var bp = 'News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/' + num;
+    imgs += '<img data-basepath="' + escapeHtml(bp) + '" src="' + bp + '.jpg" style="width:100%;border-radius:8px;margin-bottom:12px;" loading="lazy" onerror="bnImgFallback(this)">';
+  }
+  var body = cleanBody(item);
+  body = body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   m.style.display = 'block';
   document.body.style.overflow = 'hidden';
   m.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto;padding:40px 20px;-webkit-overflow-scrolling:touch;" onclick="if(event.target===this){closeBNModal();}">' +
     '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:14px;padding:36px;position:relative;">' +
+<<<<<<< HEAD
     '<div onclick="closeBNModal()" style="position:sticky;top:0;float:right;font-size:22px;cursor:pointer;color:#999;z-index:1;background:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50;">✕</div>' +
     '<h2 style="font-size:22px;font-weight:800;margin-bottom:8px;letter-spacing:-0.02em;line-height:1.3;padding-right:40px;">' + escapeHtml(item.title) + '</h2>' +
     (item.date ? '<div style="font-size:12px;color:#999;margin-bottom:4px;">' + escapeHtml(item.date) + '</div>' : '') +
     (item.location ? '<div style="font-size:12px;color:#999;margin-bottom:16px;">' + escapeHtml(item.location) + '</div>' : '<div style="margin-bottom:16px;"></div>') +
     (body ? '<div style="font-size:13px;color:#555;line-height:1.8;margin-bottom:20px;white-space:pre-line;border-top:1px solid #eee;padding-top:16px;">' + body + '</div>' : '') +
+=======
+    '<div onclick="closeBNModal()" style="position:absolute;top:16px;right:20px;font-size:20px;cursor:pointer;color:#999;z-index:1;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#f5f5f5;">✕</div>' +
+    '<h2 style="font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-0.02em;line-height:1.35;padding-right:40px;">' + escapeHtml(item.title) + '</h2>' +
+    (item.date ? '<div style="font-size:13px;color:#999;margin-bottom:4px;">📅 ' + escapeHtml(item.date) + '</div>' : '') +
+    (item.location ? '<div style="font-size:13px;color:#999;margin-bottom:20px;">📍 ' + escapeHtml(item.location) + '</div>' : '<div style="margin-bottom:20px;"></div>') +
+    (body ? '<div style="font-size:14px;color:#444;line-height:1.85;margin-bottom:24px;white-space:pre-line;border-top:1px solid #eee;padding-top:20px;">' + body + '</div>' : '') +
+>>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
     imgs + '</div></div>';
 }
 
