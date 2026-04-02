@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Building Systems — BEE Lab</title>
+<title>BEE_LAB</title>
+<link rel="icon" type="image/png" href="Photos/BEE로고_2024_투명배경.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
@@ -748,12 +749,48 @@ a { color: inherit; text-decoration: none; }
 .page-footer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 40px;
+  padding: 48px 40px 36px;
   border-top: 1px solid var(--border);
+}
+.footer-top {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+.footer-logo {
+  flex-shrink: 0;
+}
+.footer-logo img {
+  height: 52px;
+  opacity: 0.7;
+}
+.footer-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 48px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.footer-info .footer-label {
+  font-weight: 600;
+  color: var(--text-mid);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.footer-bottom {
   display: flex;
   justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
-.page-footer p { font-size: 12px; color: var(--text-muted); }
+.footer-bottom p { font-size: 12px; color: var(--text-muted); }
+@media (max-width: 768px) {
+  .footer-top { flex-direction: column; gap: 20px; }
+  .footer-info { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 900px) {
   .hero h1 { font-size: 36px; }
@@ -811,16 +848,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* BLOG / NEWS DYNAMIC GRID */
-<<<<<<< HEAD
-.bn-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-.bn-card {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-=======
 .bn-featured {
   display: grid;
   grid-template-columns: 1.3fr 1fr 1fr;
@@ -848,72 +875,35 @@ a { color: inherit; text-decoration: none; }
 .bn-card {
   border: 1px solid var(--border);
   border-radius: 12px;
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   overflow: hidden;
   cursor: pointer;
   transition: all 0.25s;
 }
 .bn-card:hover {
   border-color: var(--text);
-<<<<<<< HEAD
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-.bn-card-img {
-  width: 100%;
-  aspect-ratio: 4/3;
-=======
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 .bn-card-img {
   width: 100%;
   aspect-ratio: 16/10;
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   object-fit: cover;
   display: block;
   background: #f0f0f0;
 }
 .bn-card-body {
-<<<<<<< HEAD
-  padding: 12px 14px;
-}
-.bn-card-title {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.4;
-=======
   padding: 16px 18px;
 }
 .bn-card-title {
   font-size: 15px;
   font-weight: 700;
   line-height: 1.45;
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   word-break: keep-all;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-<<<<<<< HEAD
-.bn-no-img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #bbb;
-  font-size: 13px;
-}
-#bn-modal { display: none; }
-@media (max-width: 1100px) {
-  .bn-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 700px) {
-  .bn-grid { grid-template-columns: repeat(2, 1fr); }
-=======
 .bn-card-date {
   font-size: 12px;
   color: var(--text-muted);
@@ -943,7 +933,6 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 900px) {
   .bn-featured { grid-template-columns: 1fr; }
   .bn-grid { grid-template-columns: 1fr; }
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 }
 </style>
 </head>
@@ -2451,6 +2440,31 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- ============================================ -->
+<!-- MEMBER PROFILE: 이경재 (Alumni) -->
+<!-- ============================================ -->
+<div id="page-member-kyungjae" class="page-view">
+  <div class="profile-page fade-in">
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
+    <div class="profile-top">
+      <img class="profile-avatar" src="Photos/이경재.png" alt=""/>
+      <div class="profile-info"><h1>이경재</h1><div class="role-line">Alumni · Kyungjae Lee</div>
+      <div class="bio" style="margin-top:16px;">
+        <div style="font-weight:600;margin-bottom:8px;">Academic degrees :</div>
+        <ul style="margin:0 0 16px 20px;line-height:1.8;color:var(--text-mid);">
+          <li>M.S. in Architectural Engineering (2025)</li>
+          <li>B.E. in Architecture Engineering (2023) with a Minor in Real Estate</li>
+        </ul>
+        <ul style="margin:0 0 0 20px;line-height:1.8;color:var(--text-mid);">
+          <li>전) 건국대학교 건축환경 및 에너지 연구실 석사연구생</li>
+          <li>한국친환경설비학회 2022 Building Technology 공모전 특별상 수상</li>
+          <li>한국태양에너지학회 2023 추계학술발표대회 우수논문상 수상</li>
+        </ul>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
 <!-- PROJECT DETAIL: Green Remodeling -->
 <!-- ============================================ -->
 <div id="page-project-green-remodeling" class="page-view">
@@ -2805,17 +2819,11 @@ a { color: inherit; text-decoration: none; }
   <!-- Alumni -->
   <div id="mem-alumni" class="rp-panel">
     <div class="members-grid">
-      <div class="member-card">
-        <div style="width:88px;height:88px;border-radius:50%;background:#F0F0F0;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#999;">Alumni</div>
-        <div class="name">졸업생 A</div><div class="role">2024 졸업 · 삼성물산</div>
-      </div>
-      <div class="member-card">
-        <div style="width:88px;height:88px;border-radius:50%;background:#F0F0F0;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#999;">Alumni</div>
-        <div class="name">졸업생 B</div><div class="role">2023 졸업 · 한국에너지기술연구원</div>
-      </div>
-      <div class="member-card">
-        <div style="width:88px;height:88px;border-radius:50%;background:#F0F0F0;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#999;">Alumni</div>
-        <div class="name">졸업생 C</div><div class="role">2023 졸업 · 현대건설</div>
+      <div class="member-card" onclick="showPage('member-kyungjae')">
+        <img class="member-avatar" src="Photos/이경재.png" alt="이경재"/>
+        <div class="name">이경재</div>
+        <div class="role">M.S. in Architectural Engineering (2025)</div>
+        <div class="arrow-hint">View Profile →</div>
       </div>
     </div>
   </div>
@@ -3238,13 +3246,9 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:13px;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">BEE Lab Blog</div>
     <h1 style="font-size:56px;font-weight:900;letter-spacing:-0.05em;">BLOG</h1>
   </div>
-<<<<<<< HEAD
-  <div id="blog-grid" class="bn-grid" style="min-height:200px;"></div>
-=======
   <div id="blog-featured" class="bn-featured"></div>
   <div class="bn-section-label">All Posts</div>
   <div id="blog-grid" class="bn-grid" style="margin-bottom:80px;"></div>
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 </div>
 </div>
 <!-- ============================================ -->
@@ -3256,13 +3260,9 @@ a { color: inherit; text-decoration: none; }
     <div style="font-size:13px;letter-spacing:0.15em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;">BEE Lab News</div>
     <h1 style="font-size:56px;font-weight:900;letter-spacing:-0.05em;">NEWS</h1>
   </div>
-<<<<<<< HEAD
-  <div id="news-grid" class="bn-grid" style="min-height:200px;"></div>
-=======
   <div id="news-featured" class="bn-featured"></div>
   <div class="bn-section-label">All News</div>
   <div id="news-grid" class="bn-grid" style="margin-bottom:80px;"></div>
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 </div>
 </div>
 <!-- ============================================ -->
@@ -3308,8 +3308,36 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <footer class="page-footer">
-  <p>&copy; 2026 BEE Lab — School of Architecture, Konkuk University</p>
-  <p>Advisor: Prof. Hyunwoo Lim</p>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="Photos/BEE로고_2024_투명배경.png" alt="BEE Lab Logo"/>
+    </div>
+    <div class="footer-info">
+      <div>
+        <div class="footer-label">Laboratory</div>
+        <div>건국대학교 건축환경 및 에너지 연구실</div>
+        <div style="font-size:12px;">(Building Energy and Environment Laboratory, BEE Lab.)</div>
+      </div>
+      <div>
+        <div class="footer-label">E-mail</div>
+        <div>beelab.ku@gmail.com <span style="font-size:11px;opacity:0.7;">(BEE Lab.'s official mail)</span></div>
+        <div>hyunwoolim@konkuk.ac.kr <span style="font-size:11px;opacity:0.7;">(Professor's official mail)</span></div>
+      </div>
+      <div>
+        <div class="footer-label">Location</div>
+        <div>서울 광진구 능동로 120 건축관 509호</div>
+        <div style="font-size:12px;">120 Neungdong-ro, Gwangin-gu, Konkuk University, Architecture building #509, Seoul, South Korea</div>
+      </div>
+      <div>
+        <div class="footer-label">TEL</div>
+        <div>+82-2-450-3457</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 BEE Lab — School of Architecture, Konkuk University</p>
+    <p>Advisor: Prof. Hyunwoo Lim</p>
+  </div>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -3373,36 +3401,6 @@ var bnData = { Blog: [], News: [] };
 function loadBlogNews() {
   fetch('News_Blog_JPG/beelab_content/blog.json')
     .then(function(r) { return r.json(); })
-<<<<<<< HEAD
-    .then(function(data) { bnData.Blog = data; renderBNGrid('blog-grid', data, 'Blog'); })
-    .catch(function(e) { console.error('Blog load error:', e); });
-  fetch('News_Blog_JPG/beelab_content/news.json')
-    .then(function(r) { return r.json(); })
-    .then(function(data) { bnData.News = data; renderBNGrid('news-grid', data, 'News'); })
-    .catch(function(e) { console.error('News load error:', e); });
-}
-
-function renderBNGrid(id, items, type) {
-  var c = document.getElementById(id);
-  if (!c) return;
-  var html = '';
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    var hasImg = item.image_count > 0;
-    var imgSrc = hasImg
-      ? 'News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/001.jpg'
-      : '';
-    html += '<div class="bn-card" data-type="' + type + '" data-idx="' + i + '">';
-    if (hasImg) {
-      html += '<img class="bn-card-img" src="' + imgSrc + '" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling&&(this.nextElementSibling.style.display=\'flex\')">';
-      html += '<div class="bn-no-img" style="display:none;">No Image</div>';
-    } else {
-      html += '<div class="bn-no-img">No Image</div>';
-    }
-    html += '<div class="bn-card-body"><div class="bn-card-title">' + escapeHtml(item.title) + '</div></div></div>';
-  }
-  c.innerHTML = html;
-=======
     .then(function(data) { bnData.Blog = data; renderBNPage('blog', data, 'Blog'); })
     .catch(function(e) { console.error('Blog load error:', e); });
   fetch('News_Blog_JPG/beelab_content/news.json')
@@ -3458,7 +3456,6 @@ function buildCard(item, idx, type) {
   if (dateStr) html += '<div class="bn-card-date">' + escapeHtml(dateStr) + '</div>';
   html += '</div></div>';
   return html;
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 }
 
 function escapeHtml(t) {
@@ -3467,8 +3464,6 @@ function escapeHtml(t) {
   return d.innerHTML;
 }
 
-<<<<<<< HEAD
-=======
 function cleanBody(item) {
   var body = item.body || '';
   if (!body) return '';
@@ -3492,7 +3487,6 @@ function cleanBody(item) {
   return body;
 }
 
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
 document.addEventListener('click', function(e) {
   var card = e.target.closest('.bn-card');
   if (!card) return;
@@ -3504,17 +3498,6 @@ document.addEventListener('click', function(e) {
 function openBNDetail(type, item) {
   var m = document.getElementById('bn-modal');
   if (!m) { m = document.createElement('div'); m.id = 'bn-modal'; document.body.appendChild(m); }
-<<<<<<< HEAD
-
-  var imgs = '';
-  for (var i = 1; i <= item.image_count; i++) {
-    var num = String(i).padStart(3, '0');
-    imgs += '<img src="News_Blog_JPG/beelab_images/' + type + '/' + encodeURIComponent(item.folder) + '/' + num + '.jpg" style="width:100%;border-radius:8px;margin-bottom:12px;" loading="lazy" onerror="this.style.display=\'none\'">';
-  }
-
-  var body = (item.body || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-
-=======
   var imgs = '';
   for (var i = 1; i <= item.image_count; i++) {
     var num = String(i).padStart(3, '0');
@@ -3523,24 +3506,15 @@ function openBNDetail(type, item) {
   }
   var body = cleanBody(item);
   body = body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
   m.style.display = 'block';
   document.body.style.overflow = 'hidden';
   m.innerHTML = '<div style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;overflow-y:auto;padding:40px 20px;-webkit-overflow-scrolling:touch;" onclick="if(event.target===this){closeBNModal();}">' +
     '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:14px;padding:36px;position:relative;">' +
-<<<<<<< HEAD
-    '<div onclick="closeBNModal()" style="position:sticky;top:0;float:right;font-size:22px;cursor:pointer;color:#999;z-index:1;background:#fff;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50;">✕</div>' +
-    '<h2 style="font-size:22px;font-weight:800;margin-bottom:8px;letter-spacing:-0.02em;line-height:1.3;padding-right:40px;">' + escapeHtml(item.title) + '</h2>' +
-    (item.date ? '<div style="font-size:12px;color:#999;margin-bottom:4px;">' + escapeHtml(item.date) + '</div>' : '') +
-    (item.location ? '<div style="font-size:12px;color:#999;margin-bottom:16px;">' + escapeHtml(item.location) + '</div>' : '<div style="margin-bottom:16px;"></div>') +
-    (body ? '<div style="font-size:13px;color:#555;line-height:1.8;margin-bottom:20px;white-space:pre-line;border-top:1px solid #eee;padding-top:16px;">' + body + '</div>' : '') +
-=======
     '<div onclick="closeBNModal()" style="position:absolute;top:16px;right:20px;font-size:20px;cursor:pointer;color:#999;z-index:1;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#f5f5f5;">✕</div>' +
     '<h2 style="font-size:22px;font-weight:800;margin-bottom:10px;letter-spacing:-0.02em;line-height:1.35;padding-right:40px;">' + escapeHtml(item.title) + '</h2>' +
     (item.date ? '<div style="font-size:13px;color:#999;margin-bottom:4px;">📅 ' + escapeHtml(item.date) + '</div>' : '') +
     (item.location ? '<div style="font-size:13px;color:#999;margin-bottom:20px;">📍 ' + escapeHtml(item.location) + '</div>' : '<div style="margin-bottom:20px;"></div>') +
     (body ? '<div style="font-size:14px;color:#444;line-height:1.85;margin-bottom:24px;white-space:pre-line;border-top:1px solid #eee;padding-top:20px;">' + body + '</div>' : '') +
->>>>>>> 23d4ae39e3fbc700e5487df252979f416baf118a
     imgs + '</div></div>';
 }
 
