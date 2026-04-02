@@ -447,6 +447,128 @@ a { color: inherit; text-decoration: none; }
 .sidebar-tag { font-size: 13px; color: var(--text-muted); }
 .sidebar-tag::before { content: '#'; }
 
+/* PROJECT DETAIL - MIT Media Lab Inspired */
+.project-hero {
+  width: 100%;
+  padding: 100px 40px 60px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.project-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.project-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.project-hero .back-link {
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
+}
+.project-hero .back-link:hover { color: rgba(255,255,255,0.9); }
+.project-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.project-hero-badge .status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #4ade80;
+  display: inline-block;
+}
+.project-hero h1 {
+  font-size: 44px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  max-width: 800px;
+}
+.project-hero-desc {
+  font-size: 18px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+.project-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.project-hero-tags span {
+  padding: 5px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.project-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+}
+.project-body-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 72px;
+}
+.project-body-grid h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 40px 0 14px;
+  letter-spacing: -0.02em;
+}
+.project-body-grid h3:first-child { margin-top: 0; }
+.project-body-grid p {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.9;
+}
+.project-team-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.project-team-card:hover { background: var(--bg-subtle); }
+.project-team-card img {
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+}
+.project-team-card .name { font-weight: 600; font-size: 15px; }
+.project-team-card .role { font-size: 13px; color: var(--text-muted); }
+@media (max-width: 768px) {
+  .project-hero { padding: 80px 20px 40px; }
+  .project-hero h1 { font-size: 28px; }
+  .project-body { padding: 40px 20px 60px; }
+  .project-body-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
 /* MEMBER PROFILE */
 .profile-page {
   max-width: 1200px;
@@ -787,8 +909,8 @@ a { color: inherit; text-decoration: none; }
       <a href="#" onclick="showPage('members-all');return false;">Members</a>
       <a href="#" onclick="showPage('research-topics');return false;">Research</a>
       <a href="#" onclick="showPage('publications');return false;">Publications</a>
-      <a href="#" onclick="showPage('blog');return false;">Blog</a>
       <a href="#" onclick="showPage('news');return false;">News</a>
+      <a href="#" onclick="showPage('blog');return false;">Blog</a>
       <a href="#" onclick="showPage('contact');return false;">Contact</a>
     </div>
   </div>
@@ -949,7 +1071,7 @@ a { color: inherit; text-decoration: none; }
 
   <div id="rp-project" class="rp-panel">
     <div class="project-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" onclick="showPage('project-green-remodeling')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 사업</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
           <h4>Green Remodeling 사업</h4>
@@ -965,7 +1087,7 @@ a { color: inherit; text-decoration: none; }
         </div>
         <div class="featured-vis"></div>
       </div>
-      <div class="project-card">
+      <div class="project-card" onclick="showPage('project-lh-geothermal')" style="cursor:pointer;">
         <div class="project-meta"><span class="badge sub">Sub Project</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
         <h4>LH 지열 히트펌프 과제</h4>
         <p>LH 공동주택 대상 지열 히트펌프 시스템의 성능 분석 및 최적 설계 연구</p>
@@ -1256,7 +1378,7 @@ a { color: inherit; text-decoration: none; }
 <!-- MEMBER PROFILES -->
 <div id="page-member-sangmin" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/이상민.png" alt=""/>
       <div class="profile-info"><h1>이상민</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1272,7 +1394,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-junghyun" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/조정현.png" alt=""/>
       <div class="profile-info"><h1>조정현</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1286,7 +1408,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jaeuk" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/백재욱.png" alt=""/>
       <div class="profile-info"><h1>백재욱</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1300,7 +1422,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jiung" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/한지웅.png" alt=""/>
       <div class="profile-info"><h1>한지웅</h1><div class="role-line">Master's Student · Building Systems Group</div>
@@ -1690,7 +1812,7 @@ a { color: inherit; text-decoration: none; }
 <!-- DA MEMBER PROFILES -->
 <div id="page-member-doyeon" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/이도연.png" alt=""/>
       <div class="profile-info"><h1>이도연</h1><div class="role-line">Ph.D. Candidate · Data & Analysis Group</div>
@@ -1706,7 +1828,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-inseob" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/김인섭.png" alt=""/>
       <div class="profile-info"><h1>김인섭</h1><div class="role-line">Master's Student · Data & Analysis Group</div>
@@ -1722,7 +1844,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jiyoung" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/김지영.png" alt=""/>
       <div class="profile-info"><h1>김지영</h1><div class="role-line">Undergraduate Researcher · Data & Analysis Group</div>
@@ -1894,7 +2016,7 @@ a { color: inherit; text-decoration: none; }
 <!-- UM MEMBER PROFILES -->
 <div id="page-member-jungyun" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/황정윤.png" alt=""/>
       <div class="profile-info"><h1>황정윤</h1><div class="role-line">Ph.D. Candidate · Building & Urban Modeling Group</div>
@@ -1908,7 +2030,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-jisu" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/임지수.png" alt=""/>
       <div class="profile-info"><h1>임지수</h1><div class="role-line">Master's Student · Building & Urban Modeling Group</div>
@@ -1922,7 +2044,7 @@ a { color: inherit; text-decoration: none; }
 
 <div id="page-member-hyunsu" class="page-view">
   <div class="profile-page fade-in">
-    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="back-link" onclick="goBack('members-all')">← Members</div>
     <div class="profile-top">
       <img class="profile-avatar" src="Photos/이현수.png" alt=""/>
       <div class="profile-info"><h1>이현수</h1><div class="role-line">Undergraduate Researcher · Building & Urban Modeling Group</div>
@@ -2068,7 +2190,7 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-da-project" class="rp-panel">
     <div class="project-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" onclick="showPage('project-ai-bems')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 과제</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
           <h4>AI 기반 건물 에너지 관리 시스템 개발</h4>
@@ -2180,7 +2302,7 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div id="rp-um-project" class="rp-panel">
     <div class="project-grid">
-      <div class="project-card featured">
+      <div class="project-card featured" onclick="showPage('project-carbon-neutral')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 과제</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
           <h4>탄소중립 도시 에너지 시뮬레이션 플랫폼</h4>
@@ -2281,12 +2403,199 @@ a { color: inherit; text-decoration: none; }
 </div>
 
 <!-- ============================================ -->
+<!-- PROJECT DETAIL: Green Remodeling -->
+<!-- ============================================ -->
+<div id="page-project-green-remodeling" class="page-view">
+<div class="project-hero">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> 정부 사업 · 진행 중</div>
+    <h1>Green Remodeling 사업</h1>
+    <p class="project-hero-desc">노후 건축물의 에너지 성능 개선을 위한 그린리모델링 설계 및 시공 — 단열, 설비, 신재생에너지 통합 적용을 통해 건물의 에너지 효율을 혁신적으로 개선합니다.</p>
+    <div class="project-hero-tags">
+      <span>Green Remodeling</span><span>Energy Retrofit</span><span>Building Envelope</span><span>Renewable Energy</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>Green Remodeling 사업은 노후화된 공공 및 민간 건축물의 에너지 성능을 체계적으로 개선하는 국가 정책 사업입니다. BEE Lab은 건물 에너지 진단, 리모델링 설계, 시공 관리 및 성능 검증 전 과정에 참여하여 실질적인 에너지 절감을 달성하고 있습니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>건물 외피(단열, 창호) 성능 개선과 고효율 설비(냉난방, 환기, 조명) 교체를 통합적으로 설계하며, 신재생에너지(태양광, 지열 등) 도입 방안을 검토합니다. Change Point Model을 활용한 리모델링 전후 에너지 사용량 비교 분석을 수행하여 실질적인 에너지 절감 효과를 정량화합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>노후 건축물의 에너지 소비량 30% 이상 절감, 온실가스 배출 저감, 재실자 쾌적성 향상을 목표로 합니다. 축적된 데이터와 분석 결과는 향후 그린리모델링 정책 수립의 근거 자료로 활용됩니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Team</div>
+        <div class="project-team-card" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-junghyun')"><img src="Photos/조정현.png" alt=""/><div><div class="name">조정현</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-jaeuk')"><img src="Photos/백재욱.png" alt=""/><div><div class="name">백재욱</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-jiung')"><img src="Photos/한지웅.png" alt=""/><div><div class="name">한지웅</div><div class="role">Master's Student</div></div></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">Green Remodeling</span><span class="sidebar-tag">Energy Retrofit</span><span class="sidebar-tag">Change Point Model</span><span class="sidebar-tag">Building Envelope</span></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Related Publication</div>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.6;">Lee, D., Lim, H. — Comparative analysis of energy usage before and after Green Remodeling through Change Point Model (ISAIA 2024)</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT DETAIL: LH 지열 히트펌프 -->
+<!-- ============================================ -->
+<div id="page-project-lh-geothermal" class="page-view">
+<div class="project-hero">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('main')">← Building Systems</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> Sub Project · 진행 중</div>
+    <h1>LH 지열 히트펌프 과제</h1>
+    <p class="project-hero-desc">LH 공동주택 대상 지열 히트펌프 시스템의 성능 분석 및 최적 설계 연구를 수행합니다.</p>
+    <div class="project-hero-tags">
+      <span>Geothermal</span><span>Heat Pump</span><span>LH</span><span>Residential</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>LH(한국토지주택공사) 공동주택 단지에 적용된 지열 히트펌프 시스템의 실측 운전 데이터를 기반으로 시스템 성능을 분석하고, 최적 설계 방안을 도출하는 연구입니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>지열 히트펌프 시스템의 냉난방 성능계수(COP) 분석, 지중열교환기 설계 최적화, 부하 패턴에 따른 운전 전략 수립을 수행합니다. 실측 데이터 기반의 시뮬레이션 모델을 구축하여 다양한 설계 대안의 에너지 성능을 비교 평가합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>공동주택 지열 히트펌프 시스템의 설계 및 운전 최적화를 통한 에너지 효율 향상과 탄소 배출 저감에 기여합니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Team</div>
+        <div class="project-team-card" onclick="showPage('member-sangmin')"><img src="Photos/이상민.png" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
+        <div class="project-team-card" onclick="showPage('member-jaeuk')"><img src="Photos/백재욱.png" alt=""/><div><div class="name">백재욱</div><div class="role">Master's Student</div></div></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">Geothermal Heat Pump</span><span class="sidebar-tag">Ground Heat Exchanger</span><span class="sidebar-tag">COP</span><span class="sidebar-tag">LH</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT DETAIL: AI BEMS -->
+<!-- ============================================ -->
+<div id="page-project-ai-bems" class="page-view">
+<div class="project-hero" style="background:linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #1e3a5f 100%);">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('data-analysis')">← Data & Analysis</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> 정부 과제 · 진행 중</div>
+    <h1>AI 기반 건물 에너지 관리 시스템 개발</h1>
+    <p class="project-hero-desc">건물 에너지 데이터의 실시간 수집·분석·예측을 통합하는 AI 플랫폼을 연구개발하여 스마트 빌딩 에너지 관리의 새로운 패러다임을 제시합니다.</p>
+    <div class="project-hero-tags">
+      <span>AI Platform</span><span>BEMS</span><span>Real-time</span><span>Machine Learning</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>AI 기반 건물 에너지 관리 시스템(BEMS) 개발 과제는 건물에서 발생하는 방대한 에너지 데이터를 인공지능 기술로 분석·예측하여 에너지 효율을 극대화하는 통합 플랫폼을 개발하는 정부 연구과제입니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>머신러닝 및 딥러닝 기반의 건물 에너지 소비 예측 모델 개발, 이상 탐지 알고리즘을 통한 에너지 낭비 요인 자동 진단, 실시간 최적 제어 전략 수립을 수행합니다. IoT 센서 네트워크와 연계하여 건물 에너지 데이터를 실시간으로 수집·처리하는 데이터 파이프라인을 구축합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>건물 에너지 소비의 실시간 모니터링 및 예측을 통해 운영 비용 절감과 탄소 배출 저감을 동시에 달성하며, 스마트 빌딩 산업의 기술 경쟁력을 강화합니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Group</div>
+        <p style="font-size:14px;color:var(--text-mid);">Data & Analysis</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">AI</span><span class="sidebar-tag">BEMS</span><span class="sidebar-tag">Machine Learning</span><span class="sidebar-tag">IoT</span><span class="sidebar-tag">Energy Prediction</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<!-- PROJECT DETAIL: 탄소중립 도시 시뮬레이션 -->
+<!-- ============================================ -->
+<div id="page-project-carbon-neutral" class="page-view">
+<div class="project-hero" style="background:linear-gradient(135deg, #0a0a0a 0%, #112222 40%, #0d3320 100%);">
+  <div class="project-hero-inner">
+    <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
+    <div class="project-hero-badge"><span class="status-dot"></span> 정부 과제 · 진행 중</div>
+    <h1>탄소중립 도시 에너지 시뮬레이션 플랫폼</h1>
+    <p class="project-hero-desc">도시 스케일 에너지 모델링과 탄소 배출량 분석을 위한 통합 시뮬레이션 플랫폼을 개발하여 탄소중립 도시 실현을 위한 과학적 근거를 제공합니다.</p>
+    <div class="project-hero-tags">
+      <span>Carbon Neutral</span><span>Urban Simulation</span><span>Platform</span><span>GIS</span>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="project-body-grid">
+    <div>
+      <h3>프로젝트 개요</h3>
+      <p>탄소중립 도시 에너지 시뮬레이션 플랫폼은 도시 단위의 건물 에너지 소비와 탄소 배출을 종합적으로 시뮬레이션하여, 정책 입안자와 도시 계획가에게 데이터 기반의 의사결정 도구를 제공하는 정부 연구과제입니다.</p>
+
+      <h3>연구 내용</h3>
+      <p>UBEM(Urban Building Energy Model)과 GIS 기반 공간 분석을 결합하여 도시 전체의 에너지 흐름을 모델링합니다. 건물군 에너지 데이터, 기상 데이터, 도시 형태 정보를 통합 분석하여 탄소 배출 시나리오를 구축하고, 다양한 정책 대안의 효과를 정량적으로 평가합니다.</p>
+
+      <h3>기대 효과</h3>
+      <p>도시 단위 탄소중립 로드맵 수립을 위한 과학적 근거를 제공하며, 에너지 정책의 실효성을 사전 검증할 수 있는 시뮬레이션 환경을 구축합니다.</p>
+    </div>
+    <div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Group</div>
+        <p style="font-size:14px;color:var(--text-mid);">Building & Urban Modeling</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Period</div>
+        <p style="font-size:14px;color:var(--text-mid);">2024 – 현재</p>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label">Keywords</div>
+        <div class="sidebar-tags"><span class="sidebar-tag">Carbon Neutral</span><span class="sidebar-tag">UBEM</span><span class="sidebar-tag">Urban Simulation</span><span class="sidebar-tag">GIS</span><span class="sidebar-tag">Policy Analysis</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============================================ -->
 <!-- MEMBERS (ALL) PAGE -->
 <!-- ============================================ -->
 <div id="page-members-all" class="page-view">
 <div style="max-width:1200px;margin:0 auto;padding:72px 40px 0;">
   <h1 style="font-size:48px;font-weight:900;letter-spacing:-0.04em;margin-bottom:8px;">Members</h1>
-  <div class="subtitle" style="margin-bottom:32px;">BEE Lab 구성원</div>
 
   <div class="pill-row" style="margin-bottom:40px;">
     <div class="pill active" onclick="switchRP(this,'mem-professor')">Professor</div>
