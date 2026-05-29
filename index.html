@@ -2452,20 +2452,375 @@ a { color: inherit; text-decoration: none; }
 <!-- INTRO / ABOUT PAGE -->
 <!-- ============================================ -->
 <!-- ============================================ -->
-<!-- MAIN LANDING PAGE (Hexagonal) -->
+<!-- MAIN LANDING PAGE (Scroll-based)            -->
 <!-- ============================================ -->
 <div id="page-intro" class="page-view active">
-<div style="position:relative;width:100%;height:100vh;overflow:hidden;background:#1a1a1a;">
-  <!-- Spline 3D Scene -->
-  <iframe src="https://my.spline.design/cloneronhoverlightning-cqNZAoGwFUNplEsJmiQsRuEV/" 
-    style="position:absolute;inset:0;width:100%;height:100%;border:none;" 
-    loading="lazy" allowfullscreen></iframe>
 
-  <!-- Overlay UI (optional nav hints) -->
-  <div style="position:absolute;bottom:32px;left:0;right:0;text-align:center;z-index:10;pointer-events:none;">
-    <div style="color:rgba(255,255,255,0.35);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;">Building Energy & Environment Laboratory · Konkuk University</div>
+<style>
+  /* ===== Home(메인) 전용 스타일 ===== */
+  .home-hero {
+    position: relative;
+    width: 100%;
+    height: 88vh;
+    min-height: 560px;
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .home-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.25) 100%);
+  }
+  .home-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+  }
+  .home-hero-tag {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 22px;
+  }
+  .home-hero h1 {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+    color: #fff;
+    margin-bottom: 22px;
+    max-width: 860px;
+  }
+  .home-hero p {
+    font-size: 19px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    letter-spacing: -0.01em;
+    max-width: 600px;
+    margin-bottom: 36px;
+  }
+  .home-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .home-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1.5px solid transparent;
+  }
+  .home-cta.primary { background: #fff; color: #000; }
+  .home-cta.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,255,255,0.18); }
+  .home-cta.ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.35); }
+  .home-cta.ghost:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+  .home-scroll-cue {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: homeBob 2s ease-in-out infinite;
+  }
+  @keyframes homeBob { 0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,8px);} }
+
+  /* 섹션 헤더 (eyebrow + 제목 + more 버튼) */
+  .home-sec { max-width: 1200px; margin: 0 auto; padding: 96px 40px 0; }
+  .home-sec-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .home-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .home-sec-head h2 {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
+  .home-more {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-mid);
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.18s;
+    white-space: nowrap;
+  }
+  .home-more:hover { border-color: #000; color: #000; transform: translateX(3px); }
+
+  /* About */
+  .home-about-text { font-size: 18px; color: var(--text-mid); line-height: 1.95; word-break: keep-all; max-width: 920px; }
+  .home-about-text strong { color: var(--text); font-weight: 600; }
+
+  /* Research 3-그룹 카드 */
+  .home-research-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .home-rcard {
+    position: relative; height: 420px; border-radius: 14px; overflow: hidden; cursor: pointer;
+  }
+  .home-rcard img { width:100%; height:100%; object-fit:cover; transition: transform 0.6s; }
+  .home-rcard:hover img { transform: scale(1.06); }
+  .home-rcard .ov {
+    position:absolute; inset:0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 70%);
+    padding: 32px; display:flex; flex-direction:column; justify-content:flex-end;
+  }
+  .home-rcard .ov .num { font-size:13px; font-weight:700; color:rgba(255,255,255,0.5); margin-bottom:10px; }
+  .home-rcard .ov h3 { font-size:23px; font-weight:800; color:#fff; letter-spacing:-0.02em; line-height:1.2; margin-bottom:12px; }
+  .home-rcard .ov p { font-size:13px; color:rgba(255,255,255,0.7); line-height:1.65; }
+  .home-rcard .ov .go { margin-top:16px; font-size:13px; font-weight:600; color:#fff; opacity:0; transform:translateY(6px); transition:all 0.25s; }
+  .home-rcard:hover .ov .go { opacity:1; transform:translateY(0); }
+
+  /* News & Blog 2단 */
+  .home-nb { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .home-nb-col h3 { font-size: 22px; font-weight: 800; letter-spacing:-0.02em; }
+  .home-nb-head { display:flex; align-items:center; justify-content:space-between; margin-bottom: 22px; }
+  .home-nb-link { font-size:13px; font-weight:600; color:var(--text-muted); cursor:pointer; transition:color 0.15s; }
+  .home-nb-link:hover { color:#000; }
+  .home-nb-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+  /* Publications 미리보기 */
+  .home-pub { max-width: 1200px; margin:0 auto; }
+  .home-pub-row {
+    display:grid; grid-template-columns:56px 1fr auto; gap:16px; align-items:center;
+    padding:18px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:background 0.15s;
+  }
+  .home-pub-row:hover { background:var(--bg-hover); margin:0 -12px; padding:18px 12px; border-radius:4px; }
+
+  /* Contact */
+  .home-contact {
+    max-width:1200px; margin:96px auto 0; padding:0 40px;
+  }
+  .home-contact-inner {
+    background:#000; color:#fff; border-radius:18px; padding:56px 48px;
+    display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
+  }
+  .home-contact-inner h2 { font-size:34px; font-weight:900; letter-spacing:-0.035em; margin-bottom:14px; color:#fff; }
+  .home-contact-inner p { font-size:15px; color:rgba(255,255,255,0.6); line-height:1.9; }
+  .home-contact-inner a { color:rgba(255,255,255,0.9); text-decoration:underline; text-underline-offset:2px; }
+  .home-contact-cta {
+    justify-self:end; display:inline-flex; align-items:center; gap:8px;
+    background:#fff; color:#000; padding:16px 32px; border-radius:100px;
+    font-size:15px; font-weight:700; cursor:pointer; transition:transform 0.2s;
+  }
+  .home-contact-cta:hover { transform:translateY(-2px); }
+
+  /* 스크롤 등장 효과 */
+  .home-reveal { opacity:0; transform:translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .home-reveal.in { opacity:1; transform:translateY(0); }
+
+  @media (max-width: 900px) {
+    .home-hero h1 { font-size: 38px; }
+    .home-hero p { font-size: 16px; }
+    .home-sec-head h2 { font-size: 28px; }
+    .home-research-grid { grid-template-columns: 1fr; }
+    .home-nb { grid-template-columns: 1fr; gap: 48px; }
+    .home-nb-grid { grid-template-columns: 1fr; }
+    .home-contact-inner { grid-template-columns: 1fr; text-align:center; }
+    .home-contact-cta { justify-self:center; }
+  }
+</style>
+
+<!-- HERO -->
+<div class="home-hero">
+  <div class="home-hero-inner">
+    <div class="home-hero-tag">Building Energy &amp; Environment Laboratory · Konkuk University</div>
+    <h1>Designing a sustainable future through building energy research</h1>
+    <p>지속가능하고 탄력적인 건물과 도시를 위한 친환경 설계 및 설비시스템 연구</p>
+    <div class="home-cta-row">
+      <div class="home-cta primary" onclick="showPage('research-topics')">Research →</div>
+      <div class="home-cta ghost" onclick="showPage('introduce')">About BEE Lab</div>
+    </div>
+  </div>
+  <div class="home-scroll-cue">Scroll ↓</div>
+</div>
+
+<!-- ABOUT -->
+<div class="home-sec home-reveal">
+  <div class="home-sec-head">
+    <div>
+      <div class="home-eyebrow">About</div>
+      <h2>BEE Lab.</h2>
+    </div>
+    <div class="home-more" onclick="showPage('introduce')">More about us →</div>
+  </div>
+  <p class="home-about-text">
+    건축환경 및 에너지 연구실(<strong>Building Energy and Environment Laboratory, BEE Lab.</strong>)은
+    쾌적하고 건강한 실내 환경을 위해 요구되는 친환경 설계 및 설비시스템 분야를 연구합니다.
+    연구에 기반한 기술과 친환경적인 설계를 바탕으로 건물분야에서 발생하는 에너지와 탄소배출을 줄여,
+    지속 가능하며 탄력적인 건물과 도시를 만들기 위한 교육과 연구를 목표로 합니다.
+  </p>
+</div>
+
+<!-- RESEARCH -->
+<div class="home-sec home-reveal">
+  <div class="home-sec-head">
+    <div>
+      <div class="home-eyebrow">Research</div>
+      <h2>Research Topics</h2>
+    </div>
+    <div class="home-more" onclick="showPage('research-topics')">All topics →</div>
+  </div>
+  <div class="home-research-grid">
+    <div class="home-rcard" onclick="showPage('data-analysis')">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Data & Analysis"/>
+      <div class="ov">
+        <div class="num">01</div>
+        <h3>Data &amp; Analysis</h3>
+        <p>건물 에너지 데이터 분석 · AI 기반 수요 예측 · 빅데이터 패턴 분류</p>
+        <div class="go">바로가기 →</div>
+      </div>
+    </div>
+    <div class="home-rcard" onclick="showPage('main')">
+      <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80" alt="Building Systems"/>
+      <div class="ov">
+        <div class="num">02</div>
+        <h3>Building Systems</h3>
+        <p>열원 시스템 동적 시뮬레이션 · 냉난방 설비 최적 제어 · 데이터센터 폐열 회수</p>
+        <div class="go">바로가기 →</div>
+      </div>
+    </div>
+    <div class="home-rcard" onclick="showPage('urban-modeling')">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Building & Urban Modeling"/>
+      <div class="ov">
+        <div class="num">03</div>
+        <h3>Building &amp; Urban Modeling</h3>
+        <p>도시 에너지 모델링 · 디지털 트윈 시뮬레이션 · GIS 연계 건물군 분석</p>
+        <div class="go">바로가기 →</div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- NEWS & BLOG (최신글 자동 로드) -->
+<div class="home-sec home-reveal">
+  <div class="home-eyebrow" style="margin-bottom:36px;">Latest</div>
+  <div class="home-nb">
+    <div class="home-nb-col">
+      <div class="home-nb-head">
+        <h3>News</h3>
+        <div class="home-nb-link" onclick="showPage('news')">View all →</div>
+      </div>
+      <div id="main-news-grid" class="home-nb-grid"></div>
+    </div>
+    <div class="home-nb-col">
+      <div class="home-nb-head">
+        <h3>Blog</h3>
+        <div class="home-nb-link" onclick="showPage('blog')">View all →</div>
+      </div>
+      <div id="main-blog-grid" class="home-nb-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="home-sec home-reveal">
+  <div class="home-sec-head">
+    <div>
+      <div class="home-eyebrow">Publications</div>
+      <h2>Recent Publications</h2>
+    </div>
+    <div class="home-more" onclick="showPage('publications')">All publications →</div>
+  </div>
+  <div class="home-pub">
+    <div class="home-pub-row" onclick="showPage('publications')">
+      <div class="pub-year">2026</div>
+      <div><div class="pub-title">Load separation method for enhancing performance of central heat pump water heater system with hot water recirculation</div><div class="pub-journal">Energy and Buildings · Lee, S., Lim, H. et al.</div></div>
+      <span class="pub-badge sci">SCI</span>
+    </div>
+    <div class="home-pub-row" onclick="showPage('publications')">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">Analysis of energy consumption impacts using public data-based building shape index: a case study of office buildings in Seoul</div><div class="pub-journal">Journal of Building Engineering · Hwang, J. et al.</div></div>
+      <span class="pub-badge sci">SCI</span>
+    </div>
+    <div class="home-pub-row" onclick="showPage('publications')">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">Analyzing energy signature of building retrofits using public data</div><div class="pub-journal">Building and Environment · Lee, D. et al.</div></div>
+      <span class="pub-badge sci">SCI</span>
+    </div>
+    <div class="home-pub-row" onclick="showPage('publications')">
+      <div class="pub-year">2025</div>
+      <div><div class="pub-title">Data-driven methodology for identifying gross floor area thresholds in building energy benchmarking</div><div class="pub-journal">Journal of Building Engineering · Lee, K. et al.</div></div>
+      <span class="pub-badge sci">SCI</span>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="home-contact home-reveal">
+  <div class="home-contact-inner">
+    <div>
+      <div class="home-eyebrow" style="color:rgba(255,255,255,0.5);">Get in touch</div>
+      <h2>함께 연구할 분을 찾습니다</h2>
+      <p>
+        서울 광진구 능동로 120 건국대학교 건축관 A동 509호<br>
+        <a href="mailto:beelab.ku@gmail.com">beelab.ku@gmail.com</a> · +82-2-450-3457
+      </p>
+    </div>
+    <div class="home-contact-cta" onclick="showPage('contact')">Contact us →</div>
+  </div>
+</div>
+
+<div style="height:96px;"></div>
+
+<script>
+  // ===== 메인 페이지 전용 동작: 최신 News/Blog 로드 + 스크롤 등장 =====
+  window.addEventListener('load', function () {
+    // 1) 최신 News/Blog 3개씩 렌더 (기존 buildCard / bnData / 클릭 핸들러 재사용)
+    function renderHomeLatest(jsonPath, type, targetId) {
+      fetch(jsonPath)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          var box = document.getElementById(targetId);
+          if (!box) return;
+          if (typeof bnData !== 'undefined') { bnData[type] = data; }
+          box.innerHTML = data.slice(0, 4).map(function (item, i) {
+            return buildCard(item, i, type);
+          }).join('');
+        })
+        .catch(function (e) { console.error('home ' + type + ' load error:', e); });
+    }
+    renderHomeLatest('News_Blog_JPG/beelab_content/news.json', 'News', 'main-news-grid');
+    renderHomeLatest('News_Blog_JPG/beelab_content/blog.json', 'Blog', 'main-blog-grid');
+
+    // 2) 스크롤 시 섹션 페이드인
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('#page-intro .home-reveal').forEach(function (el) { io.observe(el); });
+  });
+</script>
+
 </div>
 
 <!-- ============================================ -->
