@@ -1138,17 +1138,24 @@ html { scroll-behavior: smooth; }
   #page-intro .home-hero-inner > * { animation:none !important; opacity:1 !important; transform:none !important; }
 }
 
-/* === 프로젝트 상세 갤러리 === */
-.proj-gallery { margin-top:56px; }
-.proj-gallery h3 { font-size:20px; font-weight:800; color:var(--text); margin-bottom:18px; letter-spacing:-0.02em; }
-.proj-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-.proj-item { position:relative; aspect-ratio:4/3; border-radius:12px; overflow:hidden; cursor:zoom-in; background:#f0f0f0; }
-.proj-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
-.proj-item:hover img { transform:scale(1.05); }
+/* === 프로젝트 상단 이미지 캐러셀 === */
+.proj-carousel { position:relative; width:100%; background:#0d0d0d; overflow:hidden; }
+.proj-carousel.empty { display:none; }
+.pc-track { display:flex; height:64vh; min-height:380px; transition:transform 0.55s cubic-bezier(0.4,0,0.2,1); }
+.pc-slide { flex:0 0 100%; display:flex; align-items:center; justify-content:center; cursor:zoom-in; }
+.pc-slide img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+.pc-arrow { position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:none; background:rgba(255,255,255,0.14); color:#fff; font-size:24px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; z-index:2; }
+.pc-arrow:hover { background:rgba(255,255,255,0.30); }
+.pc-prev { left:20px; }
+.pc-next { right:20px; }
+.pc-arrow.hidden { display:none; }
+.pc-dots { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:2; }
+.pc-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:all 0.25s; }
+.pc-dot.active { background:#fff; width:24px; border-radius:4px; }
 .proj-lightbox { display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
 .proj-lightbox.open { display:flex; }
 .proj-lightbox img { max-width:92vw; max-height:90vh; border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
-@media (max-width:768px){ .proj-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:768px){ .pc-track { height:44vh; min-height:240px; } .pc-arrow { width:40px; height:40px; font-size:20px; } .pc-prev{ left:12px; } .pc-next{ right:12px; } }
 
 </style>
 </head>
@@ -3252,6 +3259,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
+<div class="proj-carousel empty" id="proj-gallery-green"></div>
 <div class="project-body">
   <div class="project-body-grid">
     <div>
@@ -3283,10 +3291,6 @@ html { scroll-behavior: smooth; }
       </div>
     </div>
   </div>
-  <div class="proj-gallery">
-    <h3>프로젝트 갤러리</h3>
-    <div class="proj-grid" id="proj-gallery-green"></div>
-  </div>
 </div>
 </div>
 
@@ -3305,6 +3309,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
+<div class="proj-carousel empty" id="proj-gallery-lh"></div>
 <div class="project-body">
   <div class="project-body-grid">
     <div>
@@ -3331,10 +3336,6 @@ html { scroll-behavior: smooth; }
       </div>
     </div>
   </div>
-  <div class="proj-gallery">
-    <h3>프로젝트 갤러리</h3>
-    <div class="proj-grid" id="proj-gallery-lh"></div>
-  </div>
 </div>
 </div>
 
@@ -3353,6 +3354,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
+<div class="proj-carousel empty" id="proj-gallery-datanet"></div>
 <div class="project-body">
   <div class="project-body-grid">
     <div>
@@ -3386,10 +3388,6 @@ html { scroll-behavior: smooth; }
       </div>
     </div>
   </div>
-  <div class="proj-gallery">
-    <h3>프로젝트 갤러리</h3>
-    <div class="proj-grid" id="proj-gallery-datanet"></div>
-  </div>
 </div>
 </div>
 
@@ -3408,6 +3406,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
+<div class="proj-carousel empty" id="proj-gallery-carbon"></div>
 <div class="project-body">
   <div class="project-body-grid">
     <div>
@@ -3438,10 +3437,6 @@ html { scroll-behavior: smooth; }
         <div class="sidebar-tags"><span class="sidebar-tag">Carbon Neutral</span><span class="sidebar-tag">UBEM</span><span class="sidebar-tag">Urban Simulation</span><span class="sidebar-tag">GIS</span><span class="sidebar-tag">Policy Analysis</span></div>
       </div>
     </div>
-  </div>
-  <div class="proj-gallery">
-    <h3>프로젝트 갤러리</h3>
-    <div class="proj-grid" id="proj-gallery-carbon"></div>
   </div>
 </div>
 </div>
@@ -4452,6 +4447,22 @@ function openProjImg(src) {
 function loadProjGallery(key, containerId) {
   var box = document.getElementById(containerId);
   if (!box) return;
+  // 캐러셀 구조 생성
+  var track = document.createElement('div'); track.className = 'pc-track';
+  var prev = document.createElement('button'); prev.className = 'pc-arrow pc-prev hidden'; prev.setAttribute('aria-label', '이전'); prev.innerHTML = '‹';
+  var next = document.createElement('button'); next.className = 'pc-arrow pc-next hidden'; next.setAttribute('aria-label', '다음'); next.innerHTML = '›';
+  var dots = document.createElement('div'); dots.className = 'pc-dots';
+  box.appendChild(track); box.appendChild(prev); box.appendChild(next); box.appendChild(dots);
+
+  var srcs = [], cur = 0;
+  function go(i) {
+    cur = (i + srcs.length) % srcs.length;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('active', k === cur); });
+  }
+  prev.onclick = function () { go(cur - 1); };
+  next.onclick = function () { go(cur + 1); };
+
   var exts = ['.jpg', '.png', '.jpeg', '.webp'];
   (function tryIndex(i) {
     var ei = 0;
@@ -4459,18 +4470,21 @@ function loadProjGallery(key, containerId) {
       var src = 'Photos/projects/' + key + '-' + i + exts[ei];
       var img = new Image();
       img.onload = function () {
-        var item = document.createElement('div');
-        item.className = 'proj-item';
-        item.onclick = function () { openProjImg(src); };
-        var im = document.createElement('img');
-        im.src = src; im.alt = key + ' ' + i; im.loading = 'lazy';
-        item.appendChild(im);
-        box.appendChild(item);
+        srcs.push(src);
+        box.classList.remove('empty');
+        var slide = document.createElement('div'); slide.className = 'pc-slide';
+        slide.onclick = function () { openProjImg(src); };
+        var im = document.createElement('img'); im.src = src; im.alt = key + ' ' + i; im.loading = 'lazy';
+        slide.appendChild(im); track.appendChild(slide);
+        var dot = document.createElement('div'); dot.className = 'pc-dot' + (srcs.length === 1 ? ' active' : '');
+        (function (idx) { dot.onclick = function () { go(idx); }; })(srcs.length - 1);
+        dots.appendChild(dot);
+        if (srcs.length > 1) { prev.classList.remove('hidden'); next.classList.remove('hidden'); }
         tryIndex(i + 1);
       };
       img.onerror = function () {
         if (++ei < exts.length) { attempt(); }
-        else if (i === 1) { var g = box.closest('.proj-gallery'); if (g) g.style.display = 'none'; }
+        // i===1 실패 → 이미지 없음, .empty 유지(숨김)
       };
       img.src = src;
     })();
