@@ -2607,8 +2607,9 @@ a { color: inherit; text-decoration: none; }
   .home-hero {
     position: relative;
     width: 100%;
-    height: 88vh;
-    min-height: 560px;
+    height: 100vh;
+    min-height: 600px;
+    margin-top: -60px; /* sticky nav(60px) 뒤를 채워 풀스크린 (research 히어로와 동일) */
     background: #0a0a0a;
     display: flex;
     align-items: center;
@@ -2872,9 +2873,8 @@ a { color: inherit; text-decoration: none; }
       <div class="about-cta" onclick="showPage('introduce')">More about us →</div>
     </div>
     <div class="about-right">
-      <!-- 임시: 연구 현장 대표 이미지 재사용. 전용 About 사진 생기면 Photos/about-1.jpg 등으로 교체 -->
-      <div class="about-slide active" style="background-image:url('Photos/research/systems-wide.png')"></div>
-      <div class="about-slide" style="background-image:url('Photos/research/urban-wide.png')"></div>
+      <div class="about-slide active" style="background-image:url('Photos/backgrounds/about-1.png')"></div>
+      <div class="about-slide" style="background-image:url('Photos/backgrounds/about-2.png')"></div>
       <div class="about-dots">
         <div class="about-dot active" data-i="0"></div>
         <div class="about-dot" data-i="1"></div>
@@ -4181,6 +4181,8 @@ function switchRP(btn, panelId) {
 
 // ===== Research 그룹 히어로: nav 투명 전환 + 스크롤 reveal (한 번만 등록) =====
 var RESEARCH_PAGES = { 'main': 1, 'data-analysis': 1, 'urban-modeling': 1 };
+// 풀스크린 히어로가 있어 nav가 처음엔 투명해야 하는 페이지 (메인 intro 포함)
+var HERO_PAGES = { 'main': 1, 'data-analysis': 1, 'urban-modeling': 1, 'intro': 1 };
 
 var revealIO = new IntersectionObserver(function (entries) {
   entries.forEach(function (en) {
@@ -4197,9 +4199,9 @@ function updateNav() {
   var bar = document.querySelector('.top-bar');
   if (!bar) return;
   var transparent = false;
-  if (RESEARCH_PAGES[currentPage]) {
+  if (HERO_PAGES[currentPage]) {
     var page = document.getElementById('page-' + currentPage);
-    var hero = page ? page.querySelector('.rhero') : null;
+    var hero = page ? page.querySelector('.rhero, .home-hero') : null;
     var h = hero ? hero.offsetHeight : window.innerHeight;
     if (window.scrollY < h - 70) transparent = true;
   }
