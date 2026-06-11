@@ -24,7 +24,7 @@ Photos/
   research/     data.webp     data-wide.png   Data & Analysis      (.webp=카드, -wide.png=상세 배너)
                 systems.webp  systems-wide.png Building Systems
                 urban.webp    urban-wide.png  Building & Urban Modeling
-  projects/     (프로젝트/featured 시각자료 — 추후 추가용)
+  projects/     <key>-1.jpg <key>-2.jpg …      프로젝트 상세 갤러리 (연속 번호, 자동 표시)
   members/      professor.png                 교수님
                 <slug>.<ext>                  정식 프로필 헤드샷 (멤버 카드·프로필·논문 저자)
                 <slug>-sm.png                 작은 썸네일 (프로젝트 팀·people-row용)
@@ -67,6 +67,16 @@ Photos/
 
 ### 배경 슬라이드 바꾸기
 `backgrounds/home-1.png`, `home-2.png` 덮어쓰기. (home-1은 Introduce 페이지 히어로에도 쓰임)
+
+### 프로젝트 상세 갤러리에 사진 추가하기
+각 프로젝트 상세 페이지 하단에 "프로젝트 갤러리" 공간이 있고, `Photos/projects/`의 사진을 **자동으로** 읽어 표시합니다(클릭 시 라이트박스로 확대).
+- 파일명: `projects/<key>-1.jpg`, `<key>-2.jpg`, … 처럼 **1부터 연속 번호**로 저장(중간 번호가 비면 거기서 멈춤). 확장자는 `.jpg/.png/.jpeg/.webp` 자동 인식.
+- 프로젝트별 `<key>`:
+  - DataNet → `datanet`   (예: `projects/datanet-1.jpg`, `datanet-2.jpg` …)
+  - 그린리모델링 → `green`
+  - LH 지열 모니터링 → `lh`
+  - 탄소중립 도시 시뮬레이션 → `carbon`
+- 사진이 하나도 없으면 그 갤러리 영역은 자동으로 숨겨집니다. HTML 수정 불필요.
 
 ---
 
