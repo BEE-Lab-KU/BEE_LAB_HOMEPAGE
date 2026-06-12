@@ -319,7 +319,7 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 40px;
-  align-items: center;
+  align-items: stretch;
   background: #000;
   border-color: transparent;
   color: #fff;
@@ -333,7 +333,6 @@ a { color: inherit; text-decoration: none; }
 .project-card.featured .people-row img { border-color: #000; }
 .project-card.featured:hover { box-shadow: 0 20px 48px rgba(0,0,0,0.25); }
 .featured-vis {
-  aspect-ratio: 1 / 1;
   border-radius: 10px;
   background: #1a1a1a center/cover no-repeat;
   overflow: hidden;
@@ -1375,11 +1374,11 @@ html { scroll-behavior: smooth; }
     <div class="back-link" onclick="goBack('main')">← Building Systems</div>
     <div class="detail-grid">
       <div>
-        <h1 style="font-size:32px;">수열원 히트펌프 기반 데이터센터 폐열의 급탕 활용과 방류온도 제어</h1>
+        <h1 style="font-size:32px;">데이터센터 폐열 회수 및 방류 수온 복원을 위한 수열원 히트펌프 시스템</h1>
         <div class="detail-meta"><span class="status-dot"></span><span class="status-text">진행 중 · 2025–</span></div>
         <div class="detail-content">
           <h3>연구배경</h3>
-          <p>생성형 인공지능의 급격한 확산에 따라 데이터센터 수요가 폭발적으로 증가하고 있습니다. 데이터센터는 운영 과정에서 대량의 폐열을 지속적으로 발생시키며, 이를 효과적으로 활용하기 위한 연구가 활발히 진행되고 있습니다. 그러나 기존의 수열원 기반 폐열 활용 연구는 폐열 방류로 인한 수온 상승의 환경적 영향을 충분히 고려하지 못했습니다. 따라서 폐열의 에너지 활용 성능을 높이는 동시에, 방류수의 수온 변화까지 종합적으로 검토하는 접근이 필요합니다.</p>
+          <p>생성형 인공지능의 급격한 확산에 따라 데이터센터 수요가 폭발적으로 증가하고 있습니다. 데이터센터는 운영 과정에서 대량의 폐열을 지속적으로 발생시키며, 이를 효과적으로 활용하기 위한 연구가 활발히 진행되고 있습니다. 그러나 기존의 수열원 기반 폐열 활용 연구는 폐열 활용시 수온 상승의 환경적 영향을 충분히 고려하지 못했습니다. 따라서 폐열을 사용하는 경우의 에너지 활용 성능을 높이는 동시에, 방류수의 수온 변화까지 종합적으로 검토하는 접근이 필요합니다.</p>
           <h3>연구목표</h3>
           <p>수열원을 통해 폐열을 회수할 때 시스템으로 방류 수온을 제어하고, 폐열 활용에 따른 에너지 성능을 향상시킵니다.</p>
           <h3>Keywords</h3>
@@ -2628,9 +2627,9 @@ html { scroll-behavior: smooth; }
       <div class="project-card featured" onclick="showPage('project-carbon-neutral')" style="cursor:pointer;">
         <div>
           <div class="project-meta"><span class="badge govt">정부 과제</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
-          <h4>탄소중립 도시 에너지 시뮬레이션 플랫폼</h4>
-          <p>도시 스케일 에너지 모델링과 탄소 배출량 분석을 위한 통합 시뮬레이션 플랫폼 개발</p>
-          <div class="tag-row"><span class="tag">Carbon Neutral</span><span class="tag">Urban Simulation</span><span class="tag">Platform</span></div>
+          <h4>DBEM for load sharing community</h4>
+          <p>부하공유 커뮤니티를 위한 지역 건물 에너지 모델링(DBEM)으로 커뮤니티 전체 부하 패턴을 도출하고 부하 평탄화 최적 제어를 적용</p>
+          <div class="tag-row"><span class="tag">DBEM</span><span class="tag">Load Sharing</span><span class="tag">CHPWH</span></div>
         </div>
         <div class="featured-vis" style="background-image:url('Photos/projects/carbon-1.png')"></div>
       </div>
@@ -3392,10 +3391,10 @@ html { scroll-behavior: smooth; }
   <div class="project-hero-inner">
     <div class="back-link" onclick="goBack('urban-modeling')">← Building & Urban Modeling</div>
     <div class="project-hero-badge"><span class="status-dot"></span> 정부 과제 · 진행 중</div>
-    <h1>탄소중립 도시 에너지 시뮬레이션 플랫폼</h1>
-    <p class="project-hero-desc">도시 스케일 에너지 모델링과 탄소 배출량 분석을 위한 통합 시뮬레이션 플랫폼을 개발하여 탄소중립 도시 실현을 위한 과학적 근거를 제공합니다.</p>
+    <h1>DBEM for load sharing community</h1>
+    <p class="project-hero-desc">부하공유 커뮤니티를 위한 지역 건물 에너지 모델링(DBEM)으로 건물별·세대별 부하를 예측·평가하고, 부하 평탄화 최적 제어를 통해 커뮤니티 차원의 에너지·탄소 저감을 실현합니다.</p>
     <div class="project-hero-tags">
-      <span>Carbon Neutral</span><span>Urban Simulation</span><span>Platform</span><span>GIS</span>
+      <span>DBEM</span><span>Load Sharing Community</span><span>CHPWH</span><span>신재생에너지 연계</span>
     </div>
   </div>
 </div>
@@ -3404,13 +3403,10 @@ html { scroll-behavior: smooth; }
     <div class="pl-img"><div class="proj-carousel empty" id="proj-gallery-carbon"></div></div>
     <div class="pl-desc">
       <h3>프로젝트 개요</h3>
-      <p>탄소중립 도시 에너지 시뮬레이션 플랫폼은 도시 단위의 건물 에너지 소비와 탄소 배출을 종합적으로 시뮬레이션하여, 정책 입안자와 도시 계획가에게 데이터 기반의 의사결정 도구를 제공하는 정부 연구과제입니다.</p>
+      <p>급격한 도시화로 에너지 수요·공급 문제가 커지면서, 개별 건물이 아닌 커뮤니티 규모에서 에너지와 탄소를 저감하는 전략이 요구됩니다. 부하공유 커뮤니티를 위한 지역 건물 에너지 모델링 방법 개발 프로젝트는 지역 단위로 건물 에너지 모델링을 통해 건물별·세대별 부하를 예측 및 평가하고, 건물 간 상호 영향을 반영한 커뮤니티 전체 부하 패턴을 도출합니다. 나아가 예측 결과를 공유·관리 시스템과 연계해 부하를 평탄화·조정하는 최적 제어 기술을 적용함으로써 커뮤니티 차원의 에너지 및 탄소 저감을 실현합니다.</p>
 
       <h3>연구 내용</h3>
-      <p>UBEM(Urban Building Energy Model)과 GIS 기반 공간 분석을 결합하여 도시 전체의 에너지 흐름을 모델링합니다. 건물군 에너지 데이터, 기상 데이터, 도시 형태 정보를 통합 분석하여 탄소 배출 시나리오를 구축하고, 다양한 정책 대안의 효과를 정량적으로 평가합니다.</p>
-
-      <h3>기대 효과</h3>
-      <p>도시 단위 탄소중립 로드맵 수립을 위한 과학적 근거를 제공하며, 에너지 정책의 실효성을 사전 검증할 수 있는 시뮬레이션 환경을 구축합니다.</p>
+      <p>하이브리드 방식의 지역 건물 에너지 모델링(DBEM)으로 건물 형상에 따른 공간적 상호작용을 반영하고, 재실자 행동 예측을 기반으로 용도별·세대별 이질적 부하 스케줄과 시·공간 해상도별 불확실성을 평가합니다. 중앙식 히트펌프 온수기(CHPWH) 기반 부하공유 시스템과 태양광 등 신재생에너지 발전을 연계한 통합 제어 전략을 수립하며, 이 요소기술들을 융합해 건물 배치·시스템 선정·부하 이동·상쇄·발전 상호작용을 아우르는 커뮤니티 레벨 최적 설계·운영 알고리즘을 제시합니다.</p>
     </div>
     <div class="pl-meta">
       <div class="sidebar-block">
@@ -3427,7 +3423,7 @@ html { scroll-behavior: smooth; }
       </div>
       <div class="sidebar-block">
         <div class="sidebar-label">Keywords</div>
-        <div class="sidebar-tags"><span class="sidebar-tag">Carbon Neutral</span><span class="sidebar-tag">UBEM</span><span class="sidebar-tag">Urban Simulation</span><span class="sidebar-tag">GIS</span><span class="sidebar-tag">Policy Analysis</span></div>
+        <div class="sidebar-tags"><span class="sidebar-tag">DBEM</span><span class="sidebar-tag">Load Sharing Community</span><span class="sidebar-tag">CHPWH</span><span class="sidebar-tag">부하 평탄화</span><span class="sidebar-tag">신재생에너지</span></div>
       </div>
     </div>
   </div>
