@@ -333,23 +333,12 @@ a { color: inherit; text-decoration: none; }
 .project-card.featured .people-row img { border-color: #000; }
 .project-card.featured:hover { box-shadow: 0 20px 48px rgba(0,0,0,0.25); }
 .featured-vis {
-  height: 200px;
+  aspect-ratio: 1 / 1;
   border-radius: 10px;
-  background: linear-gradient(135deg, #222, #333);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #1a1a1a center/cover no-repeat;
   overflow: hidden;
   position: relative;
 }
-.featured-vis::before, .featured-vis::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-.featured-vis::before { width: 180px; height: 180px; animation: ring 5s ease-in-out infinite; }
-.featured-vis::after { width: 120px; height: 120px; animation: ring 5s ease-in-out infinite 1.5s; }
 @keyframes ring {
   0%,100% { transform: scale(1); opacity: 0.4; }
   50% { transform: scale(1.2); opacity: 1; }
@@ -415,7 +404,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 12px;
 }
 .detail-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
-.detail-content { font-size: 16px; color: var(--text-mid); line-height: 1.9; }
+.detail-content { font-size: 16px; color: var(--text-mid); line-height: 1.9; word-break: keep-all; }
 .detail-content h3 {
   font-size: 22px;
   font-weight: 800;
@@ -452,29 +441,21 @@ a { color: inherit; text-decoration: none; }
 .project-hero {
   width: 100%;
   padding: 100px 40px 60px;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background: #fff !important;
+  border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
 }
-.project-hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
-  border-radius: 50%;
-}
+.project-hero::before { content: none; }
 .project-hero-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 .project-hero .back-link {
-  color: rgba(255,255,255,0.5);
+  color: var(--text-muted);
   margin-bottom: 32px;
 }
-.project-hero .back-link:hover { color: rgba(255,255,255,0.9); }
+.project-hero .back-link:hover { color: var(--text); }
 .project-hero-badge {
   display: inline-flex;
   align-items: center;
@@ -485,9 +466,9 @@ a { color: inherit; text-decoration: none; }
   font-weight: 600;
   letter-spacing: 0.05em;
   margin-bottom: 20px;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.7);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: #f0f0f0;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
 }
 .project-hero-badge .status-dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -497,7 +478,7 @@ a { color: inherit; text-decoration: none; }
 .project-hero h1 {
   font-size: 44px;
   font-weight: 900;
-  color: #fff;
+  color: var(--text);
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin-bottom: 16px;
@@ -505,10 +486,11 @@ a { color: inherit; text-decoration: none; }
 }
 .project-hero-desc {
   font-size: 18px;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-mid);
   line-height: 1.7;
   max-width: 700px;
   margin-bottom: 28px;
+  word-break: keep-all;
 }
 .project-hero-tags {
   display: flex;
@@ -520,9 +502,9 @@ a { color: inherit; text-decoration: none; }
   border-radius: 16px;
   font-size: 13px;
   font-weight: 500;
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #f5f5f5;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
 }
 .project-body {
   max-width: 1200px;
@@ -546,6 +528,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 16px;
   color: var(--text-mid);
   line-height: 1.9;
+  word-break: keep-all;
 }
 .project-team-card {
   display: flex;
@@ -1138,24 +1121,34 @@ html { scroll-behavior: smooth; }
   #page-intro .home-hero-inner > * { animation:none !important; opacity:1 !important; transform:none !important; }
 }
 
-/* === 프로젝트 상단 이미지 캐러셀 === */
-.proj-carousel { position:relative; width:100%; background:#0d0d0d; overflow:hidden; }
+/* === 프로젝트 본문: 그림(좌) · 참여자/태그(우) · 설명(아래) 2단 배치 === */
+.proj-grid3 { grid-template-columns:2fr 1fr; gap:48px 72px; }
+.proj-grid3 .pl-img  { grid-column:1; grid-row:1; min-width:0; }
+.proj-grid3 .pl-meta { grid-column:2; grid-row:1; }
+.proj-grid3 .pl-desc { grid-column:1 / -1; grid-row:2; min-width:0; }
+@media (max-width:768px){
+  .proj-grid3 { grid-template-columns:1fr; gap:40px; }
+  .proj-grid3 .pl-img, .proj-grid3 .pl-meta, .proj-grid3 .pl-desc { grid-column:1; grid-row:auto; }
+}
+
+/* === 프로젝트 이미지 캐러셀 (좌측 컬럼) === */
+.proj-carousel { position:relative; width:100%; background:transparent; overflow:hidden; }
 .proj-carousel.empty { display:none; }
-.pc-track { display:flex; height:64vh; min-height:380px; transition:transform 0.55s cubic-bezier(0.4,0,0.2,1); }
+.pc-track { display:flex; height:460px; min-height:300px; transition:transform 0.55s cubic-bezier(0.4,0,0.2,1); }
 .pc-slide { flex:0 0 100%; display:flex; align-items:center; justify-content:center; cursor:zoom-in; }
 .pc-slide img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
-.pc-arrow { position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:none; background:rgba(255,255,255,0.14); color:#fff; font-size:24px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; z-index:2; }
-.pc-arrow:hover { background:rgba(255,255,255,0.30); }
-.pc-prev { left:20px; }
-.pc-next { right:20px; }
+.pc-arrow { position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:1px solid var(--border); background:rgba(255,255,255,0.85); color:#1a1a1a; font-size:24px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; z-index:2; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
+.pc-arrow:hover { background:#fff; }
+.pc-prev { left:12px; }
+.pc-next { right:12px; }
 .pc-arrow.hidden { display:none; }
-.pc-dots { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:2; }
-.pc-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.4); cursor:pointer; transition:all 0.25s; }
-.pc-dot.active { background:#fff; width:24px; border-radius:4px; }
+.pc-dots { position:absolute; bottom:14px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:2; }
+.pc-dot { width:8px; height:8px; border-radius:50%; background:rgba(0,0,0,0.25); cursor:pointer; transition:all 0.25s; }
+.pc-dot.active { background:#111; width:24px; border-radius:4px; }
 .proj-lightbox { display:none; position:fixed; inset:0; z-index:2000; background:rgba(0,0,0,0.92); align-items:center; justify-content:center; padding:40px; cursor:zoom-out; }
 .proj-lightbox.open { display:flex; }
 .proj-lightbox img { max-width:92vw; max-height:90vh; border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
-@media (max-width:768px){ .pc-track { height:44vh; min-height:240px; } .pc-arrow { width:40px; height:40px; font-size:20px; } .pc-prev{ left:12px; } .pc-next{ right:12px; } }
+@media (max-width:768px){ .pc-track { height:300px; min-height:0; } .pc-arrow { width:40px; height:40px; font-size:20px; } .pc-prev{ left:12px; } .pc-next{ right:12px; } }
 
 </style>
 </head>
@@ -1337,7 +1330,7 @@ html { scroll-behavior: smooth; }
             <span class="label">전원 참여</span>
           </div>
         </div>
-        <div class="featured-vis"></div>
+        <div class="featured-vis" style="background-image:url('Photos/projects/green-1.png')"></div>
       </div>
       <div class="project-card" onclick="showPage('project-lh-geothermal')" style="cursor:pointer;">
         <div class="project-meta"><span class="badge sub">Sub Project</span><span class="status-dot"></span><span class="status-text">진행 중</span></div>
@@ -2523,7 +2516,7 @@ html { scroll-behavior: smooth; }
           <p>17종 행정 데이터를 주소 기반으로 연계·통합하고, 건물 형태·음영 지표로 에너지 성능을 진단·벤치마킹하는 국가 규모 데이터 프레임워크</p>
           <div class="tag-row"><span class="tag">국가건물에너지 통합DB</span><span class="tag">형태·음영 지표</span><span class="tag">Benchmarking</span></div>
         </div>
-        <div class="featured-vis"></div>
+        <div class="featured-vis" style="background-image:url('Photos/projects/datanet-1.png')"></div>
       </div>
     </div>
   </div>
@@ -2639,7 +2632,7 @@ html { scroll-behavior: smooth; }
           <p>도시 스케일 에너지 모델링과 탄소 배출량 분석을 위한 통합 시뮬레이션 플랫폼 개발</p>
           <div class="tag-row"><span class="tag">Carbon Neutral</span><span class="tag">Urban Simulation</span><span class="tag">Platform</span></div>
         </div>
-        <div class="featured-vis"></div>
+        <div class="featured-vis" style="background-image:url('Photos/projects/carbon-1.png')"></div>
       </div>
     </div>
   </div>
@@ -3259,17 +3252,17 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
-<div class="proj-carousel empty" id="proj-gallery-green"></div>
 <div class="project-body">
-  <div class="project-body-grid">
-    <div>
+  <div class="project-body-grid proj-grid3">
+    <div class="pl-img"><div class="proj-carousel empty" id="proj-gallery-green"></div></div>
+    <div class="pl-desc">
       <h3>프로젝트 개요</h3>
       <p>Green Remodeling 사업은 노후화된 공공 및 민간 건축물의 에너지 성능을 체계적으로 개선하는 국가 정책 사업입니다. BEE Lab은 Green Remodeling이 완료된 건축물을 대상으로 사후 성능평가를 수행하여 사업의 실효성을 정량적으로 검증하고, 설계 단계 예측치와 실제 시공 성능 간 격차의 원인을 규명합니다.</p>
 
       <h3>연구 내용</h3>
       <p>자재·설비 시험성적서를 검토하고 ECO2-OD 시뮬레이션을 통해 에너지 성능을 산출합니다. 현장 실측에서 SHGC 측정을 통해 창호의 차폐성능을 검증하고, 열화상 카메라로 외벽 우각부 및 창호 주변의 열교(thermal bridge) 발생 여부를 진단하여 시공 품질을 평가합니다.</p>
     </div>
-    <div>
+    <div class="pl-meta">
       <div class="sidebar-block">
         <div class="sidebar-label">Team</div>
         <div class="project-team-card" onclick="showPage('member-sangmin')"><img src="Photos/members/sangmin.jpeg" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
@@ -3309,17 +3302,17 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
-<div class="proj-carousel empty" id="proj-gallery-lh"></div>
 <div class="project-body">
-  <div class="project-body-grid">
-    <div>
+  <div class="project-body-grid proj-grid3">
+    <div class="pl-img"><div class="proj-carousel empty" id="proj-gallery-lh"></div></div>
+    <div class="pl-desc">
       <h3>프로젝트 개요</h3>
       <p>한국토지주택공사(LH)가 발주하고 한국지열·수열에너지학회가 수행하는 연구용역으로, 공동주택에 설치된 지열히트펌프 시스템을 대상으로 합니다. 설계 성능과 실제 운전 성능 간 격차를 실측 데이터로 진단하고, 입주 초기 민원과 장기 운영의 한계를 해결하기 위한 지속가능한 관리체계를 구축하는 것을 목표로 합니다.</p>
 
       <h3>연구 내용</h3>
       <p>시운전 및 입주 초기 단계에서 온도·유량·전력 데이터를 수집하여 시간대별 COP와 효율성을 분석하고, 유량 불균형·제어 오류 등 운전 문제점을 진단·개선합니다. 또한 보조열원 도입 타당성(경제성) 검토, 장비별 유지관리 기준·매뉴얼 정립, 세대별 과금방안 수립, 센서 사양·지침을 포함한 모니터링 표준화를 수행합니다.</p>
     </div>
-    <div>
+    <div class="pl-meta">
       <div class="sidebar-block">
         <div class="sidebar-label">Team</div>
         <div class="project-team-card" onclick="showPage('member-sangmin')"><img src="Photos/members/sangmin.jpeg" alt=""/><div><div class="name">이상민</div><div class="role">Master's Student</div></div></div>
@@ -3354,17 +3347,17 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
-<div class="proj-carousel empty" id="proj-gallery-datanet"></div>
 <div class="project-body">
-  <div class="project-body-grid">
-    <div>
+  <div class="project-body-grid proj-grid3">
+    <div class="pl-img"><div class="proj-carousel empty" id="proj-gallery-datanet"></div></div>
+    <div class="pl-desc">
       <h3>프로젝트 개요</h3>
       <p>DataNet은 건축물대장과 에너지 사용량 DB를 중심으로 17종의 행정 데이터셋을 주소 기반으로 연계·통합하여, 건물 에너지 소비에 영향을 미치는 다양한 요인을 분석할 수 있는 국가 규모의 데이터 프레임워크를 구축하는 프로젝트입니다.</p>
 
       <h3>연구 내용</h3>
       <p>건축환경 및 에너지연구실(BEE Lab)은 건물의 형상·형태·음영 지표를 개발합니다. 각 지표와 총량/냉난방 사용수준 간의 관계 및 영향을 분석하고, 이를 활용하여 건물 형태 기반의 에너지 성능 진단 및 벤치마킹 연구를 수행합니다.</p>
     </div>
-    <div>
+    <div class="pl-meta">
       <div class="sidebar-block">
         <div class="sidebar-label">Team</div>
         <div class="project-team-card" onclick="showPage('member-doyeon')"><img src="Photos/members/doyeon.png" alt=""/><div><div class="name">이도연</div><div class="role">Ph.D. Candidate</div></div></div>
@@ -3406,10 +3399,10 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 </div>
-<div class="proj-carousel empty" id="proj-gallery-carbon"></div>
 <div class="project-body">
-  <div class="project-body-grid">
-    <div>
+  <div class="project-body-grid proj-grid3">
+    <div class="pl-img"><div class="proj-carousel empty" id="proj-gallery-carbon"></div></div>
+    <div class="pl-desc">
       <h3>프로젝트 개요</h3>
       <p>탄소중립 도시 에너지 시뮬레이션 플랫폼은 도시 단위의 건물 에너지 소비와 탄소 배출을 종합적으로 시뮬레이션하여, 정책 입안자와 도시 계획가에게 데이터 기반의 의사결정 도구를 제공하는 정부 연구과제입니다.</p>
 
@@ -3419,7 +3412,7 @@ html { scroll-behavior: smooth; }
       <h3>기대 효과</h3>
       <p>도시 단위 탄소중립 로드맵 수립을 위한 과학적 근거를 제공하며, 에너지 정책의 실효성을 사전 검증할 수 있는 시뮬레이션 환경을 구축합니다.</p>
     </div>
-    <div>
+    <div class="pl-meta">
       <div class="sidebar-block">
         <div class="sidebar-label">Team</div>
         <div class="project-team-card" onclick="showPage('member-jungyun')"><img src="Photos/members/jungyun.jpg" alt=""/><div><div class="name">황정윤</div><div class="role">Ph.D. Candidate</div></div></div>
@@ -4200,49 +4193,79 @@ html { scroll-behavior: smooth; }
 
 <script>
 var scrollPositions = {};
+var tabState = {};
 var navStack = [];
 var currentPage = 'intro';
 
+// 떠나는 페이지의 스크롤 위치 + 활성 탭(rp-panel) 상태 저장
+function captureState(pageId) {
+  scrollPositions[pageId] = window.scrollY;
+  var el = document.getElementById('page-' + pageId);
+  if (el) {
+    var active = [];
+    el.querySelectorAll('.rp-panel.active').forEach(function (p) { if (p.id) active.push(p.id); });
+    tabState[pageId] = active;
+  }
+}
+
+// 되돌아온 페이지의 탭 상태(pill + panel) 복원
+function restoreTabs(pageId) {
+  var saved = tabState[pageId];
+  if (!saved || !saved.length) return;
+  var el = document.getElementById('page-' + pageId);
+  if (!el) return;
+  saved.forEach(function (pid) {
+    var panel = document.getElementById(pid);
+    if (!panel) return;
+    panel.parentElement.querySelectorAll('.rp-panel').forEach(function (p) { p.classList.remove('active'); });
+    panel.classList.add('active');
+    el.querySelectorAll('.pill').forEach(function (pill) {
+      var oc = pill.getAttribute('onclick') || '';
+      if (oc.indexOf("'" + pid + "'") > -1) {
+        pill.parentElement.querySelectorAll('.pill').forEach(function (x) { x.classList.remove('active'); });
+        pill.classList.add('active');
+      }
+    });
+  });
+}
+
 function showPage(id, opts) {
   opts = opts || {};
-  // Save current scroll position before leaving
-  scrollPositions[currentPage] = window.scrollY;
+  // 떠나기 전 현재 페이지 상태 저장
+  captureState(currentPage);
 
-  // Forward navigation: remember where we came from so goBack() returns there
-  if(!opts.isBack && id !== currentPage){
-    navStack.push(currentPage);
-  }
+  // 앞으로 이동: 돌아올 수 있도록 현재 페이지를 스택에 기록
+  if (!opts.isBack && id !== currentPage) { navStack.push(currentPage); }
 
-  document.querySelectorAll('.page-view').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.page-view').forEach(function (p) { p.classList.remove('active'); });
   var el = document.getElementById('page-' + id);
-  if(el){
+  if (el) {
     el.classList.add('active');
     el.style.animation = 'none';
     el.offsetHeight;
     el.style.animation = 'fadeIn 0.35s ease-out';
 
-    // Restore scroll if going back, otherwise scroll to top
-    if(opts.isBack && scrollPositions[id] !== undefined){
-      window.scrollTo({top: scrollPositions[id], behavior:'instant'});
-    } else {
-      window.scrollTo({top:0, behavior:'instant'});
-    }
-
     // Research 그룹 페이지: 히어로 아래 섹션에 reveal 부여 + observer 등록 (전환 후에도 동작)
-    if(RESEARCH_PAGES[id]){
-      el.querySelectorAll(':scope > .section').forEach(function(s){ s.classList.add('reveal'); });
+    if (RESEARCH_PAGES[id]) {
+      el.querySelectorAll(':scope > .section').forEach(function (s) { s.classList.add('reveal'); });
     }
     observeReveals(el);
+
+    // 뒤로가기면 탭 상태 먼저 복원 → 그 다음 스크롤 위치 복원 (레이아웃 안정화 위해 다음 프레임에 재적용)
+    if (opts.isBack) restoreTabs(id);
+    var y = (opts.isBack && scrollPositions[id] !== undefined) ? scrollPositions[id] : 0;
+    window.scrollTo({ top: y, behavior: 'instant' });
+    requestAnimationFrame(function () { window.scrollTo({ top: y, behavior: 'instant' }); });
   }
   currentPage = id;
   updateNav();
-  history.pushState(null,'','#'+id);
+  history.pushState(null, '', '#' + id);
 }
 
 function goBack(fallbackId) {
-  // Return to the actual previous page (and its scroll position); fall back to the hardcoded id
+  // 실제로 들어왔던 이전 페이지로 복귀(스크롤·탭 위치 포함). 기록이 없을 때만 fallback 사용.
   var target = navStack.length ? navStack.pop() : fallbackId;
-  showPage(target, {isBack:true});
+  showPage(target, { isBack: true });
 }
 
 function switchRP(btn, panelId) {
